@@ -1,9 +1,6 @@
-package controller;
+package Controller;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-
+import Model.Login;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -11,7 +8,10 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
-import modelo.ModeloTelaLogin;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class ControlePaginaLogin implements Initializable{
 
@@ -36,8 +36,8 @@ public class ControlePaginaLogin implements Initializable{
 		
 	}
 	public void Avancar() {
-		
-		 ModeloTelaLogin usuario = new ModeloTelaLogin();
+
+		Login usuario = new Login();
 		 
 		usuario.setNome(txtUsuario.getText());
 		usuario.setSenha(txtSenha.getText());
@@ -45,7 +45,7 @@ public class ControlePaginaLogin implements Initializable{
 		if(usuario.getNome().equals("erik") & usuario.getSenha().equals("1234")){
 			
 			URL arquivoFXML;
-			arquivoFXML = getClass().getResource("/visao/PaginaCadastro.fxml");
+			arquivoFXML = getClass().getResource("/View/PaginaCadastro.fxml");
 			Parent fxmlParent;
 			try {
 				fxmlParent = FXMLLoader.load(arquivoFXML);

@@ -1,9 +1,11 @@
 package DAO;
 
-import Model.Login;
 import daoUtil.ConnectionFactory;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 
 /**
@@ -12,16 +14,16 @@ import java.sql.*;
 public class ClienteDAO {
 
     private Connection con;
-    private Statement  stmt;
+    private Statement stmt;
     private PreparedStatement stm;
 
 
-    private String sqlListaCliente ="Select * from cliente";
+    private String sqlLogin = "Select * from login";
 
     public ClienteDAO() throws SQLException {
 
         ConnectionFactory factory = new ConnectionFactory();
-        con = (Connection) factory.getConnection();
+        con = factory.getConnection();
 
     }
 

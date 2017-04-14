@@ -1,6 +1,6 @@
-package modelo;
+package Model;
 
-public class ModeloTelaLogin {
+public class Login {
 
 	private String nome;
 	private String senha;

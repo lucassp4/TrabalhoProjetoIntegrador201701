@@ -1,9 +1,9 @@
-package controller;
+package Controller;
+
+import javafx.fxml.Initializable;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import javafx.fxml.Initializable;
 
 public class ControllerSegundaPagina implements Initializable {
 

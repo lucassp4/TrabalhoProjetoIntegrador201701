@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.BorderPane?>
-
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="514.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<Pane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="514.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/8">
    <children>
-      <Button layoutX="150.0" layoutY="475.0" mnemonicParsing="false" text="Salvar" />
+      <Button layoutX="150.0" layoutY="475.0" mnemonicParsing="false" text="Alterar" />
       <Button layoutX="431.0" layoutY="475.0" mnemonicParsing="false" text="Fechar" />
-      <Label layoutX="174.0" layoutY="28.0" text="Reserva de Recurso">
+      <Label layoutX="207.0" layoutY="29.0" text="Alterar Reserva">
          <font>
             <Font size="30.0" />
          </font>
