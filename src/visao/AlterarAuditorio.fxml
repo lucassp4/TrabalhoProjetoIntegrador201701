@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="131.0" layoutY="28.0" text="Alterar Cadastro do Auditorio">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="106.0" text="Numero" />
+      <Label layoutX="39.0" layoutY="147.0" text="Capacidade" />
+      <Label layoutX="338.0" layoutY="135.0" text="Bloco" />
+      <TextField layoutX="112.0" layoutY="102.0" />
+      <TextField layoutX="112.0" layoutY="143.0" prefHeight="25.0" prefWidth="70.0" />
+      <ComboBox layoutX="403.0" layoutY="131.0" prefWidth="150.0" />
+      <Button layoutX="139.0" layoutY="396.0" mnemonicParsing="false" text="Alterar" />
+      <Button layoutX="360.0" layoutY="396.0" mnemonicParsing="false" text="Fechar" />
+      <ComboBox layoutX="403.0" layoutY="90.0" prefWidth="150.0" />
+      <Label layoutX="331.0" layoutY="94.0" text="Unidade" />
+      <Label layoutX="235.0" layoutY="209.0" text="Descriçao">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextArea layoutX="92.0" layoutY="244.0" prefHeight="131.0" prefWidth="380.0" />
+   </children>
+</Pane>

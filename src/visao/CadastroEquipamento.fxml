@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="465.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="47.0" layoutY="125.0" text="Nome " />
+      <Label layoutX="135.0" layoutY="24.0" prefHeight="39.0" prefWidth="331.0" text="Cadastro de Equipamento">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="169.0" text="Marca" />
+      <TextField layoutX="105.0" layoutY="121.0" prefHeight="25.0" prefWidth="239.0" />
+      <TextField layoutX="105.0" layoutY="165.0" prefHeight="25.0" prefWidth="239.0" />
+      <Label layoutX="43.0" layoutY="219.0" text="Modelo" />
+      <TextField layoutX="105.0" layoutY="215.0" prefHeight="25.0" prefWidth="239.0" />
+      <Label layoutX="366.0" layoutY="117.0" text="Quantidade" />
+      <TextField layoutX="448.0" layoutY="113.0" prefHeight="25.0" prefWidth="77.0" />
+      <Label layoutX="238.0" layoutY="240.0" text="Descriçao">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextArea layoutX="105.0" layoutY="268.0" prefHeight="157.0" prefWidth="347.0" />
+      <Button layoutX="151.0" layoutY="439.0" mnemonicParsing="false" text="Salvar" />
+      <Button layoutX="357.0" layoutY="439.0" mnemonicParsing="false" text="Fechar" />
+   </children>
+</Pane>
