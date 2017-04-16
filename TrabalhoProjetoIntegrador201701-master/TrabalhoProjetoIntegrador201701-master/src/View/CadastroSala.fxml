@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="422.0" prefWidth="613.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="56.0" layoutY="172.0" text="Número" />
+      <TextField fx:id="txtNumero" layoutX="110.0" layoutY="168.0" prefHeight="25.0" prefWidth="175.0" promptText="Digite o Número" />
+      <ComboBox fx:id="comboUnidade" layoutX="387.0" layoutY="168.0" prefWidth="150.0" promptText="Selecione a Unidade" />
+      <Label layoutX="200.0" layoutY="50.0" text="Cadastro de Sala">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <Label layoutX="38.0" layoutY="210.0" text="Capacidade" />
+      <TextField fx:id="txtCapacidade" layoutX="110.0" layoutY="206.0" prefHeight="25.0" prefWidth="175.0" promptText="Informe a Capaciadade" />
+      <ComboBox fx:id="comboBloco" layoutX="387.0" layoutY="206.0" prefWidth="150.0" promptText="Selecione o Bloco" />
+      <Label layoutX="348.0" layoutY="210.0" text="Bloco" />
+      <Button fx:id="btnSalvar" layoutX="139.0" layoutY="376.0" mnemonicParsing="false" text="Salvar" />
+      <Button fx:id="btnFechar" layoutX="416.0" layoutY="376.0" mnemonicParsing="false" text="Fechar" />
+      <Label layoutX="333.0" layoutY="172.0" text="Unidade" />
+   </children>
+</Pane>

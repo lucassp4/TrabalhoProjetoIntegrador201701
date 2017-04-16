@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="500.0" prefWidth="630.0">
+         <children>
+            <Button fx:id="btnSalvar" layoutX="164.0" layoutY="450.0" mnemonicParsing="false" text="Salvar" />
+            <Button fx:id="btnFechar" layoutX="426.0" layoutY="450.0" mnemonicParsing="false" text="Fechar" />
+            <Label layoutX="196.0" layoutY="47.0" text="Reserva de Sala">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="343.0" layoutY="154.0" text="Sala" />
+         </children>
+      </Pane>
+      <Label layoutX="327.0" layoutY="222.0" text="Data fim" />
+      <Label layoutX="327.0" layoutY="250.0" text="Hora Final" />
+      <TextField layoutX="396.0" layoutY="246.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha a hora Final" />
+      <TextField layoutX="104.0" layoutY="246.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha a hora inicial" />
+      <Label layoutX="33.0" layoutY="250.0" text="Hora inicial" />
+      <DatePicker layoutX="396.0" layoutY="218.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha a data final" />
+      <DatePicker layoutX="104.0" layoutY="218.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha a data inicial" />
+      <Label layoutX="33.0" layoutY="222.0" text="Data inicial" />
+      <Label layoutX="47.0" layoutY="155.0" text="Bloco" />
+      <ComboBox layoutX="395.0" layoutY="186.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha Unidade" />
+      <ComboBox layoutX="395.0" layoutY="151.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha a Sala" />
+      <ComboBox layoutX="102.0" layoutY="186.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha Turno" />
+      <ComboBox layoutX="102.0" layoutY="151.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha o BLoco" />
+      <Label layoutX="47.0" layoutY="190.0" text="Turno" />
+      <Label layoutX="335.0" layoutY="190.0" text="Unidade" />
+   </children>
+</AnchorPane>

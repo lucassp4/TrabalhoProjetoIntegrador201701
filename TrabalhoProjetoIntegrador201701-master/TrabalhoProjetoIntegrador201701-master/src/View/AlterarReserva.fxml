@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<Pane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="514.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <Button layoutX="150.0" layoutY="475.0" mnemonicParsing="false" text="Alterar" />
+      <Button layoutX="431.0" layoutY="475.0" mnemonicParsing="false" text="Fechar" />
+      <Label layoutX="207.0" layoutY="29.0" text="Alterar Reserva">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="45.0" layoutY="121.0" text="Nome" />
+      <Label layoutX="30.0" layoutY="151.0" text="Matricula" />
+      <Label layoutX="292.0" layoutY="121.0" text="Email" />
+      <Label layoutX="284.0" layoutY="184.0" text="Unidade" />
+      <Label layoutX="287.0" layoutY="151.0" text="Funçao" />
+      <Label layoutX="25.0" layoutY="184.0" text="Autoridade" />
+      <TextField layoutX="86.0" layoutY="117.0" prefHeight="25.0" prefWidth="192.0" />
+      <TextField layoutX="86.0" layoutY="147.0" prefHeight="25.0" prefWidth="192.0" />
+      <TextField layoutX="86.0" layoutY="180.0" prefHeight="25.0" prefWidth="192.0" />
+      <TextField layoutX="339.0" layoutY="117.0" prefHeight="25.0" prefWidth="280.0" />
+      <TextField layoutX="339.0" layoutY="147.0" prefHeight="25.0" prefWidth="280.0" />
+      <TextField layoutX="339.0" layoutY="180.0" prefHeight="25.0" prefWidth="280.0" />
+      <Label layoutX="47.0" layoutY="240.0" text="Sala" />
+      <Label layoutX="47.0" layoutY="273.0" text="Laboratorio" />
+      <Label layoutX="308.0" layoutY="274.0" text="Kit" />
+      <Label layoutX="290.0" layoutY="240.0" text="Equipamentos" />
+      <Label layoutX="48.0" layoutY="307.0" text="Auditorio" />
+      <ComboBox layoutX="122.0" layoutY="236.0" prefHeight="25.0" prefWidth="156.0" />
+      <ComboBox layoutX="122.0" layoutY="270.0" prefHeight="25.0" prefWidth="156.0" />
+      <ComboBox layoutX="122.0" layoutY="303.0" prefHeight="25.0" prefWidth="156.0" />
+      <ComboBox layoutX="395.0" layoutY="270.0" prefWidth="150.0" />
+      <ComboBox layoutX="395.0" layoutY="236.0" prefWidth="150.0" />
+   </children>
+</Pane>

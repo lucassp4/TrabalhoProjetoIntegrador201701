@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="155.0" layoutY="401.0" mnemonicParsing="false" text="Salvar" />
+      <Button layoutX="396.0" layoutY="401.0" mnemonicParsing="false" text="Fechar" />
+      <Label layoutX="136.0" layoutY="39.0" text="Cadastro de Laboratório">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="65.0" layoutY="110.0" text="Numero" />
+      <Label layoutX="369.0" layoutY="180.0" text="Tipo" />
+      <Label layoutX="47.0" layoutY="145.0" text="Capacidade" />
+      <Label layoutX="348.0" layoutY="110.0" text="Unidade" />
+      <TextField layoutX="119.0" layoutY="106.0" prefHeight="25.0" prefWidth="149.0" promptText="Digite o Número" />
+      <ComboBox layoutX="402.0" layoutY="106.0" prefHeight="25.0" prefWidth="149.0" promptText="Selecione a Unidade" />
+      <TextField layoutX="119.0" layoutY="141.0" promptText="Digite a Capacidade" />
+      <TextArea layoutX="128.0" layoutY="256.0" prefHeight="133.0" prefWidth="345.0" />
+      <Label layoutX="260.0" layoutY="220.0" text="Descrição">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="363.0" layoutY="145.0" text="Bloco" />
+      <ComboBox layoutX="402.0" layoutY="141.0" prefHeight="25.0" prefWidth="149.0" promptText="Selecione o Bloco" />
+      <TextField layoutX="402.0" layoutY="176.0" prefHeight="25.0" prefWidth="149.0" promptText="Digite o Tipo" />
+   </children>
+</Pane>
