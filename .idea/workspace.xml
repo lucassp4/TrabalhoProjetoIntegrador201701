@@ -2,7 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="060349df-de27-4db1-a615-6662a439d2b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/Trabalho.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/build.fxbuild" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/src/DAO/ClienteDAO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/src/Lib/sqljdbc4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/src/Model/Login.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/src/View/AlterarReserva.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/src/View/PaginaLogin.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/src/View/PaginaPrincipal.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/src/application/Main.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/src/controller/ControlePaginaLogin.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/src/controller/ControllerSegundaPagina.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/src/daoUtil/ConnectionFactory.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/PaginaPrincipal.fxml" afterPath="$PROJECT_DIR$/src/View/PaginaPrincipal.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/src/View/AlterarAuditorio.fxml" afterPath="$PROJECT_DIR$/src/View/AlterarAuditorio.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/src/View/Cadastrarautoridade.fxml" afterPath="$PROJECT_DIR$/src/View/Cadastrarautoridade.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/src/View/CadastroAuditorio.fxml" afterPath="$PROJECT_DIR$/src/View/CadastroAuditorio.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/src/View/CadastroBloco.fxml" afterPath="$PROJECT_DIR$/src/View/CadastroBloco.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/src/View/CadastroEquipamento.fxml" afterPath="$PROJECT_DIR$/src/View/CadastroEquipamento.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/src/View/CadastroFuncionario.fxml" afterPath="$PROJECT_DIR$/src/View/CadastroFuncionario.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/src/View/CadastroLaboratorio.fxml" afterPath="$PROJECT_DIR$/src/View/CadastroLaboratorio.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/src/View/CadastroNovasUnidades.fxml" afterPath="$PROJECT_DIR$/src/View/CadastroNovasUnidades.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/src/View/CadastroSala.fxml" afterPath="$PROJECT_DIR$/src/View/CadastroSala.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/src/View/CadastroUsuario.fxml" afterPath="$PROJECT_DIR$/src/View/CadastroUsuario.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/src/View/CancelarReserva.fxml" afterPath="$PROJECT_DIR$/src/View/CancelarReserva.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/src/View/CriarKit.fxml" afterPath="$PROJECT_DIR$/src/View/CriarKit.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/src/View/ReservarLaboratorio.fxml" afterPath="$PROJECT_DIR$/src/View/ReservarLaboratorio.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/src/View/ReservarRecurso.fxml" afterPath="$PROJECT_DIR$/src/View/ReservarRecurso.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/src/View/ReservarSala.fxml" afterPath="$PROJECT_DIR$/src/View/ReservarSala.fxml" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -26,8 +55,8 @@
       <file leaf-file-name="LoginDAO.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DAO/LoginDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+            <state relative-caret-position="119">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -49,6 +78,9 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -123,6 +155,24 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TrabalhoProjetoIntegrador201701" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TrabalhoProjetoIntegrador201701" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -152,6 +202,11 @@
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\100. Pessoal\Faculdade\5 Semestre\Programação II\Trabalho\Trabalho\TrabalhoProjetoIntegrador201701\src\View" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -559,7 +614,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1492401318414</updated>
-      <workItem from="1492401319812" duration="197000" />
+      <workItem from="1492401319812" duration="547000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <created>1492401416031</created>
@@ -568,15 +623,22 @@
       <option name="project" value="LOCAL" />
       <updated>1492401416031</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Commit">
+      <created>1492401529517</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1492401529517</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197000" />
+    <option name="totallyTimeSpent" value="547000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -589,7 +651,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -620,10 +682,18 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/TrabalhoProjetoIntegrador201701-master/TrabalhoProjetoIntegrador201701-master/src/DAO/ClienteDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/DAO/LoginDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        <state relative-caret-position="119">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>

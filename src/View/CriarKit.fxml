@@ -1,38 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
-<Pane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-      minWidth="-Infinity" prefHeight="438.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8">
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="438.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button layoutX="156.0" layoutY="390.0" mnemonicParsing="false" text="Salvar" />
-      <Button layoutX="403.0" layoutY="390.0" mnemonicParsing="false" text="Fechar" />
-      <Label layoutX="169.0" layoutY="24.0" text="Cadastro de kit">
+      <TextField fx:id="txtNomeKit" layoutX="148.0" layoutY="131.0" prefHeight="25.0" prefWidth="254.0" promptText="Digite o Nome Do Kit" />
+      <ComboBox fx:id="comboQuantidade" layoutX="148.0" layoutY="164.0" prefHeight="25.0" prefWidth="254.0" promptText="Escolha a quantidade de Itens" />
+      <ComboBox fx:id="comboItem1" layoutX="148.0" layoutY="197.0" prefHeight="25.0" prefWidth="141.0" />
+      <ComboBox fx:id="comboItem2" layoutX="148.0" layoutY="230.0" prefHeight="25.0" prefWidth="141.0" />
+      <ComboBox fx:id="comboItem3" layoutX="148.0" layoutY="264.0" prefHeight="25.0" prefWidth="141.0" />
+      <ComboBox fx:id="comboItem4" layoutX="148.0" layoutY="298.0" prefHeight="25.0" prefWidth="141.0" />
+      <ComboBox fx:id="comboItem5" layoutX="388.0" layoutY="197.0" prefHeight="25.0" prefWidth="141.0" />
+      <ComboBox fx:id="comboItem6" layoutX="388.0" layoutY="231.0" prefHeight="25.0" prefWidth="141.0" />
+      <ComboBox fx:id="comboItem7" layoutX="388.0" layoutY="264.0" prefHeight="25.0" prefWidth="141.0" />
+      <ComboBox fx:id="comboItem8" layoutX="388.0" layoutY="298.0" prefHeight="25.0" prefWidth="141.0" />
+      <Label layoutX="199.0" layoutY="31.0" text="Cadastro de Kit">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label layoutX="33.0" layoutY="130.0" text="Nome do Kit" />
-      <Label layoutX="54.0" layoutY="196.0" text="Itens" />
-      <Label layoutX="54.0" layoutY="230.0" text="Itens" />
-      <Label layoutX="54.0" layoutY="260.0" text="Itens" />
-      <Label layoutX="54.0" layoutY="290.0" text="Itens" />
-      <Label layoutX="35.0" layoutY="161.0" text="Quantidade" />
-      <ComboBox layoutX="115.0" layoutY="226.0" prefHeight="25.0" prefWidth="141.0" />
-      <ComboBox layoutX="115.0" layoutY="256.0" prefHeight="25.0" prefWidth="141.0" />
-      <ComboBox layoutX="115.0" layoutY="286.0" prefHeight="25.0" prefWidth="141.0" />
-      <ComboBox layoutX="115.0" layoutY="192.0" prefHeight="25.0" prefWidth="141.0" />
-      <ComboBox layoutX="115.0" layoutY="157.0" prefHeight="25.0" prefWidth="67.0" />
-      <TextField layoutX="115.0" layoutY="126.0" prefHeight="25.0" prefWidth="254.0" />
-      <Label layoutX="294.0" layoutY="196.0" text="Itens" />
-      <ComboBox layoutX="355.0" layoutY="192.0" prefHeight="25.0" prefWidth="141.0" />
-      <ComboBox layoutX="355.0" layoutY="256.0" prefHeight="25.0" prefWidth="141.0" />
-      <Label layoutX="294.0" layoutY="290.0" text="Itens" />
-      <ComboBox layoutX="355.0" layoutY="286.0" prefHeight="25.0" prefWidth="141.0" />
-      <ComboBox layoutX="355.0" layoutY="226.0" prefHeight="25.0" prefWidth="141.0" />
-      <Label layoutX="294.0" layoutY="260.0" text="Itens" />
-      <Label layoutX="294.0" layoutY="230.0" text="Itens" />
+      <Label layoutX="71.0" layoutY="135.0" text="Nome do Kit" />
+      <Label layoutX="113.0" layoutY="201.0" text="Itens" />
+      <Label layoutX="113.0" layoutY="235.0" text="Itens" />
+      <Label layoutX="113.0" layoutY="268.0" text="Itens" />
+      <Label layoutX="113.0" layoutY="302.0" text="Itens" />
+      <Label layoutX="76.0" layoutY="168.0" text="Quantidade" />
+      <Label layoutX="353.0" layoutY="201.0" text="Itens" />
+      <Label layoutX="353.0" layoutY="302.0" text="Itens" />
+      <Label layoutX="353.0" layoutY="235.0" text="Itens" />
+      <Label layoutX="353.0" layoutY="268.0" text="Itens" />
+      <Button fx:id="btnSalvar" layoutX="151.0" layoutY="381.0" mnemonicParsing="false" text="Salvar" />
+      <Button fx:id="btnFechar" layoutX="398.0" layoutY="381.0" mnemonicParsing="false" text="Fechar" />
    </children>
 </Pane>
