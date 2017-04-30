@@ -35,29 +35,13 @@ public class ControlePaginaLogin implements Initializable{
 	public void Fechar(){
 		
 	}
-	public void Avancar() {
+	public void Login() {
 
 		Login usuario = new Login();
 		 
 		usuario.setNome(txtUsuario.getText());
 		usuario.setSenha(txtSenha.getText());
-		
-		if(usuario.getNome().equals("erik") & usuario.getSenha().equals("1234")){
-			
-			URL arquivoFXML;
-			arquivoFXML = getClass().getResource("/View/PaginaCadastro.fxml");
-			Parent fxmlParent;
-			try {
-				fxmlParent = FXMLLoader.load(arquivoFXML);
-				panel.getChildren().clear();
-				panel.getChildren().add(fxmlParent);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			
-		}else{
-		
-		}
+
 			}
 	
 	}

@@ -20,17 +20,25 @@ public class ConnectionFactory {
         return connectionFactory;
     }
 
+
+    // abre uma nova conexão com o banco de dados. Se algum erro for lançado
+    // aqui, verifique o erro com atenção e se o banco está rodando
     public Connection getConnection() throws SQLException {
         Connection conn = null;
         try {
             Class.forName(driver);
             conn = DriverManager.getConnection(connectionStr);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return conn;
+            if (e instanceof ClassNotFoundException) {
+                System.err.println("VERIFIQUE SE O DRIVER DO BANCO DE DADOS ESTÁ NO CLASSPATH");
+            } else {
+                System.err.println("VERIFIQUE SE O BANCO ESTÁ RODANDO E SE OS DADOS DE CONEXÃO ESTÃO CORRETOS");
+            }
+            System.exit(0);
+            // o sistema deverá sair antes de chegar aqui...
+
+        }return conn;
     }
 
     public void closeConnection() throws SQLException {

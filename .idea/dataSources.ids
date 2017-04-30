@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
   <data-source name="SQL Server (Microsoft) - ProjetoIntegrador@localhost" uuid="4929d939-0eeb-48f9-9339-b60beab90065">
-    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+    <database-info product="Microsoft SQL Server" version="12.00.2269" jdbc-version="4.0" driver-name="Microsoft JDBC Driver 4.0 for SQL Server" driver-version="4.0.2206.100">
+      <extra-name-characters>$#@</extra-name-characters>
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
+    <database-model serializer="dbm" rdbms="MSSQL" format-version="2.5">
+      <database id="1" name="ProjetoIntegrador">
+        <object-id>6</object-id>
+        <collation>Latin1_General_CI_AS</collation>
+      </database>
+      <schema id="2" parent="1" name="dbo">
+        <object-id>1</object-id>
+        <introspection-timestamp>2017-04-18.21:12:08.373</introspection-timestamp>
+      </schema>
+      <table id="3" parent="2" name="usuarios">
+        <object-id>277576027</object-id>
+        <created-timestamp>2017-04-14.21:40:09.173</created-timestamp>
+        <modified-timestamp>2017-04-14.21:40:09.210</modified-timestamp>
+      </table>
+      <column id="4" parent="3" name="id_user">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+        <sequence-identity>1(2)</sequence-identity>
+      </column>
+      <column id="5" parent="3" name="nome">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="6" parent="3" name="senha">
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)</data-type>
+      </column>
+      <index id="7" parent="3" name="PK_Table_1">
+        <columns>id_user</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <clustering>1</clustering>
+        <position>1</position>
+      </index>
+      <key id="8" parent="3" name="PK_Table_1">
+        <object-id>293576084</object-id>
+        <created-timestamp>2017-04-14.21:40:09.197</created-timestamp>
+        <modified-timestamp>2017-04-14.21:40:09.197</modified-timestamp>
+        <columns>id_user</columns>
+        <underlying-index>PK_Table_1</underlying-index>
+        <primary>1</primary>
+      </key>
+    </database-model>
   </data-source>
 </component>
