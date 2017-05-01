@@ -29,7 +29,7 @@ public class DepartamentoDAO {
 
     // comandos SQL
     private String INSERIR      = "INSERT INTO departamento() VALUES(?, ?, ?))";
-    private String ATUALIZAR    = "UPDATE departamento SET =?, =?,  = STR_TO_DATE(?, '%d/%m/%Y') WHERE id = ?";
+    private String ATUALIZAR    = "UPDATE departamento SET =? WHERE id = ?";
     private String BUSCAR       = "SELECT * FROM departamento WHERE ID = ?";
     private String BUSCAR_TODOS = "SELECT * FROM departamento";
     private String APAGAR       = "DELETE FROM departamento WHERE id = ?";
