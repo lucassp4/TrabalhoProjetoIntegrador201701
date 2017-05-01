@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="060349df-de27-4db1-a615-6662a439d2b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Lib/mysql-connector-java-5.1.40-bin.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_40_bin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trabalho.iml" afterPath="$PROJECT_DIR$/Trabalho.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DAO/LoginDAO.java" afterPath="$PROJECT_DIR$/src/DAO/LoginDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/PaginaLogin.fxml" afterPath="$PROJECT_DIR$/src/View/PaginaLogin.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/daoUtil/ConnectionFactory.java" afterPath="$PROJECT_DIR$/src/daoUtil/ConnectionFactory.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/controller/ControlePaginaLogin.java" afterPath="$PROJECT_DIR$/src/controller/ControleLogin.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/controller/ControllerSegundaPagina.java" afterPath="$PROJECT_DIR$/src/controller/ControllerMenuPrincipal.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/PaginaPrincipal.fxml" afterPath="$PROJECT_DIR$/src/View/PaginaPrincipal.fxml" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -55,8 +46,8 @@
       <file leaf-file-name="ControllerMenuPrincipal.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controller/ControllerMenuPrincipal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+            <state relative-caret-position="187">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -742,7 +733,7 @@
       <workItem from="1492401319812" duration="2034000" />
       <workItem from="1492559781744" duration="2003000" />
       <workItem from="1493006286677" duration="1488000" />
-      <workItem from="1493345794479" duration="28775000" />
+      <workItem from="1493345794479" duration="29264000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <created>1492401416031</created>
@@ -807,11 +798,18 @@
       <option name="project" value="LOCAL" />
       <updated>1493653418093</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Commit">
+      <created>1493680629499</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1493680629499</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34300000" />
+    <option name="totallyTimeSpent" value="34789000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1166,8 +1164,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/ControllerMenuPrincipal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+        <state relative-caret-position="187">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
