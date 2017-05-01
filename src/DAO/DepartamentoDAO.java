@@ -1,6 +1,6 @@
 package DAO;
 
-import Model.Funcionario;
+import Model.Departamento;
 import daoUtil.ConnectionFactory;
 
 import java.sql.*;
@@ -19,7 +19,7 @@ public class DepartamentoDAO {
     private PreparedStatement stm;
 
     //conexao
-    public FuncionarioDAO() throws SQLException {
+    public DepartamentoDAO() throws SQLException {
 
         ConnectionFactory factory = new ConnectionFactory();
         con = factory.getConnection();
@@ -27,75 +27,74 @@ public class DepartamentoDAO {
     }
 
 
-    // comandos
-    private String INSERIR      = "INSERT INTO usuarios() VALUES(?, ?, ?))";
-    private String ATUALIZAR    = "UPDATE usuarios SET =?, =?,  = STR_TO_DATE(?, '%d/%m/%Y') WHERE id = ?";
-    private String BUSCAR       = "SELECT * FROM usuarios WHERE ID = ?";
-    private String BUSCAR_TODOS = "SELECT * FROM usuarios";
-    private String APAGAR       = "DELETE FROM usuarios WHERE id = ?";
+    // comandos SQL
+    private String INSERIR      = "INSERT INTO departamento() VALUES(?, ?, ?))";
+    private String ATUALIZAR    = "UPDATE departamento SET =?, =?,  = STR_TO_DATE(?, '%d/%m/%Y') WHERE id = ?";
+    private String BUSCAR       = "SELECT * FROM departamento WHERE ID = ?";
+    private String BUSCAR_TODOS = "SELECT * FROM departamento";
+    private String APAGAR       = "DELETE FROM departamento WHERE id = ?";
 
 
-    public List<Funcionario> buscarTodas() throws SQLException {
+    // metodo de pesquisar todos deparamentos
+    public List<Departamento> buscarTodas() throws SQLException {
         //Criando um objeto de listas para guardar todos usuarios
-        List<Funcionario> listaUser = new ArrayList<>();
+        List<Departamento> listaDepartamento = new ArrayList<>();
 
         try {
             stm = con.prepareStatement(BUSCAR_TODOS);
             ResultSet resultadoBusca = stm.executeQuery();
             while (resultadoBusca.next()) {
-                Funcionario user = extraiUsuario(resultadoBusca); // coleta do banco de dados a lista de usuários
-                listaUser.add(user);
+                Departamento dpto = extraiDepartamento(resultadoBusca); // coleta do banco de dados a lista de usuários
+                listaDepartamento.add(dpto);
 
             }
             stm.close();//fecha o execute query
             con.close(); //fecha a conexão
         } catch (Exception e) {
             e.printStackTrace();
-            System.err.println("ERROR BUSCANDO TODAS AS USUARIOS.");
+            System.err.println("ERROR BUSCANDO TODAS AS DEPARTAMENTO.");
             System.exit(0);
         }
-        return listaUser;
+        return listaDepartamento;
     }
+
 
     // extrain o objeto Conta do result set
-    private Funcionario extraiUsuario(ResultSet resultadoBusca) throws SQLException, ParseException {
+    private Departamento extraiDepartamento(ResultSet resultadoBusca) throws SQLException, ParseException {
 
         // instanciando o objeto
-        Funcionario user = new Funcionario();
+        Departamento dpto = new Departamento();
 
         // fazendo o get da tabela de usuários
-        user.setId(resultadoBusca.getInt(1));
-        user.setNome(resultadoBusca.getString(2));
-        user.setSenha(resultadoBusca.getString(3));
-        user.setTelefone(resultadoBusca.getString(4));
-        user.setCelular(resultadoBusca.getString(5));
-        user.setMatricula(resultadoBusca.getString(6));
-        user.setEmail(resultadoBusca.getString(7));
+        dpto.setId(resultadoBusca.getInt(1));
+        dpto.setNome(resultadoBusca.getString(2));
 
-        return user;
+        return dpto;
     }
 
 
-    public Funcionario buscaPorId(int id) {
-        Funcionario user = null;
+    //metodo de busca por id deparamento
+    public Departamento buscaPorId(int id) {
+        Departamento dpto = null;
         try {
             stm = con.prepareStatement(BUSCAR);
             stm.setInt(1, id);
             ResultSet resultadoBusca = stm.executeQuery();
             resultadoBusca.next();
-            user = extraiUsuario(resultadoBusca);
+            dpto = extraiDepartamento(resultadoBusca);
             stm.close();
             con.close();
         } catch (Exception e) {
             e.printStackTrace();
-            System.err.println("ERROR BUSCANDO USUÁRIO COM ID " + id);
+            System.err.println("ERROR BUSCANDO DEPARTAMENTO COM ID " + id);
             System.exit(0);
         }
-        return user;
+        return dpto;
     }
 
 
-    public void apagarUser(int id) {
+    //metodo para apagar deparatamento
+    public void apagarDepartamento(int id) {
         try {
             stm = con.prepareStatement(APAGAR);
             stm.setInt(1, id);
@@ -104,9 +103,27 @@ public class DepartamentoDAO {
             con.close();
         } catch (Exception e) {
             e.printStackTrace();
-            System.err.println("ERROR APAGANDO USUÁRIO COM ID " + id);
+            System.err.println("ERROR APAGANDO DEPARTAMENTO COM ID " + id);
             System.exit(0);
         }
     }
+
+    //metodo para atualizar um departamento
+    public void atualizar(Departamento dpto) {
+        try {
+            stm = con.prepareStatement(ATUALIZAR);
+            //stm.setInt(1, dpto.getId());
+            stm.setString(2, dpto.getNome());
+            stm.executeUpdate();
+            stm.close();
+            con.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("ERROR ATUALIZANDO DEPARTAMENTO COM ID " + dpto.getId());
+            System.exit(0);
+        }
+
+    }
+
 
 }
