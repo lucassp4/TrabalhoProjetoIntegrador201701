@@ -5,7 +5,7 @@ import javafx.fxml.Initializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ControllerSegundaPagina implements Initializable {
+public class ControllerMenuPrincipal implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -13,8 +13,6 @@ public class ControllerSegundaPagina implements Initializable {
 		
 	}
 
-	public void cadEquipamento(){
-		
-	}
+
 	
 }

@@ -10,8 +10,12 @@ import java.sql.SQLException;
 public class ConnectionFactory {
 
     private static ConnectionFactory connectionFactory = null;
-    private String connectionStr = "jdbc:sqlserver://localhost:1433;user=sa;password=1Qaz2Wsx;databaseName=ProjetoIntegrador";
-    private String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+    //private String connectionStr = "jdbc:sqlserver://localhost:1433;user=sa;password=1Qaz2Wsx;databaseName=ProjetoIntegrador";
+    private String connectionStr = "jdbc:mysql://localhost:3306/projetointegrador";
+    //private String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+    private String driver = "com.mysql.jdbc.Driver";
+    private String username = "root";
+    private String password = "root";
 
     public static ConnectionFactory getInstance() {
         if (connectionFactory == null)
@@ -27,7 +31,7 @@ public class ConnectionFactory {
         Connection conn = null;
         try {
             Class.forName(driver);
-            conn = DriverManager.getConnection(connectionStr);
+            conn = DriverManager.getConnection(connectionStr,username,password);
         } catch (Exception e) {
             e.printStackTrace();
             if (e instanceof ClassNotFoundException) {
