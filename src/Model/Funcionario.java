@@ -3,7 +3,7 @@ package Model;
 /**
  * Created by lucas.pereira on 27/04/2017.
  */
-public class Usuario {
+public class Funcionario {
 
 
     private Integer id;

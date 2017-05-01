@@ -8,7 +8,7 @@ import java.util.ResourceBundle;
 /**
  * Created by lucas.pereira on 28/04/2017.
  */
-public class ControleUsuario implements Initializable {
+public class ControleFuncionario implements Initializable {
 
 
 

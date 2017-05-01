@@ -1,6 +1,6 @@
 package DAO;
 
-import Model.Usuario;
+import Model.Funcionario;
 import daoUtil.ConnectionFactory;
 
 import java.sql.*;
@@ -11,14 +11,14 @@ import java.util.List;
 /**
  * Created by lucas.pereira on 28/04/2017.
  */
-public class UsuarioDAO {
+public class FuncionarioDAO {
 
     private Connection con;
     private Statement stmt;
     private PreparedStatement stm;
 
     //conexao
-    public UsuarioDAO() throws SQLException {
+    public FuncionarioDAO() throws SQLException {
 
         ConnectionFactory factory = new ConnectionFactory();
         con = factory.getConnection();
@@ -34,15 +34,15 @@ public class UsuarioDAO {
     private String APAGAR       = "DELETE FROM usuarios WHERE id = ?";
 
 
-    public List<Usuario> buscarTodas() throws SQLException {
+    public List<Funcionario> buscarTodas() throws SQLException {
         //Criando um objeto de listas para guardar todos usuarios
-        List<Usuario> listaUser = new ArrayList<>();
+        List<Funcionario> listaUser = new ArrayList<>();
 
         try {
             stm = con.prepareStatement(BUSCAR_TODOS);
             ResultSet resultadoBusca = stm.executeQuery();
             while (resultadoBusca.next()) {
-                Usuario user = extraiUsuario(resultadoBusca); // coleta do banco de dados a lista de usuários
+                Funcionario user = extraiUsuario(resultadoBusca); // coleta do banco de dados a lista de usuários
                 listaUser.add(user);
 
             }
@@ -57,10 +57,10 @@ public class UsuarioDAO {
     }
 
     // extrain o objeto Conta do result set
-    private Usuario extraiUsuario(ResultSet resultadoBusca) throws SQLException, ParseException {
+    private Funcionario extraiUsuario(ResultSet resultadoBusca) throws SQLException, ParseException {
 
         // instanciando o objeto
-        Usuario user = new Usuario();
+        Funcionario user = new Funcionario();
 
         // fazendo o get da tabela de usuários
         user.setId(resultadoBusca.getInt(1));
@@ -75,8 +75,8 @@ public class UsuarioDAO {
     }
 
 
-    public Usuario buscaPorId(int id) {
-        Usuario user = null;
+    public Funcionario buscaPorId(int id) {
+        Funcionario user = null;
         try {
             stm = con.prepareStatement(BUSCAR);
             stm.setInt(1, id);
