@@ -1,4 +1,4 @@
-package daoUtil;
+package daoutil;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -35,9 +35,9 @@ public class ConnectionFactory {
         } catch (Exception e) {
             e.printStackTrace();
             if (e instanceof ClassNotFoundException) {
-                System.err.println("VERIFIQUE SE O DRIVER DO BANCO DE DADOS ESTÁ NO CLASSPATH");
+                System.err.println("VERIFIQUE SE O DRIVER DO BANCO DE DADOS EST�? NO CLASSPATH");
             } else {
-                System.err.println("VERIFIQUE SE O BANCO ESTÁ RODANDO E SE OS DADOS DE CONEXÃO ESTÃO CORRETOS");
+                System.err.println("VERIFIQUE SE O BANCO EST�? RODANDO E SE OS DADOS DE CONEXÃO ESTÃO CORRETOS");
             }
             System.exit(0);
             // o sistema deverá sair antes de chegar aqui...
