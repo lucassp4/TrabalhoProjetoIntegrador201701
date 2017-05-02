@@ -5,7 +5,6 @@ package model;
  */
 public class Funcionario {
 
-
     private Integer id;
     private String nome;
     private String telefone;
@@ -13,6 +12,28 @@ public class Funcionario {
     private String matricula;
     private String senha;
     private String email;
+
+	public boolean Login(){
+		return false;
+	}
+	
+	public void Cadastrar(String nome, String email, String telefone, String celular, String matricula, String senha){
+		this.nome = nome;
+		this.email = email;
+		this.telefone = telefone;
+		this.celular = celular;
+		this.matricula = matricula;
+		this.senha = senha;
+	}
+	
+	public void Editar(){
+		
+	}
+	
+	public void Excluir(){
+		
+	}
+
 
 
     public Integer getId() {
