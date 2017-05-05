@@ -6,7 +6,7 @@
       <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
     </src_description>
   </component>
-  <component name="NewModuleRootManager" inherit-compiler-output="false">
+  <component name="NewModuleRootManager">
     <output url="file://$MODULE_DIR$/bin" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
@@ -18,5 +18,7 @@
     <orderEntry type="library" name="sqljdbc4" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.38" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.40-bin" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-5.1.38" level="project" />
+    <orderEntry type="library" name="controlsfx-8.40.12" level="project" />
   </component>
 </module>

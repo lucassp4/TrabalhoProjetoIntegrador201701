@@ -1,14 +1,10 @@
-package dao;
+package DAO;
 
 
-import jdk.nashorn.internal.scripts.JO;
-import model.Funcionario;
-import model.Login;
+import Model.Login;
+import daoUtil.ConnectionFactory;
 
 import javax.swing.*;
-
-import daoutil.ConnectionFactory;
-
 import java.sql.*;
 
 
