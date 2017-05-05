@@ -25,7 +25,7 @@ import java.util.ResourceBundle;
 
 public class CadastroAuditorio implements Initializable{
 	Auditorio auditorio = new Auditorio();
-	Main main = new Main();
+	Main main = null;
 	AuditorioDao auditorioDao = new AuditorioDao();
 	BlocoDao blocoDao = new BlocoDao();
 	CadastroBloco cadastroBloco = new CadastroBloco();
@@ -78,6 +78,7 @@ public class CadastroAuditorio implements Initializable{
 		validarCampo();
 		auditorioDao.salvar(auditorio);
 
+
 		URL arquivoFXML;
 		arquivoFXML = getClass().getResource("/View/PaginaPrincipal.fxml");
 		Parent fxmlParent;
@@ -115,13 +116,14 @@ public class CadastroAuditorio implements Initializable{
 		public void validarCampo(){
 			pegarValores(auditorio);
 
-			if(!auditorio.getBloco().equals("") || auditorio.getBloco() != null ){
-				if(auditorio.getCapacidade()!= 0 )
-					if(!auditorio.getNome().equals("") || auditorio.getNome() != null){
-					if(!auditorio.getUnidade().equals("") || auditorio.getUnidade()!= null){
-						exibeMensagem("Cadastro efetuado com sucesso");
-					}
 
+				if(auditorio.getCapacidade()!= 0 ){
+					if(!auditorio.getNome().equals("") || auditorio.getNome() != null){
+					if(!auditorio.getUnidade().equals("") || auditorio.getUnidade()!= null) {
+						if (!auditorio.getDescricao().equals("") || auditorio.getDescricao() != null) {
+							exibeMensagem("Cadastro efetuado com sucesso");
+						}
+					}
 					}
 
 			}

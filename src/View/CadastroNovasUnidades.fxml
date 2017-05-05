@@ -24,7 +24,7 @@
       <TextField fx:id="txtRazao" layoutX="124.0" layoutY="158.0" prefHeight="25.0" prefWidth="170.0" promptText="Digite a Razão Social" />
       <TextField fx:id="txtCnpj" layoutX="392.0" layoutY="158.0" prefHeight="25.0" prefWidth="189.0" promptText="Digite o CNPJ" />
       <TextField fx:id="txtTelefone" layoutX="124.0" layoutY="193.0" prefHeight="25.0" prefWidth="170.0" promptText="Digite o Telefone" />
-      <TextField fx:id="TextBloco" layoutX="393.0" layoutY="193.0" prefHeight="25.0" prefWidth="189.0" promptText="Informe a Quantdade de Blocos" />
+      <TextField fx:id="textBloco" layoutX="393.0" layoutY="193.0" prefHeight="25.0" prefWidth="189.0" promptText="Informe a Quantdade de Blocos" />
       <Button fx:id="btnSalvar" layoutX="128.0" layoutY="387.0" mnemonicParsing="false" onAction="#btnSalvar" text="Salvar" />
       <Button fx:id="btnCancelar" layoutX="410.0" layoutY="387.0" mnemonicParsing="false" onAction="#btnCancelar" text="Cancelar" />
       <Label layoutX="349.0" layoutY="197.0" text="Blocos" />

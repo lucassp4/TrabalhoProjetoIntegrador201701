@@ -12,11 +12,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import model.Login;
+import Model.Login;
 
 import javax.swing.*;
 
-import dao.LoginDAO;
+import DAO.LoginDAO;
 
 import java.io.IOException;
 import java.net.URL;
@@ -27,10 +27,9 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ControleLogin implements Initializable{
+public class ControleLogin implements Initializable {
 
-	
-	
+
 	@FXML
 	private TextField txtUsuario;
 	@FXML
@@ -45,16 +44,25 @@ public class ControleLogin implements Initializable{
 	private Label msgLogin;
 
 
-
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		
-		
+
+
 	}
 
-	public void Login(ActionEvent event) throws SQLException{
+	public void Login(ActionEvent event) throws SQLException {
+		URL arquivoFXML;
+		arquivoFXML = getClass().getResource("/View/PaginaPrincipal.fxml");
+		Parent fxmlParent;
+		try {
+			fxmlParent = FXMLLoader.load(arquivoFXML);
+			panel.getChildren().clear();
+			panel.getChildren().add(fxmlParent);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
-		Login usuario = new Login();
+		/*Login usuario = new Login();
 		LoginDAO userDAO = new LoginDAO();
 		Boolean log = null;
 
@@ -89,15 +97,16 @@ public class ControleLogin implements Initializable{
 
 		}
 
+	}*/
 	}
-	public void limpaMsg(){
-		msgLogin.setText("Login incorreto!");
-		msgLogin.setVisible(false);
+		public void limpaMsg() {
+			msgLogin.setText("Login incorreto!");
+			msgLogin.setVisible(false);
+		}
+
 	}
-	
-}
-		
-		
+
+
 	
 	
 	

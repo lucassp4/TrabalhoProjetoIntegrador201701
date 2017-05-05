@@ -1,16 +1,22 @@
 package controller;
 
+import DAO.UnidadeDao;
 import Model.Unidade;
+import application.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class CadastroUnidade implements Initializable {
@@ -34,7 +40,7 @@ public class CadastroUnidade implements Initializable {
 	private TextField txtTelefone;
 	
 	@FXML
-	private TextField txtBloco;
+	private TextField textBloco;
 	
 	
 	@FXML
@@ -44,7 +50,7 @@ public class CadastroUnidade implements Initializable {
 	private Button btnCancelar; 
 	
 	Unidade unidade = new Unidade();
-
+	Main main = null;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -52,10 +58,10 @@ public class CadastroUnidade implements Initializable {
 		
 	}
 
-	public void btnSalvar(){
-
+	public void btnSalvar() throws SQLException {
+		UnidadeDao unidadeDao = new UnidadeDao();
 	    validarCampos();
-
+		unidadeDao.salvar(unidade);
 
         URL arquivoFXML;
         arquivoFXML = getClass().getResource("/View/PaginaPrincipal.fxml");
@@ -90,7 +96,7 @@ public class CadastroUnidade implements Initializable {
 		unidade.setCnpj(txtCnpj.getText());
 		unidade.setRazaoSocial(txtRazao.getText());
 		unidade.setTelefone(txtTelefone.getText());
-		unidade.setBlocos(Integer.parseInt(txtBloco.getText()));
+		unidade.setBlocos(Integer.parseInt(textBloco.getText()));
 
 
 	}
@@ -108,6 +114,18 @@ public class CadastroUnidade implements Initializable {
 			if(unidade.getBlocos() != 0);
 					}
 
+
+
+	}
+	public void exibeMensagem(String msg){
+		Notifications.create()
+				.title("Atensão")
+				.text(String.valueOf(msg))
+				.owner(main)
+				.hideAfter(Duration.seconds(3))
+				.darkStyle()
+				.position(Pos.TOP_RIGHT)
+				.showInformation();
 
 
 	}

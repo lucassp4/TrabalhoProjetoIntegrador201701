@@ -1,85 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.Pane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-   <top>
-      <MenuBar BorderPane.alignment="CENTER">
-        <menus>
-          <Menu mnemonicParsing="false" text="Cadastrar">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Equipamentos" />
-                  <MenuItem mnemonicParsing="false" text="Usuario" />
-                  <Menu mnemonicParsing="false" text="Salas">
+<Pane fx:id="painelPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.PaginaPrincipal">
+   <children>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="600.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="Cadastros">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#cadAutoridade" text="Autoridade" />
+                  <MenuItem mnemonicParsing="false" onAction="#cadAuditorio" text="Auditório" />
+                  <MenuItem mnemonicParsing="false" onAction="#cadBloco" text="Bloco" />
+                  <MenuItem mnemonicParsing="false" onAction="#cadEquipamento" text="Equipamentos" />
+                  <MenuItem mnemonicParsing="false" onAction="#cadLaboratorio" text="Laboratório" />
+                  <MenuItem mnemonicParsing="false" onAction="#cadSala" text="Sala" />
+                  <MenuItem mnemonicParsing="false" onAction="#cadUsuario" text="Usuário" />
+                  <MenuItem mnemonicParsing="false" onAction="#cadUnidade" text="Unidade" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Kits">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#kits" text="Criar Kit " />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Reserva">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#reservarAuditorio" text="Auditório" />
+                  <MenuItem mnemonicParsing="false" onAction="#reservarEquipamento" text="Equipamentos" />
+                  <MenuItem mnemonicParsing="false" onAction="#reservaLaboratorio" text="Laboratório" />
+                  <MenuItem mnemonicParsing="false" onAction="#reservaSala" text="Sala" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Cancelamento">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#reservaCancelar" text="Cancelar Reserva" />
+                  <Menu mnemonicParsing="false" text="ADM">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#cancelarReservaADM" text="Cancelar Reserva" />
+                     </items>
+                  </Menu>
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Editar">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#cadAutoridade" text="Autoridade" />
+                  <MenuItem mnemonicParsing="false" onAction="#cadAuditorio" text="Auditório" />
+                  <MenuItem mnemonicParsing="false" onAction="#cadBloco" text="Bloco" />
+                  <MenuItem mnemonicParsing="false" onAction="#cadEquipamento" text="Equipamentos" />
+                  <MenuItem mnemonicParsing="false" onAction="#cadLaboratorio" text="Laboratório" />
+                  <MenuItem mnemonicParsing="false" onAction="#cadSala" text="Sala" />
+                  <MenuItem mnemonicParsing="false" onAction="#cadUsuario" text="Usuário" />
+                  <MenuItem mnemonicParsing="false" onAction="#cadUnidade" text="Unidade" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Excluir">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#cadAutoridade" text="Autoridade" />
+                  <MenuItem mnemonicParsing="false" onAction="#cadAuditorio" text="Auditório" />
+                  <MenuItem mnemonicParsing="false" onAction="#cadBloco" text="Bloco" />
+                  <MenuItem mnemonicParsing="false" onAction="#cadEquipamento" text="Equipamentos" />
+                  <MenuItem mnemonicParsing="false" onAction="#cadLaboratorio" text="Laboratório" />
+                  <MenuItem mnemonicParsing="false" onAction="#cadSala" text="Sala" />
+                  <MenuItem mnemonicParsing="false" onAction="#cadUsuario" text="Usuário" />
+                  <MenuItem mnemonicParsing="false" onAction="#cadUnidade" text="Unidade" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Relatórios">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#relatorioReserva" text="Reservas" />
+                  <Menu mnemonicParsing="false" text="ADM">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Auditorio" />
-                      <MenuItem mnemonicParsing="false" text="Laboratorio" />
-                        <MenuItem mnemonicParsing="false" text="Sala" />
+                        <MenuItem mnemonicParsing="false" onAction="#relatorioCadastro" text="Cadastros" />
+                      <MenuItem mnemonicParsing="false" onAction="#relatorioReservaADM" text="Reserva" />
+                        <MenuItem mnemonicParsing="false" onAction="#relatorioCancelamento" text="Cancelamentos" />
                     </items>
                   </Menu>
-            </items>
-          </Menu>
-            <Menu mnemonicParsing="false" text="Cancelar">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Equipamentos" />
-                  <MenuItem mnemonicParsing="false" text="Usuario" />
-                  <Menu mnemonicParsing="false" text="Salas">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Auditorio" />
-                        <MenuItem mnemonicParsing="false" text="Laboratorio" />
-                        <MenuItem mnemonicParsing="false" text="Sala" />
-                     </items>
-                  </Menu>
                </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Alterar">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Equipamentos" />
-                  <MenuItem mnemonicParsing="false" text="Usuario" />
-                  <Menu mnemonicParsing="false" text="Salas">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Auditorio" />
-                        <MenuItem mnemonicParsing="false" text="Laboratorio" />
-                        <MenuItem mnemonicParsing="false" text="Sala" />
-                     </items>
-                  </Menu>
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Histórico">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Equipamentos" />
-                  <MenuItem mnemonicParsing="false" text="Usuario" />
-                  <Menu mnemonicParsing="false" text="Salas">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Auditorio" />
-                        <MenuItem mnemonicParsing="false" text="Laboratorio" />
-                        <MenuItem mnemonicParsing="false" text="Sala" />
-                     </items>
-                  </Menu>
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Relatório">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Equipamentos" />
-                  <MenuItem mnemonicParsing="false" text="Usuario" />
-                  <Menu mnemonicParsing="false" text="Salas">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Auditorio" />
-                        <MenuItem mnemonicParsing="false" text="Laboratorio" />
-                        <MenuItem mnemonicParsing="false" text="Sala" />
-                     </items>
-                  </Menu>
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Ajuda">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-              </items>
-            </Menu>
-        </menus>
+         </menus>
       </MenuBar>
-   </top>
-</BorderPane>
+   </children>
+</Pane>

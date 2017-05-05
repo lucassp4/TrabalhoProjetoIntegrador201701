@@ -14,7 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 import org.controlsfx.control.Notifications;
-import sun.applet.Main;
+import application.Main;
 
 import java.io.IOException;
 import java.net.URL;
@@ -39,7 +39,7 @@ public class CadastrarBloco implements Initializable {
 	@FXML
 	private Button btnCancelar;
 
-	Main main = new Main();
+	Main main = null;
 	CadastroBloco bloco = new CadastroBloco();
 
 	@Override
@@ -67,6 +67,7 @@ public class CadastrarBloco implements Initializable {
 		BlocoDao blocoDao = new BlocoDao();
 		blocoDao.salvar(bloco);
 
+			exibeMensagem("Salvo com sucesso");
 
 			URL arquivoFXML;
 			arquivoFXML = getClass().getResource("/View/PaginaPrincipal.fxml");

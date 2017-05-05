@@ -21,8 +21,8 @@ public class AuditorioDao {
         ConnectionFactory cf = new ConnectionFactory();
         con = cf.getConnection();
     }
-    String sqlSalvar =  "INSERT INTO projetoIntegrado.cadastroAuditorio" + "(nome,capacidade,unidade,bloco,descricao)" +
-            "VALUES(?,?,?,?,?)";
+    String sqlSalvar =  "INSERT INTO projetoIntegrador.cadastroAuditorio" + "(nome,capacidade,unidade,descricao)" +
+            "VALUES(?,?,?,?)";
 
     public String salvar(Auditorio auditorio) throws SQLException{
 
@@ -34,8 +34,7 @@ public class AuditorioDao {
             stmt.setString(1, auditorio.getNome());
             stmt.setInt    (2, auditorio.getCapacidade());
             stmt.setString(3, auditorio.getUnidade());
-            stmt.setString(4, auditorio.getBloco());
-            stmt.setString(5,auditorio.getDescricao());
+            stmt.setString(4,auditorio.getDescricao());
             stmt.executeUpdate();
             con.commit();
             salvo = "salvo";

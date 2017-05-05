@@ -23,7 +23,7 @@ public class UnidadeDao {
         ConnectionFactory cf = new ConnectionFactory();
         con = cf.getConnection();
     }
-    String sqlSalvar =  "INSERT INTO projetoIntegrado.cadastroUnidade" + "(nome,endereco,telefone,cnpj,razaoSocial,blocos)" +
+    String sqlSalvar =  "INSERT INTO projetoIntegrador.cadastroUnidade" + "(nome,endereco,telefone,cnpj,razaoSocial,blocos)" +
             "VALUES(?,?,?,?,?,?)";
 
     public String salvar(Unidade unidade) throws SQLException{

@@ -21,7 +21,7 @@ public class BlocoDao {
         ConnectionFactory cf = new ConnectionFactory();
         con = cf.getConnection();
     }
-    String sqlSalvar =  "INSERT INTO projetoIntegrado.cadastroBlocos" + "(nome,unidade,descricao,sala)" +
+    String sqlSalvar =  "INSERT INTO projetoIntegrador.cadastroBlocos" + "(nome,unidade,descricao,sala)" +
             "VALUES(?,?,?,?)";
 
     public String salvar(CadastroBloco blocos) throws SQLException{
