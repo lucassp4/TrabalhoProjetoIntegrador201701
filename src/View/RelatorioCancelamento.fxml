@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<Pane fx:id="painelPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="424.0" prefWidth="686.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RelatorioDeCancelamento">
+   <children>
+      <Label layoutX="231.0" layoutY="30.0" text="Relatório de Reserva ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TableView layoutX="6.0" layoutY="168.0" prefHeight="200.0" prefWidth="674.0">
+         <columns>
+            <TableColumn fx:id="tabelaUsuario" prefWidth="119.0" text="Usuário" />
+            <TableColumn fx:id="tabelaDataReserva" prefWidth="101.0" text="Data da Reserva" />
+            <TableColumn fx:id="tabelaDataCancelamento" prefWidth="135.0" text="Data do Cancelamento" />
+            <TableColumn fx:id="tabelaItens" prefWidth="130.0" text="Itens Reservados" />
+            <TableColumn fx:id="tabelaHorario" prefWidth="88.0" text="Horário" />
+            <TableColumn fx:id="tabelaMotivo" prefWidth="112.0" text="Motivo" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnSair" layoutX="333.0" layoutY="385.0" mnemonicParsing="false" onAction="#btnSair" text="Sair" />
+      <DatePicker fx:id="date" layoutX="49.0" layoutY="127.0" promptText="Escolha uma data" />
+      <Label layoutX="14.0" layoutY="131.0" text="Data" />
+      <Label layoutX="6.0" layoutY="99.0" text="Nome" />
+      <ComboBox fx:id="comboNome" editable="true" layoutX="49.0" layoutY="95.0" prefHeight="25.0" prefWidth="174.0" promptText="Digite o nome" />
+   </children>
+</Pane>

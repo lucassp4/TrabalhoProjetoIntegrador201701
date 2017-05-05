@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<Pane fx:id="painelPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="514.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CancelarReservaAdm">
+   <children>
+      <Button fx:id="btnCancelarReserva" layoutX="144.0" layoutY="475.0" mnemonicParsing="false" onAction="#btnCancelarReserva" text="Cancelar Reserva" />
+      <Button fx:id="btnCancelar" layoutX="425.0" layoutY="475.0" mnemonicParsing="false" onAction="#btnCancelar" text="Cancelar" />
+      <Label layoutX="203.0" layoutY="21.0" text="Cancelar Reserva">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="282.0" layoutY="331.0" text="Motivo">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="txtareaMotivo" layoutX="113.0" layoutY="372.0" prefHeight="87.0" prefWidth="405.0" />
+      <Label layoutX="20.0" layoutY="99.0" text="Nome" />
+      <ComboBox fx:id="comboNome" editable="true" layoutX="63.0" layoutY="95.0" prefHeight="25.0" prefWidth="275.0" promptText="Escollha um Usuário">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </ComboBox>
+      <TableView fx:id="TabelaPrincipal" layoutX="20.0" layoutY="131.0" prefHeight="200.0" prefWidth="591.0">
+         <columns>
+            <TableColumn fx:id="reservaCTebela" prefWidth="162.0" text="Reservas" />
+            <TableColumn fx:id="dataTabela" prefWidth="146.0" text="Data" />
+            <TableColumn fx:id="horarioTabela" prefWidth="176.0" text="Horário" />
+            <TableColumn fx:id="periodoTabela" prefWidth="106.0" text="Período" />
+         </columns>
+      </TableView>
+   </children>
+</Pane>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<Pane fx:id="painelPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="424.0" prefWidth="648.0" xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RelatorioReserva">
+   <children>
+      <Label layoutX="208.0" layoutY="26.0" text="Relatorio de cadastro ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TableView layoutX="7.0" layoutY="167.0" prefHeight="200.0" prefWidth="634.0">
+         <columns>
+            <TableColumn fx:id="tabelaNome" prefWidth="161.0" text="Usuário" />
+            <TableColumn fx:id="tabelaData" prefWidth="145.0" text="Data Reserva" />
+            <TableColumn fx:id="tabelaHorario" prefWidth="109.0" text="Horário" />
+            <TableColumn fx:id="tabelaItens" prefWidth="122.0" text="Iten Reservado" />
+            <TableColumn fx:id="tabelaPeriodo" prefWidth="122.0" text="Período" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnSair" layoutX="301.0" layoutY="385.0" mnemonicParsing="false" onAction="#btnSair" text="Sair" />
+      <DatePicker fx:id="date" layoutX="42.0" layoutY="115.0" prefHeight="25.0" prefWidth="221.0" promptText="Escolha uma data" />
+      <Label layoutX="7.0" layoutY="119.0" text="Data" />
+   </children>
+</Pane>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="painelPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CadastroAutoridade"> 
+   <children>
+      <Button fx:id="btnCancelar" layoutX="369.0" layoutY="379.0" mnemonicParsing="false" onAction="#btnCancelar" text="Cancelar" />
+      <Label layoutX="185.0" layoutY="26.0" text="Cadastro de Autoridade">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="88.0" text="Nivel" />
+      <Label layoutX="55.0" layoutY="123.0" text="Unidade" />
+      <ComboBox fx:id="comboUnidade" layoutX="109.0" layoutY="119.0" prefHeight="25.0" prefWidth="436.0" />
+      <ComboBox fx:id="comboNivel" layoutX="109.0" layoutY="84.0" onAction="#comboNivel" prefHeight="25.0" prefWidth="122.0" promptText="Escolha o nível" />
+      <Label layoutX="229.0" layoutY="160.0" text="Itens permitidos">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <VBox fx:id="vbox" layoutX="229.0" layoutY="209.0" prefHeight="143.0" prefWidth="135.0">
+         <children>
+            <RadioButton fx:id="radioCadastro" layoutX="10.0" layoutY="19.0" mnemonicParsing="false" text="Cadastro">
+               <padding>
+                  <Insets bottom="5.0" />
+               </padding>
+            </RadioButton>
+            <RadioButton fx:id="radioAlterar" mnemonicParsing="false" text="Alterar">
+               <padding>
+                  <Insets bottom="15.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="9.0" />
+               </VBox.margin>
+            </RadioButton>
+            <RadioButton fx:id="radioRelatorio" mnemonicParsing="false" text="Relatório">
+               <padding>
+                  <Insets bottom="15.0" />
+               </padding>
+            </RadioButton>
+            <RadioButton fx:id="radioReserva" layoutX="10.0" layoutY="83.0" mnemonicParsing="false" text="Reserva">
+               <padding>
+                  <Insets bottom="15.0" />
+               </padding>
+            </RadioButton>
+            <RadioButton fx:id="radioHistorico" layoutX="10.0" layoutY="115.0" mnemonicParsing="false" text="Históricos">
+               <padding>
+                  <Insets bottom="15.0" />
+               </padding>
+            </RadioButton>
+         </children>
+      </VBox>
+      <Button fx:id="btnSalvar" layoutX="170.0" layoutY="379.0" mnemonicParsing="false" onAction="#btnSalvar" text="Salvar" />
+   </children>
+</Pane>

@@ -6,30 +6,32 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="613.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="painelPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="613.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CadastroUsuario">
    <children>
-      <Label layoutX="71.0" layoutY="113.0" text="Nome" />
+      <Label layoutX="70.0" layoutY="106.0" text="Nome" />
       <Label layoutX="191.0" layoutY="34.0" text="Cadastro Usuários">
          <font>
             <Font size="29.0" />
          </font>
       </Label>
-      <Label layoutX="58.0" layoutY="147.0" text="Telefone" />
-      <TextField fx:id="txtNome" layoutX="114.0" layoutY="108.0" prefHeight="25.0" prefWidth="454.0" promptText="Digite o Nome" />
-      <TextField fx:id="txtTelefone" layoutX="114.0" layoutY="143.0" prefHeight="25.0" prefWidth="454.0" promptText="Informe o Telefone" />
-      <Label layoutX="57.0" layoutY="323.0" text="E-mail" />
-      <Button fx:id="btnSalvar" layoutX="131.0" layoutY="467.0" mnemonicParsing="false" text="Salvar" />
-      <Button fx:id="btnFechar" layoutX="355.0" layoutY="467.0" mnemonicParsing="false" text="Fechar" />
-      <Label layoutX="65.0" layoutY="217.0" text="Curso" />
-      <Label layoutX="50.0" layoutY="251.0" text="Matrícula" />
-      <TextField fx:id="txtCelular" layoutX="114.0" layoutY="178.0" prefHeight="25.0" prefWidth="454.0" promptText="Informe o Celular" />
-      <ComboBox fx:id="comboCurso" layoutX="114.0" layoutY="213.0" prefHeight="25.0" prefWidth="454.0" promptText="Selecione o Curso" />
-      <TextField fx:id="txtMatricula" layoutX="114.0" layoutY="247.0" prefHeight="25.0" prefWidth="454.0" promptText="Digite a Matrícula" />
-      <TextField fx:id="txtEmail" layoutX="114.0" layoutY="319.0" prefHeight="25.0" prefWidth="454.0" promptText="Digite o E-mail" />
-      <Label layoutX="52.0" layoutY="288.0" text="Unidade" />
-      <Label layoutX="67.0" layoutY="182.0" text="Celular" />
-      <Label layoutX="44.0" layoutY="359.0" text="Autoridade" />
-      <ComboBox fx:id="comboAutoridade" layoutX="114.0" layoutY="355.0" prefHeight="25.0" prefWidth="454.0" promptText="Defina a Autoridade" />
-      <ComboBox layoutX="114.0" layoutY="284.0" prefHeight="25.0" prefWidth="454.0" promptText="Escolha uma Unidade" />
+      <Label layoutX="57.0" layoutY="140.0" text="Telefone" />
+      <TextField fx:id="txtNome" layoutX="113.0" layoutY="101.0" prefHeight="25.0" prefWidth="454.0" promptText="Digite o Nome" />
+      <TextField fx:id="txtTelefone" layoutX="113.0" layoutY="136.0" prefHeight="25.0" prefWidth="454.0" promptText="Informe o Telefone" />
+      <Label layoutX="70.0" layoutY="315.0" text="E-mail" />
+      <Button fx:id="btnSalvar" layoutX="131.0" layoutY="467.0" mnemonicParsing="false" onAction="#btnSalvar" text="Salvar" />
+      <Button fx:id="btnCancelar" layoutX="355.0" layoutY="467.0" mnemonicParsing="false" onAction="#btnCancelar" text="Cancelar" />
+      <Label layoutX="72.0" layoutY="210.0" text="Curso" />
+      <Label layoutX="54.0" layoutY="245.0" text="Matrícula" />
+      <TextField fx:id="txtCelular" layoutX="113.0" layoutY="171.0" prefHeight="25.0" prefWidth="454.0" promptText="Informe o Celular" />
+      <ComboBox fx:id="comboCurso" layoutX="113.0" layoutY="206.0" prefHeight="25.0" prefWidth="454.0" promptText="Selecione o Curso" />
+      <TextField fx:id="txtMatricula" layoutX="113.0" layoutY="241.0" prefHeight="25.0" prefWidth="454.0" promptText="Digite a Matrícula" />
+      <TextField fx:id="txtEmail" layoutX="113.0" layoutY="311.0" prefHeight="25.0" prefWidth="454.0" promptText="Digite o E-mail" />
+      <Label layoutX="59.0" layoutY="280.0" text="Unidade" />
+      <Label layoutX="66.0" layoutY="175.0" text="Celular" />
+      <Label layoutX="65.0" layoutY="350.0" text="Função" />
+      <ComboBox fx:id="comboFuncao" layoutX="113.0" layoutY="346.0" prefHeight="25.0" prefWidth="454.0" promptText="Defina a Autoridade" />
+      <ComboBox fx:id="comboUnidade" layoutX="113.0" layoutY="276.0" prefHeight="25.0" prefWidth="454.0" promptText="Escolha uma Unidade" />
+      <ComboBox fx:id="comboAutoridade" layoutX="114.0" layoutY="381.0" prefHeight="25.0" prefWidth="454.0" promptText="Defina a Autoridade" />
+      <Label layoutX="45.0" layoutY="385.0" text="Autoridade" />
    </children>
 </Pane>

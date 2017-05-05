@@ -1,12 +1,14 @@
 package controller;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -37,6 +39,10 @@ public class ControleLogin implements Initializable{
 	private Button btnLogin;
 	@FXML
 	private Pane panel;
+	@FXML
+	private Label msgSenha;
+	@FXML
+	private Label msgLogin;
 
 
 
@@ -55,7 +61,9 @@ public class ControleLogin implements Initializable{
 		try{
 
 			if(txtUsuario.getText().equals("")|| txtUsuario.getText().equals("") && txtSenha.getText().equals(null)||txtSenha.getText().equals("")){
-				JOptionPane.showMessageDialog(null,"O campo de usuário e senha estão vazios!!!");
+				//JOptionPane.showMessageDialog(null,"O campo de usuário e senha estão vazios!!!");
+				msgLogin.setText("O campo de usuário e senha estão vazios!!!");
+				msgLogin.setVisible(true);
 			}else{
 				usuario.setNome(txtUsuario.getText());
 				usuario.setSenha(txtSenha.getText());
@@ -81,7 +89,10 @@ public class ControleLogin implements Initializable{
 
 		}
 
-
+	}
+	public void limpaMsg(){
+		msgLogin.setText("Login incorreto!");
+		msgLogin.setVisible(false);
 	}
 	
 }

@@ -7,34 +7,28 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="514.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="painelPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="514.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CancelarReserva">
    <children>
-      <Button fx:id="btnCancelarReserva" layoutX="148.0" layoutY="475.0" mnemonicParsing="false" text="Cancelar Reserva" />
-      <Button fx:id="btnFechar" layoutX="429.0" layoutY="475.0" mnemonicParsing="false" text="Fechar" />
-      <Label layoutX="207.0" layoutY="31.0" text="Cancelar Reserva">
+      <Button fx:id="btnCancelarReserva" layoutX="148.0" layoutY="475.0" mnemonicParsing="false" onAction="#btnCancelarReserva" text="Cancelar Reserva" />
+      <Button fx:id="btnCancelar" layoutX="429.0" layoutY="475.0" mnemonicParsing="false" onAction="#btnCancelar" text="Cancelar" />
+      <Label layoutX="204.0" layoutY="28.0" text="Cancelar Reserva">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label layoutX="47.0" layoutY="103.0" text="Nome" />
-      <Label layoutX="31.0" layoutY="138.0" text="Matrícula" />
-      <Label layoutX="319.0" layoutY="103.0" text="E-mail" />
-      <Label layoutX="308.0" layoutY="173.0" text="Unidade" />
-      <Label layoutX="314.0" layoutY="138.0" text="Função" />
-      <TextField fx:id="txtNome" layoutX="90.0" layoutY="99.0" prefHeight="25.0" prefWidth="192.0" />
-      <TextField fx:id="txtMatricula" layoutX="90.0" layoutY="134.0" prefHeight="25.0" prefWidth="192.0" />
-      <TextField fx:id="txtEmail" layoutX="362.0" layoutY="99.0" prefHeight="25.0" prefWidth="256.0" />
-      <TextField fx:id="txtFuncao" layoutX="362.0" layoutY="134.0" prefHeight="25.0" prefWidth="256.0" />
-      <TextField fx:id="txtUnidade" layoutX="362.0" layoutY="169.0" prefHeight="25.0" prefWidth="256.0" />
-      <Label layoutX="4.0" layoutY="210.0" text="Equipamentos" />
-      <Label layoutX="275.0" layoutY="264.0" text="Motivo">
+      <Label layoutX="286.0" layoutY="301.0" text="Motivo">
          <font>
             <Font size="21.0" />
          </font>
       </Label>
-      <TextArea fx:id="txtareaMotivo" layoutX="113.0" layoutY="313.0" prefHeight="152.0" prefWidth="397.0" />
-      <Label layoutX="5.0" layoutY="175.0" text="Nº da Reserva" />
-      <TextField fx:id="txtNumeroReserva" layoutX="90.0" layoutY="171.0" prefHeight="25.0" prefWidth="192.0" />
-      <TextField layoutX="90.0" layoutY="206.0" prefHeight="25.0" prefWidth="192.0" />
+      <TextArea fx:id="txtareaMotivo" layoutX="113.0" layoutY="346.0" prefHeight="113.0" prefWidth="405.0" />
+      <TableView fx:id="TabelaPrincipal" layoutX="20.0" layoutY="92.0" prefHeight="200.0" prefWidth="591.0">
+        <columns>
+          <TableColumn fx:id="reservaCTebela" prefWidth="162.0" text="Reservas" />
+          <TableColumn fx:id="dataTabela" prefWidth="146.0" text="Data" />
+            <TableColumn fx:id="horarioTabela" prefWidth="176.0" text="Horario" />
+            <TableColumn fx:id="periodoTabela" prefWidth="106.0" text="Periodo" />
+        </columns>
+      </TableView>
    </children>
 </Pane>

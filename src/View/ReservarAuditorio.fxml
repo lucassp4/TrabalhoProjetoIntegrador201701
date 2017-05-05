@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<Pane fx:id="painelPrincipal" prefHeight="440.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReservaAuditorio">
+   <children>
+      <Label layoutX="203.0" layoutY="54.0" text="Reservar Auditório">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="326.0" layoutY="143.0" text="Auditório" />
+      <Label layoutX="332.0" layoutY="178.0" text="Unidade" />
+      <TextArea fx:id="textAriaDescricao" layoutX="122.0" layoutY="308.0" prefHeight="74.0" prefWidth="374.0" />
+      <Label layoutX="271.0" layoutY="272.0" text="Descrição">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btcSalvar" layoutX="168.0" layoutY="393.0" mnemonicParsing="false" onAction="#btcSalvar" text="Salvar" />
+      <Button fx:id="btnCancelar" layoutX="388.0" layoutY="393.0" mnemonicParsing="false" onAction="#btnCancelar" text="Cancelar" />
+      <Label layoutX="62.0" layoutY="178.0" text="Turno" />
+      <ComboBox fx:id="comboBloca" layoutX="103.0" layoutY="139.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha o Bloco" />
+      <ComboBox fx:id="comboTurma" layoutX="103.0" layoutY="174.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha o Turno" />
+      <ComboBox fx:id="comboAuditorio" layoutX="386.0" layoutY="139.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha o Auditório" />
+      <ComboBox fx:id="comboUnidade" layoutX="386.0" layoutY="174.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha Unidade" />
+      <Label layoutX="63.0" layoutY="144.0" text="Bloco" />
+      <Label layoutX="35.0" layoutY="213.0" text="Data Inicial" />
+      <DatePicker fx:id="dateInicio" layoutX="103.0" layoutY="209.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha a Data Inicial" />
+      <DatePicker fx:id="dateFim" layoutX="386.0" layoutY="209.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha a Data Final" />
+      <Label layoutX="34.0" layoutY="247.0" text="Hora Inicial" />
+      <TextField fx:id="horaIncio" layoutX="103.0" layoutY="243.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha a Hora Inicial" />
+      <TextField fx:id="horaFim" layoutX="386.0" layoutY="243.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha a Hora Final" />
+      <Label layoutX="323.0" layoutY="247.0" text="Hora Final" />
+      <Label layoutX="331.0" layoutY="213.0" text="Data Fim" />
+   </children>
+</Pane>

@@ -8,7 +8,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="438.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="painelPrincipal" maxHeight="-Infinity" 
+maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" 
+prefHeight="438.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CriarKit">
    <children>
       <TextField fx:id="txtNomeKit" layoutX="148.0" layoutY="131.0" prefHeight="25.0" prefWidth="254.0" promptText="Digite o Nome Do Kit" />
       <ComboBox fx:id="comboQuantidade" layoutX="148.0" layoutY="164.0" prefHeight="25.0" prefWidth="254.0" promptText="Escolha a quantidade de Itens" />
@@ -35,7 +37,7 @@
       <Label layoutX="353.0" layoutY="302.0" text="Itens" />
       <Label layoutX="353.0" layoutY="235.0" text="Itens" />
       <Label layoutX="353.0" layoutY="268.0" text="Itens" />
-      <Button fx:id="btnSalvar" layoutX="151.0" layoutY="381.0" mnemonicParsing="false" text="Salvar" />
-      <Button fx:id="btnFechar" layoutX="398.0" layoutY="381.0" mnemonicParsing="false" text="Fechar" />
+      <Button fx:id="btnSalvar" layoutX="151.0" layoutY="381.0" mnemonicParsing="false" onAction="#btnSalvar" text="Salvar" />
+      <Button fx:id="btnCancelar" layoutX="398.0" layoutY="381.0" mnemonicParsing="false" onAction="#btnCancelar" text="Cancelar" />
    </children>
 </Pane>
