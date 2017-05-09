@@ -12,11 +12,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import Model.Login;
+import model.Login;
 
 import javax.swing.*;
 
-import DAO.LoginDAO;
+import dao.LoginDAO;
 
 import java.io.IOException;
 import java.net.URL;

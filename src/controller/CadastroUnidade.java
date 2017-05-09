@@ -1,7 +1,7 @@
 package controller;
 
-import DAO.UnidadeDao;
-import Model.Unidade;
+import dao.UnidadeDao;
+import model.Unidade;
 import application.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

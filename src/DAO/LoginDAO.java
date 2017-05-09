@@ -1,8 +1,8 @@
-package DAO;
+package dao;
 
 
-import Model.Login;
-import daoUtil.ConnectionFactory;
+import model.Login;
+import daoutil.ConnectionFactory;
 
 import javax.swing.*;
 import java.sql.*;

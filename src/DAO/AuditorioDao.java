@@ -1,8 +1,8 @@
-package DAO;
+package dao;
 
-import Model.Auditorio;
-import Model.CadastroBloco;
-import daoUtil.ConnectionFactory;
+import model.Auditorio;
+import model.CadastroBloco;
+import daoutil.ConnectionFactory;
 
 import java.sql.*;
 import java.util.ArrayList;

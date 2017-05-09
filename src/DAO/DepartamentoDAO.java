@@ -1,13 +1,13 @@
-package DAO;
+package dao;
 
-import Model.Departamento;
+import model.Departamento;
 
 import java.sql.*;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
-import daoUtil.ConnectionFactory;
+import daoutil.ConnectionFactory;
 
 /**
  * Created by lucas.pereira on 01/05/2017.

@@ -1,9 +1,9 @@
 package controller;
 
-import DAO.AuditorioDao;
-import DAO.BlocoDao;
-import Model.Auditorio;
-import Model.CadastroBloco;
+import dao.AuditorioDao;
+import dao.BlocoDao;
+import model.Auditorio;
+import model.CadastroBloco;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;

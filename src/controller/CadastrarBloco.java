@@ -1,7 +1,7 @@
 package controller;
 
-import DAO.BlocoDao;
-import Model.CadastroBloco;
+import dao.BlocoDao;
+import model.CadastroBloco;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
