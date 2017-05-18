@@ -35,7 +35,6 @@ public void cadUsuario(){
 		Parent fxmlParent;
 		try {
 			fxmlParent = FXMLLoader.load(arquivoFXML);
-			painelPrincipal.getChildren().clear();
 			painelPrincipal.getChildren().add(fxmlParent);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -47,7 +46,7 @@ public void cadUsuario(){
 		Parent fxmlParent;
 		try {
 			fxmlParent = FXMLLoader.load(arquivoFXML);
-			painelPrincipal.getChildren().clear();
+
 			painelPrincipal.getChildren().add(fxmlParent);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -59,7 +58,7 @@ public void cadUsuario(){
 			Parent fxmlParent;
 			try {
 				fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-				painelPrincipal.getChildren().clear();
+
 				painelPrincipal.getChildren().add(fxmlParent);
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -72,7 +71,7 @@ public void cadUsuario(){
 			Parent fxmlParent;
 			try {
 				fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-				painelPrincipal.getChildren().clear();
+
 				painelPrincipal.getChildren().add(fxmlParent);
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -85,7 +84,7 @@ public void cadUsuario(){
 			Parent fxmlParent;
 			try {
 				fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-				painelPrincipal.getChildren().clear();
+
 				painelPrincipal.getChildren().add(fxmlParent);
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -99,7 +98,7 @@ public void cadUsuario(){
 			Parent fxmlParent;
 			try {
 				fxmlParent = FXMLLoader.load(arquivoFXML);
-				painelPrincipal.getChildren().clear();
+
 				painelPrincipal.getChildren().add(fxmlParent);
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -112,7 +111,7 @@ public void cadUsuario(){
 			Parent fxmlParent;
 			try {
 				fxmlParent = FXMLLoader.load(arquivoFXML);
-				painelPrincipal.getChildren().clear();
+
 				painelPrincipal.getChildren().add(fxmlParent);
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -127,7 +126,7 @@ public void cadUsuario(){
 			Parent fxmlParent;
 			try {
 				fxmlParent = FXMLLoader.load(arquivoFXML);
-				painelPrincipal.getChildren().clear();
+
 				painelPrincipal.getChildren().add(fxmlParent);
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -140,7 +139,7 @@ public void cadUsuario(){
 			Parent fxmlParent;
 			try {
 				fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-				painelPrincipal.getChildren().clear();
+
 				painelPrincipal.getChildren().add(fxmlParent);
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -157,7 +156,7 @@ public void cadUsuario(){
 			Parent fxmlParent;
 			try {
 				fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-				painelPrincipal.getChildren().clear();
+
 				painelPrincipal.getChildren().add(fxmlParent);
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -170,7 +169,7 @@ public void cadUsuario(){
 			Parent fxmlParent;
 			try {
 				fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-				painelPrincipal.getChildren().clear();
+
 				painelPrincipal.getChildren().add(fxmlParent);
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -184,7 +183,7 @@ public void cadUsuario(){
 				Parent fxmlParent;
 				try {
 					fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-					painelPrincipal.getChildren().clear();
+
 					painelPrincipal.getChildren().add(fxmlParent);
 				} catch (IOException e) {
 					e.printStackTrace();
@@ -197,7 +196,7 @@ public void cadUsuario(){
 					Parent fxmlParent;
 					try {
 						fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-						painelPrincipal.getChildren().clear();
+
 						painelPrincipal.getChildren().add(fxmlParent);
 					} catch (IOException e) {
 						e.printStackTrace();
@@ -209,7 +208,7 @@ public void cadUsuario(){
 						Parent fxmlParent;
 						try {
 							fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-							painelPrincipal.getChildren().clear();
+
 							painelPrincipal.getChildren().add(fxmlParent);
 						} catch (IOException e) {
 							e.printStackTrace();
@@ -221,7 +220,7 @@ public void cadUsuario(){
 							Parent fxmlParent;
 							try {
 								fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-								painelPrincipal.getChildren().clear();
+
 								painelPrincipal.getChildren().add(fxmlParent);
 							} catch (IOException e) {
 								e.printStackTrace();
@@ -238,26 +237,13 @@ public void cadUsuario(){
 							Parent fxmlParent;
 							try {
 								fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-								painelPrincipal.getChildren().clear();
+
 								painelPrincipal.getChildren().add(fxmlParent);
 							} catch (IOException e) {
 								e.printStackTrace();
 							}
 						}
-	
-							public void alterarAuditorio(){
-								URL arquivoFXML;
-								arquivoFXML = getClass().getResource("/View/AlterarAuditorio.fxml");
-								Parent fxmlParent;
-								try {
-									fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-									painelPrincipal.getChildren().clear();
-									painelPrincipal.getChildren().add(fxmlParent);
-								} catch (IOException e) {
-									e.printStackTrace();
-								}
-	
-		}
+
 
 							
 							public void alterarEquipamento(){
@@ -266,25 +252,14 @@ public void cadUsuario(){
 								Parent fxmlParent;
 								try {
 									fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-									painelPrincipal.getChildren().clear();
+
 									painelPrincipal.getChildren().add(fxmlParent);
 								} catch (IOException e) {
 									e.printStackTrace();
 								}
 	
 		}
-							public void alterarLaboratorio(){
-								URL arquivoFXML;
-								arquivoFXML = getClass().getResource("/View/ReservarRecurso.fxml");
-								Parent fxmlParent;
-								try {
-									fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-									painelPrincipal.getChildren().clear();
-									painelPrincipal.getChildren().add(fxmlParent);
-								} catch (IOException e) {
-									e.printStackTrace();
-								}
-							}
+
 								public void alterarSala(){
 									URL arquivoFXML;
 									arquivoFXML = getClass().getResource("/View/CadastroUsuario.fxml");
@@ -298,71 +273,7 @@ public void cadUsuario(){
 									}
 								}
 								
-								
-								//Metodos de historicos
-									public void HistoricoUsuario(){
-										URL arquivoFXML;
-										arquivoFXML = getClass().getResource("/View/CadastroUsuario.fxml");
-										Parent fxmlParent;
-										try {
-											fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-											painelPrincipal.getChildren().clear();
-											painelPrincipal.getChildren().add(fxmlParent);
-										} catch (IOException e) {
-											e.printStackTrace();
-										}
-									}
-										public void HistoricoAuditorio(){
-											URL arquivoFXML;
-											arquivoFXML = getClass().getResource("/View/CadastroUsuario.fxml");
-											Parent fxmlParent;
-											try {
-												fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-												painelPrincipal.getChildren().clear();
-												painelPrincipal.getChildren().add(fxmlParent);
-											} catch (IOException e) {
-												e.printStackTrace();
-											}
-										}
-											public void HistoricoEquipamento(){
-												URL arquivoFXML;
-												arquivoFXML = getClass().getResource("/View/CadastroUsuario.fxml");
-												Parent fxmlParent;
-												try {
-													fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-													painelPrincipal.getChildren().clear();
-													painelPrincipal.getChildren().add(fxmlParent);
-												} catch (IOException e) {
-													e.printStackTrace();
-												}
-											}
-												public void HistoricoSala(){
-													URL arquivoFXML;
-													arquivoFXML = getClass().getResource("/View/CadastroUsuario.fxml");
-													Parent fxmlParent;
-													try {
-														fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-														painelPrincipal.getChildren().clear();
-														painelPrincipal.getChildren().add(fxmlParent);
-													} catch (IOException e) {
-														e.printStackTrace();
-													}
-						
-							}
-												public void HistoricoLaboratorio(){
-													URL arquivoFXML;
-													arquivoFXML = getClass().getResource("/View/CadastroUsuario.fxml");
-													Parent fxmlParent;
-													try {
-														fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-														painelPrincipal.getChildren().clear();
-														painelPrincipal.getChildren().add(fxmlParent);
-													} catch (IOException e) {
-														e.printStackTrace();
-													}
-						
-							}
-												
+
 												
 												//Metodos de Relatorios
 											

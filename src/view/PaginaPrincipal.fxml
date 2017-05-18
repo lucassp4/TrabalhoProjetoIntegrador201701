@@ -42,26 +42,11 @@
             </Menu>
             <Menu mnemonicParsing="false" text="Editar">
                <items>
-                  <MenuItem mnemonicParsing="false" onAction="#cadAutoridade" text="Autoridade" />
-                  <MenuItem mnemonicParsing="false" onAction="#cadAuditorio" text="Auditório" />
-                  <MenuItem mnemonicParsing="false" onAction="#cadBloco" text="Bloco" />
-                  <MenuItem mnemonicParsing="false" onAction="#cadEquipamento" text="Equipamentos" />
-                  <MenuItem mnemonicParsing="false" onAction="#cadLaboratorio" text="Laboratório" />
-                  <MenuItem mnemonicParsing="false" onAction="#cadSala" text="Sala" />
-                  <MenuItem mnemonicParsing="false" onAction="#cadUsuario" text="Usuário" />
-                  <MenuItem mnemonicParsing="false" onAction="#cadUnidade" text="Unidade" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Excluir">
                <items>
-                  <MenuItem mnemonicParsing="false" onAction="#cadAutoridade" text="Autoridade" />
-                  <MenuItem mnemonicParsing="false" onAction="#cadAuditorio" text="Auditório" />
-                  <MenuItem mnemonicParsing="false" onAction="#cadBloco" text="Bloco" />
-                  <MenuItem mnemonicParsing="false" onAction="#cadEquipamento" text="Equipamentos" />
-                  <MenuItem mnemonicParsing="false" onAction="#cadLaboratorio" text="Laboratório" />
-                  <MenuItem mnemonicParsing="false" onAction="#cadSala" text="Sala" />
-                  <MenuItem mnemonicParsing="false" onAction="#cadUsuario" text="Usuário" />
-                  <MenuItem mnemonicParsing="false" onAction="#cadUnidade" text="Unidade" />
+
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Relatórios">
