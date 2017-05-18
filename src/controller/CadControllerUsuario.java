@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CadastroUsuario implements Initializable{
+public class CadControllerUsuario implements Initializable{
 	
 	
 	
