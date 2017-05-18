@@ -28,8 +28,17 @@ public class CadastroUnidade implements Initializable {
 	private TextField txtNomeUnidade;
 
 	@FXML
+	private TextField txtFantacia;
+
+	@FXML
+	private TextField txtCep;
+	@FXML
+	private TextField txtEstado;
+	@FXML
+	private TextField txtCidade;
+
+	@FXML
 	private TextField txtEndereco;
-	
 	@FXML
 	private TextField txtRazao;
 	

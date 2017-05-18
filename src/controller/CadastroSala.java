@@ -27,6 +27,10 @@ public class CadastroSala implements Initializable{
 	@FXML
 	private ComboBox<String> comboBloco;
 	@FXML
+	private ComboBox<String> comboSala;
+
+
+	@FXML
 	private Button btnSalvar;
 	@FXML
 	private Button btnFechar;

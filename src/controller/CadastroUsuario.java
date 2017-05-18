@@ -56,9 +56,9 @@ public class CadastroUsuario implements Initializable{
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		preenchercomboAutoridade();
+
 		preenchercomboFuncao();
-		preenchercomboUnidade();
+
 	}
 	
 	public void preenchercomboAutoridade(){

@@ -14,10 +14,10 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <Label layoutX="72.0" layoutY="88.0" text="Nivel" />
+      <Label layoutX="61.0" layoutY="88.0" text="Nome" />
       <Label layoutX="55.0" layoutY="123.0" text="Unidade" />
       <ComboBox fx:id="comboUnidade" layoutX="109.0" layoutY="119.0" prefHeight="25.0" prefWidth="436.0" />
-      <ComboBox fx:id="comboNivel" layoutX="109.0" layoutY="84.0" onAction="#comboNivel" prefHeight="25.0" prefWidth="122.0" promptText="Escolha o nível" />
+      <ComboBox fx:id="comboNivel" editable="true" layoutX="109.0" layoutY="84.0" onAction="#comboNivel" prefHeight="25.0" prefWidth="436.0" promptText="Escolha o usuario" />
       <Label layoutX="229.0" layoutY="160.0" text="Itens permitidos">
          <font>
             <Font size="20.0" />
