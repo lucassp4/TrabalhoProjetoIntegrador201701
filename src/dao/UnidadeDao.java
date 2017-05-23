@@ -2,11 +2,12 @@ package dao;
 
 import model.CadastroBloco;
 import model.Unidade;
-import daoutil.ConnectionFactory;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import daoUtil.ConnectionFactory;
 
 /**
  * Created by Ritchely on 04/05/2017.

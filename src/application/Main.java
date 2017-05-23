@@ -5,6 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.event.ActionEvent;
+import javafx.scene.layout.VBox;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
 
 
 public class Main extends Application {

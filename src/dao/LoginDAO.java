@@ -2,9 +2,11 @@ package dao;
 
 
 import model.Login;
-import daoutil.ConnectionFactory;
 
 import javax.swing.*;
+
+import daoUtil.ConnectionFactory;
+
 import java.sql.*;
 
 
