@@ -21,28 +21,28 @@ public class RelatorioDeCancelamento implements Initializable {
 	private Pane painelPrincipal;
 	
 	@FXML
-	private TableColumn<CadastroUsuario, String> tabelaNome;
+	private TableColumn<CadControllerUsuario, String> tabelaNome;
 
 	@FXML
-	private TableColumn<CadastroUsuario, String> tabelaData;
+	private TableColumn<CadControllerUsuario, String> tabelaData;
 	
 	@FXML
-	private TableColumn<CadastroUsuario, String> tabelaHorario;
+	private TableColumn<CadControllerUsuario, String> tabelaHorario;
 
 	@FXML
-	private TableColumn<CadastroUsuario, String> tabelaItens;
+	private TableColumn<CadControllerUsuario, String> tabelaItens;
 	
 	@FXML
-	private TableColumn<CadastroUsuario, String> tabelaUsuario;
+	private TableColumn<CadControllerUsuario, String> tabelaUsuario;
 
 	@FXML
-	private TableColumn<CadastroUsuario, String> tabelaDataReserva;
+	private TableColumn<CadControllerUsuario, String> tabelaDataReserva;
 	
 	@FXML
-	private TableColumn<CadastroUsuario, String> tabelaDataCancelamento;
+	private TableColumn<CadControllerUsuario, String> tabelaDataCancelamento;
 
 	@FXML
-	private TableColumn<CadastroUsuario, String> tabelaMotivo;
+	private TableColumn<CadControllerUsuario, String> tabelaMotivo;
 	
 
 	@FXML

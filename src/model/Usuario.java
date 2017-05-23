@@ -1,29 +1,29 @@
 package model;
 
+import java.sql.SQLException;
+
+import dao.UsuarioDAO;
+
 /**
  * Created by lucas.pereira on 27/04/2017.
  */
-public class Funcionario {
+public class Usuario {
 
-    private Integer id;
+    private int id;
     private String nome;
     private String telefone;
     private String celular;
     private String matricula;
     private String senha;
     private String email;
+    protected UsuarioDAO dao = new UsuarioDAO();
 
 	public boolean Login(){
 		return false;
 	}
 	
-	public void Cadastrar(String nome, String email, String telefone, String celular, String matricula, String senha){
-		this.nome = nome;
-		this.email = email;
-		this.telefone = telefone;
-		this.celular = celular;
-		this.matricula = matricula;
-		this.senha = senha;
+	public void Cliente(int id) throws SQLException{
+		this.id = id;
 	}
 	
 	public void Editar(){
@@ -31,16 +31,16 @@ public class Funcionario {
 	}
 	
 	public void Excluir(){
-		
+
 	}
 
 
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 

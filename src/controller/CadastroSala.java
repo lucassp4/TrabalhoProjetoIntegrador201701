@@ -41,7 +41,7 @@ public class CadastroSala implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		preencherComboUnidade();
-		
+		preencherComboSala();
 	}
 	public void preencherComboUnidade(){
 		
@@ -62,6 +62,14 @@ public class CadastroSala implements Initializable{
 			e.printStackTrace();
 		}
 		
+	}
+
+	public void preencherComboSala(){
+
+		comboSala.getItems().add("Sala de aula");
+		comboSala.getItems().add("Laboratorio");
+		comboSala.getItems().add("Auditorio");
+
 	}
 	
 

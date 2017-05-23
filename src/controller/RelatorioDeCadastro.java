@@ -20,16 +20,16 @@ public class RelatorioDeCadastro implements Initializable {
 	private Pane painelPrincipal;
 	
 	@FXML
-	private TableColumn<CadastroUsuario, String> tabelaNome;
+	private TableColumn<CadControllerUsuario, String> tabelaNome;
 
 	@FXML
-	private TableColumn<CadastroUsuario, String> tabelaData;
+	private TableColumn<CadControllerUsuario, String> tabelaData;
 	
 	@FXML
-	private TableColumn<CadastroUsuario, String> tabelaHorario;
+	private TableColumn<CadControllerUsuario, String> tabelaHorario;
 
 	@FXML
-	private TableColumn<CadastroUsuario, String> tabelaCadastradoPelo;
+	private TableColumn<CadControllerUsuario, String> tabelaCadastradoPelo;
 	
 
 	@FXML

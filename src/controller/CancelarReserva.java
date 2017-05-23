@@ -32,14 +32,14 @@ public class CancelarReserva implements Initializable {
 	private TableView TabelaPrincipal;
 	
 	@FXML
-	private TableColumn<CadastroUsuario, String> reservaCTebela;
+	private TableColumn<CadControllerUsuario, String> reservaCTebela;
 	
 	@FXML
-	private TableColumn<CadastroUsuario, String> dataTabela;
+	private TableColumn<CadControllerUsuario, String> dataTabela;
 	@FXML
-	private TableColumn<CadastroUsuario, String> horarioTabela;
+	private TableColumn<CadControllerUsuario, String> horarioTabela;
 	@FXML
-	private TableColumn<CadastroUsuario, String> periodoTabela;
+	private TableColumn<CadControllerUsuario, String> periodoTabela;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
