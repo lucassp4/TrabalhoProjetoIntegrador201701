@@ -1,4 +1,4 @@
-package daoutil;
+package daoUtil;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,11 +13,12 @@ public class ConnectionFactory {
 
         public Connection getConnection() {
             try {
-                Class.forName("com.mysql.jdbc.Driver");
+               // Class.forName("com.mysql.jdbc.Driver");
+            	DriverManager.deregisterDriver(new com.mysql.jdbc.Driver());
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projetoIntegrador", "root", "root");
                 return con;
             } catch (Exception e) {
-                System.out.println("Erro na conex√£o: " + e.getMessage());
+                System.out.println("Erro na conex„o: " + e.getMessage());
             }
             return con;
         }
@@ -26,10 +27,8 @@ public class ConnectionFactory {
             try {
                 con.close();
             } catch (Exception e) {
-                System.out.println("Erro na conex√£o: " + e.getMessage());
+                System.out.println("Erro na conex„o: " + e.getMessage());
             }
         }
 
     }
-
-
