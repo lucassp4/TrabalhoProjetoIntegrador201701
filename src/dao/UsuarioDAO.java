@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import daoutil.ConnectionFactory;
+import daoUtil.ConnectionFactory;
 import model.Usuario;
 
 /**

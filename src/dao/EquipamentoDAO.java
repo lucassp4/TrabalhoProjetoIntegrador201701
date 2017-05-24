@@ -1,6 +1,6 @@
 package dao;
 
-import daoutil.ConnectionFactory;
+import daoUtil.ConnectionFactory;
 import model.CadEquipamento;
 
 import java.sql.*;

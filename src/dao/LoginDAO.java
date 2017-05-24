@@ -5,7 +5,7 @@ import model.Login;
 
 import javax.swing.*;
 
-import daoutil.ConnectionFactory;
+import daoUtil.ConnectionFactory;
 
 import java.sql.*;
 
