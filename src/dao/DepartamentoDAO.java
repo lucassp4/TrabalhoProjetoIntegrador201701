@@ -7,7 +7,7 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
-import daoUtil.ConnectionFactory;
+import daoutil.ConnectionFactory;
 
 /**
  * Created by lucas.pereira on 01/05/2017.

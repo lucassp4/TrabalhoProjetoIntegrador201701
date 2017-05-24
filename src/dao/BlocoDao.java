@@ -6,7 +6,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import daoUtil.ConnectionFactory;
+import daoutil.ConnectionFactory;
 
 /**
  * Created by Ritchely on 03/05/2017.
