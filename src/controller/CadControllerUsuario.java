@@ -25,31 +25,16 @@ public class CadControllerUsuario implements Initializable{
 	private TextField txtEndereco;
 	@FXML 
 	private TextField txtMatricula;
-	
 	@FXML 
 	private TextField txtCelular;
-	
 	@FXML 
 	private TextField txtEmail;
-	
-	@FXML 
-	private ComboBox<String> comboAutoridade;
-	
-	@FXML 
-	private ComboBox<String> comboUnidade;
-	
 	@FXML 
 	private ComboBox<String> comboFuncao;
-	
-	@FXML 
-	private ComboBox<String> comboCurso;
-	
 	@FXML
 	private Button btnSalvar;
-	
 	@FXML 
 	private Button btnCancelar;
-	
 	@FXML 
 	private Pane painelPrincipal;
 	
@@ -61,21 +46,9 @@ public class CadControllerUsuario implements Initializable{
 
 	}
 	
-	public void preenchercomboAutoridade(){
-		comboAutoridade.getItems().add("Alta");
-		comboAutoridade.getItems().add("Baixa");
-		comboAutoridade.getItems().add("Total");
-	}
-	
-	public void preenchercomboUnidade(){
-		comboUnidade.getItems().add("Bueno");
-		comboUnidade.getItems().add("Sao paulo");
-		comboUnidade.getItems().add("Perimetral");
-		
-	}
 	public void preenchercomboFuncao(){
 		comboFuncao.getItems().add("Professor");
-		comboFuncao.getItems().add("Cordenador");
+		comboFuncao.getItems().add("Coordenador");
 		comboFuncao.getItems().add("Audio visual");
 		
 	}

@@ -26,6 +26,6 @@
       <TextField fx:id="txtEmail" layoutX="113.0" layoutY="241.0" prefHeight="25.0" prefWidth="454.0" promptText="Digite o E-mail" />
       <Label layoutX="66.0" layoutY="175.0" text="Celular" />
       <Label layoutX="65.0" layoutY="280.0" text="Função" />
-      <ComboBox fx:id="comboFuncao" layoutX="113.0" layoutY="276.0" prefHeight="25.0" prefWidth="454.0" promptText="Defina a Autoridade" />
+      <ComboBox fx:id="comboFuncao" layoutX="113.0" layoutY="276.0" prefHeight="25.0" prefWidth="454.0" promptText="Defina a Função" />
    </children>
 </Pane>
