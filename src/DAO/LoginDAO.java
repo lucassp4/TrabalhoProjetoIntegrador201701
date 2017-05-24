@@ -1,13 +1,13 @@
 package DAO;
 
 
-import Model.Funcionario;
 import Model.Login;
 import daoUtil.ConnectionFactory;
-import jdk.nashorn.internal.scripts.JO;
 
 import javax.swing.*;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -16,10 +16,9 @@ import java.sql.*;
 public class LoginDAO {
 
     private Connection con;
-    private Statement stmt;
-    private PreparedStatement stm;
+    private PreparedStatement stmt;
 
-
+    //CONEXÃO DO DANCO DE DADOS + FABRICA DE CONEXÃO
     public LoginDAO() throws SQLException {
 
         ConnectionFactory factory = new ConnectionFactory();
@@ -28,36 +27,43 @@ public class LoginDAO {
     }
 
 
-    //comando sql
-    private String BUSCAR = "SELECT NOME, SENHA FROM FUNCIONARIO WHERE NOME=? AND SENHA=?";
+    //COMANDO SQL
+    private String BUSCAR = "SELECT ID, NOME, SENHA FROM FUNCIONARIO WHERE NOME=?";
 
-    // metodo de pesquisar todos deparamentos
-    public Boolean buscarUsuario(Login user) throws SQLException {
+    // BUCA USUARIO DE LOGIN
+    public Login getUsuario(String user) throws SQLException {
 
-        Boolean log = null;
+        List<Login> list = new ArrayList<Login>();
 
         try {
-            stm = con.prepareStatement(BUSCAR);
+            stmt = con.prepareStatement(BUSCAR);
 
-            stm.setString(1, user.getNome());
-            stm.setString(2, user.getSenha());
+            stmt.setString(1, user);
+           // stmt.setString(2, user.getSenha());
 
-            ResultSet rs = stm.executeQuery();
-            //rs.next();
+            ResultSet rs = stmt.executeQuery();
 
-            if(rs.next()){
-                log = true;
-            }else {
-                JOptionPane.showMessageDialog(null, "Senha Incorreta!!");
-                log = false;
-            }
+                while(rs.next()){
+                    Login usuario = new Login();
 
-            stm.close();
-            con.close();
+                    usuario.setId(rs.getInt("id"));
+                    usuario.setNome(rs.getString("nome"));
+                    usuario.setSenha(rs.getString("senha"));
 
-        } catch (Exception e) {
+                    list.add(usuario);
+
+                }//FIM DO ENQUANTO
+
+        }//FIIM TRY
+        catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
+        }//FIM CATCH
+
+        if (!list.isEmpty()){
+            return list.get(0);
         }
-        return log;
-    }
-}
+        else return new Login();
+
+    }// FIM DO GETUSUARIO
+
+}// FIM DA CLASSE
