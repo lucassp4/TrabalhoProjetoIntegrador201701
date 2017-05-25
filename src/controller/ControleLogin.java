@@ -52,7 +52,7 @@ public class ControleLogin implements Initializable {
 
 	public void Login(ActionEvent event) throws SQLException {
 		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/View/PaginaPrincipal.fxml");
+		arquivoFXML = getClass().getResource("/view/PaginaPrincipal.fxml");
 		Parent fxmlParent;
 		try {
 			fxmlParent = FXMLLoader.load(arquivoFXML);

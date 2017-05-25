@@ -52,7 +52,7 @@ public class CadastroSala implements Initializable{
 	}
 	public void cancelar(){
 		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/View/PaginaPrincipal.fxml");
+		arquivoFXML = getClass().getResource("/view/PaginaPrincipal.fxml");
 		Parent fxmlParent;
 		try {
 			fxmlParent = FXMLLoader.load(arquivoFXML);

@@ -122,7 +122,7 @@ public class CadastroEquipamento implements Initializable {
 		
 		public void Cancelar(){
 			URL arquivoFXML;
-			arquivoFXML = getClass().getResource("/View/PaginaPrincipal.fxml");
+			arquivoFXML = getClass().getResource("/view/PaginaPrincipal.fxml");
 			Parent fxmlParent;
 			try {
 				fxmlParent = FXMLLoader.load(arquivoFXML);

@@ -73,7 +73,7 @@ public class CadastroUnidade implements Initializable {
 		unidadeDao.salvar(unidade);
 
         URL arquivoFXML;
-        arquivoFXML = getClass().getResource("/View/PaginaPrincipal.fxml");
+        arquivoFXML = getClass().getResource("/view/PaginaPrincipal.fxml");
         Parent fxmlParent;
         try {
             fxmlParent = FXMLLoader.load(arquivoFXML);
