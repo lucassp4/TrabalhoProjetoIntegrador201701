@@ -8,24 +8,24 @@
 
 <Pane fx:id="painelPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="613.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CadControllerUsuario">
    <children>
-      <Label layoutX="70.0" layoutY="106.0" text="Nome" />
+      <Label layoutX="70.0" layoutY="106.0" text="Nome*" />
       <Label layoutX="191.0" layoutY="34.0" text="Cadastro Usuários">
          <font>
             <Font size="29.0" />
          </font>
       </Label>
-      <Label layoutX="57.0" layoutY="140.0" text="Telefone" />
+      <Label layoutX="57.0" layoutY="140.0" text="Telefone*" />
       <TextField fx:id="txtNome" layoutX="113.0" layoutY="101.0" prefHeight="25.0" prefWidth="454.0" promptText="Digite o Nome" />
       <TextField fx:id="txtTelefone" layoutX="113.0" layoutY="136.0" prefHeight="25.0" prefWidth="454.0" promptText="Informe o Telefone" />
-      <Label layoutX="70.0" layoutY="245.0" text="E-mail" />
+      <Label layoutX="70.0" layoutY="245.0" text="E-mail*" />
       <Button fx:id="btnSalvar" layoutX="164.0" layoutY="444.0" mnemonicParsing="false" onAction="#btnSalvar" text="Salvar" />
       <Button fx:id="btnCancelar" layoutX="388.0" layoutY="444.0" mnemonicParsing="false" onAction="#btnCancelar" text="Cancelar" />
-      <Label layoutX="54.0" layoutY="210.0" text="Matrícula" />
+      <Label layoutX="54.0" layoutY="210.0" text="Matrícula*" />
       <TextField fx:id="txtCelular" layoutX="113.0" layoutY="171.0" prefHeight="25.0" prefWidth="454.0" promptText="Informe o Celular" />
       <TextField fx:id="txtMatricula" layoutX="113.0" layoutY="206.0" prefHeight="25.0" prefWidth="454.0" promptText="Digite a Matrícula" />
       <TextField fx:id="txtEmail" layoutX="113.0" layoutY="241.0" prefHeight="25.0" prefWidth="454.0" promptText="Digite o E-mail" />
-      <Label layoutX="66.0" layoutY="175.0" text="Celular" />
-      <Label layoutX="65.0" layoutY="280.0" text="Função" />
+      <Label layoutX="66.0" layoutY="175.0" text="Celular*" />
+      <Label layoutX="65.0" layoutY="280.0" text="Função*" />
       <ComboBox fx:id="comboFuncao" layoutX="113.0" layoutY="276.0" prefHeight="25.0" prefWidth="454.0" promptText="Defina a Função" />
    </children>
 </Pane>
