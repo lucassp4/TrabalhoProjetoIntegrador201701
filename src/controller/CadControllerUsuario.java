@@ -48,8 +48,6 @@ public class CadControllerUsuario implements Initializable {
 	@FXML
 	private TextField txtId;
 	@FXML
-	private Usuario usuario;
-	@FXML
 	private TextField txtNome;
 	@FXML
 	private TextField txtTelefone;
@@ -71,15 +69,16 @@ public class CadControllerUsuario implements Initializable {
 	private Pane painelPrincipal;
 
 	List<Usuario> usuarios = new ArrayList();
-	Main main = null;
 	ObservableList<Usuario> usuariosView = null;
 	UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
 
+	static Usuario usuario = new Usuario();
+
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
-		txtId.setVisible(false);
-		usuario = new Usuario();
-		usuarios = listarUsuarios();
+		if(usuario != null){
+			
+		}
 		preenchercomboFuncao();
 	}
 
@@ -95,14 +94,20 @@ public class CadControllerUsuario implements Initializable {
 	}
 	
 	@FXML
-	public void btnSalvar() throws SQLException {
-		String 
+	public void btnSalvar() {
+		usuario.setNome(txtNome.getText());
+		usuario.setTelefone(txtTelefone.getText());
+		usuario.setCelular(txtCelular.getText());
+		usuario.setMatricula(txtMatricula.getText());
+		usuario.setEmail(txtEmail.getText());
+		usuario.setFuncao(comboFuncao.getPromptText());
 
 	}
+		
 
 	public void btnCancelar() {
 		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/View/PaginaPrincipal.fxml");
+		arquivoFXML = getClass().getResource("/view/PaginaPrincipal.fxml");
 		Parent fxmlParent;
 		try {
 			fxmlParent = FXMLLoader.load(arquivoFXML);
@@ -124,18 +129,15 @@ public class CadControllerUsuario implements Initializable {
 		String email = txtEmail.getText();
 		String funcao = comboFuncao.getValue();
 		
-		StringBuilder sb = new StringBuilder();
-		
-		sb.append("");
 		if(nome.equals("") || nome == null ||
 				telefone.equals("") || telefone == null ||
 				celular.equals("") || celular == null ||
 				matricula.equals("") || matricula == null ||
 				email.equals("") || email == null ||
 				funcao.equals("") || funcao == null){
-			sb.append("Os campos com (*) devem ser preenchidos obrigatoriamente. \n");
+			return false;
 		}		
-		return sb.toString().isEmpty();	
+		return true;
 	}
 
 }
