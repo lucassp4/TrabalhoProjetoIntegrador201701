@@ -1,6 +1,10 @@
 package controller;
 
+import dao.BlocoDao;
 import dao.UnidadeDao;
+import javafx.animation.RotateTransition;
+import javafx.event.ActionEvent;
+import javafx.scene.control.Control;
 import model.Unidade;
 import application.Main;
 import javafx.fxml.FXML;
@@ -12,11 +16,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
+import negocio.UnidadeNegocio;
 import org.controlsfx.control.Notifications;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class CadastroUnidade implements Initializable {
@@ -47,18 +54,14 @@ public class CadastroUnidade implements Initializable {
 	
 	@FXML
 	private TextField txtTelefone;
-	
-	@FXML
-	private TextField textBloco;
-	
-	
+
 	@FXML
 	private Button btnSalvar;
 	
 	@FXML
 	private Button btnCancelar; 
 	
-	Unidade unidade = new Unidade();
+	Unidade unidadeM = new Unidade();
 	Main main = null;
 
 	@Override
@@ -69,20 +72,34 @@ public class CadastroUnidade implements Initializable {
 
 	public void btnSalvar() throws SQLException {
 		UnidadeDao unidadeDao = new UnidadeDao();
-	    validarCampos();
-		unidadeDao.salvar(unidade);
+		pegarValores();
+		boolean validar;
+		boolean validarString;
 
-        URL arquivoFXML;
-        arquivoFXML = getClass().getResource("/view/PaginaPrincipal.fxml");
-        Parent fxmlParent;
-        try {
-            fxmlParent = FXMLLoader.load(arquivoFXML);
-            painelPrincipal.getChildren().clear();
-            painelPrincipal.getChildren().add(fxmlParent);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-		
+		validar = validarCampos();
+		UnidadeNegocio unidadeNegocio = new UnidadeNegocio();
+		validarString = unidadeNegocio.verificarCampo(unidadeM.getCep());
+
+
+		if (validar) {
+			if (validarString) {
+				unidadeDao.salvar(unidadeM);
+				exibeMensagem("Salvo com sucesso");
+
+				URL arquivoFXML;
+				arquivoFXML = getClass().getResource("/View/PaginaPrincipal.fxml");
+				Parent fxmlParent;
+				try {
+					fxmlParent = FXMLLoader.load(arquivoFXML);
+					painelPrincipal.getChildren().clear();
+					painelPrincipal.getChildren().add(fxmlParent);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			} else {
+				exibeMensagem("Por favor digite o cep sem letras!");
+			}
+		}
 	}
 	public void btnCancelar(){
 		
@@ -100,42 +117,112 @@ public class CadastroUnidade implements Initializable {
 	
 	public void pegarValores(){
 
-		unidade.setNome(txtNomeUnidade.getText());
-		unidade.setEndereco(txtEndereco.getText());
-		unidade.setCnpj(txtCnpj.getText());
-		unidade.setRazaoSocial(txtRazao.getText());
-		unidade.setTelefone(txtTelefone.getText());
-		unidade.setBlocos(Integer.parseInt(textBloco.getText()));
+		unidadeM.setNome(txtNomeUnidade.getText());
+		unidadeM.setEndereco(txtEndereco.getText());
+		unidadeM.setCnpj(txtCnpj.getText());
+		unidadeM.setRazaoSocial(txtRazao.getText());
+		unidadeM.setTelefone(txtTelefone.getText());
+		unidadeM.setCep(txtCep.getText());
+		unidadeM.setCidade(txtCidade.getText());
+		unidadeM.setEstado(txtEstado.getText());
+		unidadeM.setFantacia(txtFantacia.getText());
 
 
 	}
 
 
-	public void validarCampos(){
+	public boolean validarCampos(){
 
-		pegarValores();
+		String nome =unidadeM.getNome();
+		String endereco= unidadeM.getEndereco();
+		String cnpj =  unidadeM.getCnpj();
+		String razao = unidadeM.getRazaoSocial();
+		String telefone = unidadeM.getTelefone();
+		String cep =  unidadeM.getCep();
+		String cidade = unidadeM.getCidade();
+		String estado =  unidadeM.getEstado();
+		String fantacia = unidadeM.getFantacia();
 
-		if(!unidade.getNome().equals("")|| unidade.getNome() != null){
-			if(!unidade.getEndereco().equals("") ||unidade.getEndereco() != null );
-			if(!unidade.getTelefone().equals("") || unidade.getTelefone() != null);
-			if(!unidade.getCnpj().equals("") || unidade.getCnpj() != null);
-			if(!unidade.getRazaoSocial().equals("") || unidade.getRazaoSocial() !=null);
-			if(unidade.getBlocos() != 0);
-					}
 
+		List<Control> controls = new ArrayList<>();
+		StringBuilder sb = new StringBuilder();
+		sb.append("");
+		if(nome.equals("") || nome == null){
+			sb.append("O nome não pode ser vazio!. \n");
+			controls.add(txtNomeUnidade);
+		}
+		if(endereco.equals("") || endereco== null){
+			sb.append(" O Endereço nao pode ser vazio !. \n");
+			controls.add(txtEndereco);
+		}
+		if(cnpj.equals("") || cnpj == null){
+			sb.append("O CNPJ nao pode ser vazio!. \n");
+			controls.add(txtCnpj);
+		}
+		if(razao.equals("") || razao == null){
+			sb.append("A razão socil não pode ser vazio!. \n");
+			controls.add(txtRazao);
+		}
+		if(telefone.equals("")|| telefone == null){
+			sb.append(" O telefone nao pode ser vazio !. \n");
+			controls.add(txtTelefone);
+		}
+		if(cep.equals("") || cep == null){
+			sb.append("O Cep nao pode ser vazio!. \n");
+			controls.add(txtCep);
+		}
+		if(cidade.equals("") || cidade == null){
+			sb.append(" A cidade nao pode ser vazia  !. \n");
+			controls.add(txtCidade);
+		}
+		if(estado.equals("") || estado == null){
+			sb.append("O estado nao pode ser vazio!. \n");
+			controls.add(txtEstado);
+		}
+		if(fantacia.equals("") || fantacia == null){
+			sb.append("O nome fantacia nao pode ser vazio!. \n");
+			controls.add(txtFantacia);
+		}
 
+		if(!sb.equals("")) {
+			exibeMensagem(sb.toString());
+			animaCamposValidados(controls);
+		}
 
+		return sb.toString().isEmpty();
 	}
+
+
+
+
 	public void exibeMensagem(String msg){
 		Notifications.create()
 				.title("Atensão")
 				.text(String.valueOf(msg))
 				.owner(main)
-				.hideAfter(Duration.seconds(3))
+				.hideAfter(Duration.seconds(6))
 				.darkStyle()
 				.position(Pos.TOP_RIGHT)
 				.showInformation();
 
 
 	}
+
+	public void animaCamposValidados(List<Control> controls) {
+		controls.forEach(control -> {
+			RotateTransition rotateTransition = new RotateTransition(Duration.millis(60), control);
+			rotateTransition.setFromAngle(-4);
+			rotateTransition.setToAngle(4);
+			rotateTransition.setCycleCount(8);
+			rotateTransition.setAutoReverse(true);
+			rotateTransition.setOnFinished((ActionEvent event1) ->{
+				control.setRotate(0);
+			});
+			rotateTransition.play();
+		});
+		if(!controls.isEmpty()){
+			controls.get(0).requestFocus();
+		}
+	}
+
 }

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="427.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="223.0" layoutY="23.0" text="Editar Bloco" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.9095238095238095">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <TableView layoutX="27.0" layoutY="190.0" onMouseClicked="#selecionarBloco" prefHeight="181.0" prefWidth="552.0">
+        <columns>
+          <TableColumn fx:id="colunaNome" prefWidth="208.0" text="Nome" />
+          <TableColumn fx:id="ColunaUnidade" prefWidth="225.0" text="Unidade" />
+            <TableColumn fx:id="ColunaSala" prefWidth="118.0" text="Salas" />
+        </columns>
+      </TableView>
+      <Label layoutX="42.0" layoutY="83.0" text="Nome" />
+      <Label layoutX="42.0" layoutY="120.0" text="Unidade" />
+      <TextField fx:id="txtNome" layoutX="93.0" layoutY="79.0" prefHeight="25.0" prefWidth="352.0" />
+      <ComboBox fx:id="ComboUnidade" layoutX="93.0" layoutY="116.0" prefHeight="25.0" prefWidth="352.0" />
+      <Button layoutX="178.0" layoutY="388.0" mnemonicParsing="false" text="Salvar" />
+      <Button layoutX="349.0" layoutY="388.0" mnemonicParsing="false" text="Cancelar" />
+   </children>
+</Pane>

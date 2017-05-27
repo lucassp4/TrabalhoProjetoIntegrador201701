@@ -39,7 +39,6 @@ public class UnidadeDao {
             stmt.setString(3, unidade.getTelefone());
             stmt.setString(4,unidade.getCnpj());
             stmt.setString(5, unidade.getRazaoSocial());
-            stmt.setInt    (6, unidade.getBlocos());
             stmt.executeUpdate();
             con.commit();
             salvo = "salvo";
@@ -80,7 +79,7 @@ public class UnidadeDao {
                 bloco.setNome(res.getString("nome"));
                 bloco.setDescricao(res.getString("descricao"));
                 bloco.setUnidade(res.getString("unidade"));
-                bloco.setNumeroSalas(res.getInt("sala"));
+                bloco.setNumeroSalas(res.getString("sala"));
 
                 list.add(bloco);
             }

@@ -1,16 +1,15 @@
 package controller;
 
 import dao.BlocoDao;
+import javafx.animation.RotateTransition;
+import javafx.event.ActionEvent;
+import javafx.scene.control.*;
 import model.CadastroBloco;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 import org.controlsfx.control.Notifications;
@@ -19,6 +18,8 @@ import application.Main;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 
@@ -46,9 +47,13 @@ public class CadastrarBloco implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 		   	preencherComboUnidade();
+
 	}
 
 	public void btnCancelar() {
+
+
+
 		URL arquivoFXML;
 		arquivoFXML = getClass().getResource("/view/PaginaPrincipal.fxml");
 		Parent fxmlParent;
@@ -63,11 +68,13 @@ public class CadastrarBloco implements Initializable {
 
 
 	public void btnSalvar() throws SQLException {
+		boolean validar;
 		pegarvalores();
+		validar =  validarCampos();
 		BlocoDao blocoDao = new BlocoDao();
-		blocoDao.salvar(bloco);
-
-			exibeMensagem("Salvo com sucesso");
+		if (validar) {
+			blocoDao.salvar(bloco);
+				exibeMensagem("Salvo com sucesso");
 
 			URL arquivoFXML;
 			arquivoFXML = getClass().getResource("/View/PaginaPrincipal.fxml");
@@ -79,8 +86,8 @@ public class CadastrarBloco implements Initializable {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-
 		}
+	}
 
 
 	public void pegarvalores() {
@@ -88,7 +95,7 @@ public class CadastrarBloco implements Initializable {
 
 		bloco.setNome(txtNome.getText());
 		bloco.setUnidade(comboUnidade.getValue());
-		bloco.setNumeroSalas(Integer.parseInt(txtSalas.getText()));
+		bloco.setNumeroSalas(txtSalas.getText());
 		bloco.setDescricao(textDescricao.getText());
 
 
@@ -114,12 +121,53 @@ public class CadastrarBloco implements Initializable {
 
 	}
 
-	
+	public boolean validarCampos(){
+
+		String nome =  txtNome.getText();
+		String unidade = bloco.getUnidade();
+		String nSala = bloco.getNumeroSalas();
+
+		List<Control> controls = new ArrayList<>();
+		StringBuilder sb = new StringBuilder();
+		sb.append("");
+		if(nome.equals("") || nome == null){
+			sb.append("O nome não pode ser vazio!. \n");
+			controls.add(txtNome);
+		}
+		if(unidade == null){
+			sb.append(" A por favor selecione uma unidade !. \n");
+			controls.add(comboUnidade);
+		}
+		if(nSala.equals("") || nSala == null){
+			sb.append("O Numero de sala não pode ser vazio!. \n");
+			controls.add(txtSalas);
+		}
+
+		if(!sb.equals("")) {
+			exibeMensagem(sb.toString());
+			animaCamposValidados(controls);
+		}
+
+		return sb.toString().isEmpty();
+	}
+
+	public void animaCamposValidados(List<Control> controls) {
+		controls.forEach(control -> {
+			RotateTransition rotateTransition = new RotateTransition(Duration.millis(60), control);
+			rotateTransition.setFromAngle(-4);
+			rotateTransition.setToAngle(4);
+			rotateTransition.setCycleCount(8);
+			rotateTransition.setAutoReverse(true);
+			rotateTransition.setOnFinished((ActionEvent event1) ->{
+				control.setRotate(0);
+			});
+			rotateTransition.play();
+		});
+		if(!controls.isEmpty()){
+			controls.get(0).requestFocus();
+		}
+	}
+
+		}
 
 
-
-
-
-	
-	
-}

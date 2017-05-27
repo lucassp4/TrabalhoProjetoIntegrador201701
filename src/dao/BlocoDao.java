@@ -35,7 +35,7 @@ public class BlocoDao {
             stmt.setString(1, blocos.getNome());
             stmt.setString(2, blocos.getUnidade());
             stmt.setString(3,blocos.getDescricao());
-            stmt.setInt    (4, blocos.getNumeroSalas());
+            stmt.setString    (4, blocos.getNumeroSalas());
             stmt.executeUpdate();
             con.commit();
             salvo = "salvo";
@@ -66,7 +66,7 @@ public class BlocoDao {
 
                             try {
                                  stm = con.createStatement();
-                                 res = stm.executeQuery("SELECT * FROM blocos");
+                                 res = stm.executeQuery("SELECT * FROM cadastroBlocos");
 
                                  while (res.next()){
 
@@ -76,7 +76,7 @@ public class BlocoDao {
                                      bloco.setNome(res.getString("nome"));
                                      bloco.setDescricao(res.getString("descricao"));
                                      bloco.setUnidade(res.getString("unidade"));
-                                     bloco.setNumeroSalas(res.getInt("sala"));
+                                     bloco.setNumeroSalas(res.getString("sala"));
 
                 list.add(bloco);
             }

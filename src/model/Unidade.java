@@ -9,8 +9,11 @@ public class Unidade {
     private String endereco;
     private String telefone;
     private String cnpj;
+    private String fantacia;
+    private String cep;
+    private String estado;
+    private String cidade;
     private String razaoSocial;
-    private int blocos;
     private int id;
 
     public String getNome() {
@@ -53,19 +56,43 @@ public class Unidade {
         this.razaoSocial = razaoSocial;
     }
 
-    public int getBlocos() {
-        return blocos;
-    }
-
-    public void setBlocos(int blocos) {
-        this.blocos = blocos;
-    }
-
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getFantacia() {
+        return fantacia;
+    }
+
+    public void setFantacia(String fantacia) {
+        this.fantacia = fantacia;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
     }
 }

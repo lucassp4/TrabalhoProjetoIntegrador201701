@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane fx:id="painelPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PaginaPrincipal">
+<Pane fx:id="painelPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1174.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PaginaPrincipal">
    <children>
-      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="600.0">
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1380.0">
          <menus>
             <Menu mnemonicParsing="false" text="Cadastros">
                <items>
@@ -19,9 +19,12 @@
                   <MenuItem mnemonicParsing="false" onAction="#cadUnidade" text="Unidade" />
                </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Kits">
+            <Menu mnemonicParsing="false" text="Pequisar">
                <items>
-                  <MenuItem mnemonicParsing="false" onAction="#kits" text="Criar Kit " />
+                  <MenuItem mnemonicParsing="false" onAction="#pesquisarEquipamento" text="Equipamentos" />
+                  <MenuItem mnemonicParsing="false" onAction="#pesquisarSala" text="Sala" />
+                  <MenuItem mnemonicParsing="false" onAction="#pesquisarUsuario" text="Usuário" />
+                  <MenuItem mnemonicParsing="false" onAction="#pesquisarUnidade" text="Unidade" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Reserva">

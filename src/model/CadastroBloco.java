@@ -7,9 +7,9 @@ public class CadastroBloco  {
 
 
     private String nome;
-    private String unidade;
-    private int numeroSalas;
-    private String descricao = "asdfasd";
+    private String unidade = "" ;
+    private String numeroSalas ;
+    private String descricao ;
     private int id;
 
 
@@ -30,11 +30,11 @@ public class CadastroBloco  {
         this.unidade = unidade;
     }
 
-    public int getNumeroSalas() {
+    public String getNumeroSalas() {
         return numeroSalas;
     }
 
-    public void setNumeroSalas(int numeroSalas) {
+    public void setNumeroSalas(String numeroSalas) {
         this.numeroSalas = numeroSalas;
     }
 
