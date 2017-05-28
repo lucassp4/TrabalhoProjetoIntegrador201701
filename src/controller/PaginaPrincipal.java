@@ -362,6 +362,20 @@ public void cadUsuario(){
 		}
 
 	}
-}
+
+	public void excluirUnidade(ActionEvent actionEvent) {
+		URL arquivoFXML;
+		arquivoFXML = getClass().getResource("/View/ExcluirUnidade.fxml");
+		Parent fxmlParent;
+		try {
+			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
+			painelPrincipal.getChildren().add(fxmlParent);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+	}
+
 					
 			

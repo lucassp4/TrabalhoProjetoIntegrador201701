@@ -31,10 +31,10 @@
       <TextField fx:id="txtEndereco" layoutX="122.0" layoutY="184.0" prefHeight="25.0" prefWidth="243.0" promptText="Digite o Endereço" />
       <TextField fx:id="txtNomeUnidade" layoutX="123.0" layoutY="78.0" prefHeight="25.0" prefWidth="243.0" promptText="Digite o Nome da Unidade" />
       <Label layoutX="383.0" layoutY="82.0" text="CNPJ*" />
-      <Label layoutX="38.0" layoutY="117.0" text="Razão Social*" />
+      <Label layoutX="41.0" layoutY="117.0" text="Razão Social*" />
       <Label layoutX="47.0" layoutY="225.0" text="Telefone*" />
       <Label layoutX="60.0" layoutY="188.0" text="End.*" />
-      <Label layoutX="23.0" layoutY="82.0" text="Nome da Unidade*" />
+      <Label layoutX="13.0" layoutY="82.0" text="Nome da Unidade*" />
       <Label layoutX="225.0" layoutY="23.0" text="Editar Unidade">
          <font>
             <Font size="25.0" />
@@ -52,6 +52,6 @@
             <Font size="23.0" />
          </font>
       </Label>
-      <TextField fx:id="txtId" layoutX="125.0" layoutY="47.0" prefHeight="25.0" prefWidth="51.0" visible="false"/>
+      <TextField fx:id="txtId" layoutX="125.0" layoutY="47.0" prefHeight="25.0" prefWidth="51.0" visible="false" />
    </children>
 </Pane>

@@ -50,7 +50,7 @@
             </Menu>
             <Menu mnemonicParsing="false" text="Excluir">
                <items>
-
+                  <MenuItem mnemonicParsing="false" onAction="#excluirUnidade" text="Editar Unidade" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Relatórios">

@@ -20,6 +20,7 @@ import model.Unidade;
 import negocio.UnidadeNegocio;
 import org.controlsfx.control.Notifications;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -104,41 +105,45 @@ public class EditarUnidade implements Initializable{
             boolean validarCep;
             boolean validarCnpj;
             boolean validarTelefone;
-
+            boolean confirmarEdiçao;
             validar = validarCampos();
             UnidadeNegocio unidadeNegocio = new UnidadeNegocio();
             validarTelefone = unidadeNegocio.validarTelefone(unidadeM.getTelefone());
             validarCep = unidadeNegocio.validarCep(unidadeM.getCep());
             validarCnpj = unidadeNegocio.verificarCampo(unidadeM.getCnpj());
-
+            confirmarEdiçao = confirmar();
             if (validar) {
                 if (validarCep) {
                     if (validarCnpj) {
-                        if(validarTelefone) {
-                            unidadeDao.editar(unidadeM);
-                            exibeMensagem("Salvo com sucesso");
+                        if (validarTelefone) {
+                            if (confirmarEdiçao) {
 
-                            URL arquivoFXML;
-                            arquivoFXML = getClass().getResource("/view/PaginaPrincipal.fxml");
-                            Parent fxmlParent;
-                            try {
-                                fxmlParent = FXMLLoader.load(arquivoFXML);
-                                painelPrincipal.getChildren().clear();
-                                painelPrincipal.getChildren().add(fxmlParent);
-                            } catch (IOException e) {
-                                e.printStackTrace();
+                                unidadeDao.editar(unidadeM);
+                                exibeMensagem("Salvo com sucesso");
+
+
+                                URL arquivoFXML;
+                                arquivoFXML = getClass().getResource("/view/PaginaPrincipal.fxml");
+                                Parent fxmlParent;
+                                try {
+                                    fxmlParent = FXMLLoader.load(arquivoFXML);
+                                    painelPrincipal.getChildren().clear();
+                                    painelPrincipal.getChildren().add(fxmlParent);
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
                             }
-                        }
-                        }else{
+                        } else {
                             exibeMensagem("Por favor digite um telefone valido");
                         }
                     } else {
                         exibeMensagem("Por favor digite um CNPJ valido!");
                     }
-                }else{
+                } else {
                     exibeMensagem("Por favor digite um Cep valido!");
                 }
             }
+        }
 
         public void btnCancelar(){
 
@@ -250,7 +255,7 @@ public class EditarUnidade implements Initializable{
                     .title("Atensão")
                     .text(String.valueOf(msg))
                     .owner(main)
-                    .hideAfter(Duration.seconds(6))
+                    .hideAfter(Duration.seconds(2))
                     .darkStyle()
                     .position(Pos.TOP_RIGHT)
                     .showInformation();
@@ -292,6 +297,24 @@ public class EditarUnidade implements Initializable{
 
         unidadeM = (Unidade) tableUnidade.getSelectionModel().getSelectedItem();
         setarValor(unidadeM);
+    }
+
+    public boolean confirmar() {
+        boolean teste= false;
+
+        Object[] options = {"Sim", "Não"};
+
+        int opcao = JOptionPane.showOptionDialog(null, "Tem certeza que dezeja salvar a alteraçao feitas nessa unidade?",
+                "Confirmaçao", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
+        for (int i = -1; i<options.length;i++ ) {
+            if (opcao == 0) {
+                teste = true;
+            } else {
+                teste = false;
+            }
+        }
+
+        return teste;
     }
 }
 
