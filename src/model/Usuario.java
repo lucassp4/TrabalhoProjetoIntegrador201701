@@ -17,10 +17,6 @@ public class Usuario {
 	private String funcao;
 	protected UsuarioDAO dao = new UsuarioDAO();
 
-	public boolean Login(String email, String senha) {
-		return false;
-	}
-
 	public Usuario() {
 	}
 

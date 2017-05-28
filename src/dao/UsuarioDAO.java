@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import daoutil.ConnectionFactory;
 import model.Usuario;
@@ -116,4 +117,36 @@ public class UsuarioDAO {
 		}
 		return true;
 	}
+
+	public static ArrayList<Usuario> getAll() {
+		
+		ArrayList<Usuario> usuarios = new ArrayList();
+		
+		Connection conn = new ConnectionFactory().getConnection();
+		
+		String sql = "select * from usuario";
+		
+		try {
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			ResultSet rs = stmt.executeQuery();
+			
+			while (rs.next()){
+				Usuario usuario = new  Usuario();
+				
+				usuario.setId(rs.getInt("id"));
+				usuario.setNome(rs.getString("nome"));
+				usuario.setTelefone(rs.getString("telefone"));
+				usuario.setCelular(rs.getString("celular"));
+				usuario.setMatricula(rs.getString("matricula"));
+				usuario.setEmail(rs.getString("email"));
+				usuario.setFuncao(rs.getString("funcao"));
+			
+				usuarios.add(usuario);
+			}
+		}catch (SQLException e){
+			System.out.println();
+		}
+		return usuarios;
+	}
+
 }

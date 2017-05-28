@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import application.Main;
+import dao.UsuarioDAO;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,7 +23,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import model.Usuario;
-import negocio.UsuarioNegocio;
 
 public class CadControllerUsuario implements Initializable {
 
@@ -68,18 +68,15 @@ public class CadControllerUsuario implements Initializable {
 	@FXML
 	private Pane painelPrincipal;
 
-	List<Usuario> usuarios = new ArrayList();
 	ObservableList<Usuario> usuariosView = null;
-	UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
 
 	static Usuario usuario = new Usuario();
-
+	UsuarioDAO usuarioDAO = new UsuarioDAO();
+	
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
-		if(usuario != null){
-			
-		}
-		preenchercomboFuncao();
+		txtId.setVisible(false);
+		usuario = new Usuario();
 	}
 
 	public void preenchercomboFuncao() {
@@ -88,10 +85,6 @@ public class CadControllerUsuario implements Initializable {
 		comboFuncao.getItems().add("Audio visual");
 	}
 	
-	public List<Usuario> listarUsuarios(){
-		usuarios = usuarioNegocio.listarUsuario();
-		return usuarios;
-	}
 	
 	@FXML
 	public void btnSalvar() {
