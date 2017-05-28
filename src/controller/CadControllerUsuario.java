@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import javax.swing.JOptionPane;
+
 import application.Main;
 import dao.UsuarioDAO;
 import javafx.collections.ObservableList;
@@ -25,25 +27,6 @@ import javafx.scene.layout.Pane;
 import model.Usuario;
 
 public class CadControllerUsuario implements Initializable {
-
-	@FXML
-	private TableView<Usuario> tabelaUsuario;
-	@FXML
-	private TableColumn<Usuario, String> colunaNome;
-	@FXML
-	private TableColumn<Usuario, String> colunaTelefone;
-	@FXML
-	private TableColumn<Usuario, String> colunaEndereco;
-	@FXML
-	private TableColumn<Usuario, String> colunaMatricula;
-	@FXML
-	private TableColumn<Usuario, String> colunaCelular;
-	@FXML
-	private TableColumn<Usuario, String> colunaEmail;
-	@FXML
-	private TableColumn<Usuario, String> colunaFuncao;
-	@FXML
-	private TableColumn<Usuario, Integer> colunaId;
 
 	@FXML
 	private TextField txtId;
@@ -67,16 +50,20 @@ public class CadControllerUsuario implements Initializable {
 	private Button btnCancelar;
 	@FXML
 	private Pane painelPrincipal;
+	@FXML
+	private Label errorMessage;
+	@FXML
+	private Label salvoMessage;
 
 	ObservableList<Usuario> usuariosView = null;
 
 	static Usuario usuario = new Usuario();
 	UsuarioDAO usuarioDAO = new UsuarioDAO();
-	
+
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
-		txtId.setVisible(false);
 		usuario = new Usuario();
+		preenchercomboFuncao();
 	}
 
 	public void preenchercomboFuncao() {
@@ -84,19 +71,24 @@ public class CadControllerUsuario implements Initializable {
 		comboFuncao.getItems().add("Coordenador");
 		comboFuncao.getItems().add("Audio visual");
 	}
-	
-	
+
 	@FXML
 	public void btnSalvar() {
-		usuario.setNome(txtNome.getText());
-		usuario.setTelefone(txtTelefone.getText());
-		usuario.setCelular(txtCelular.getText());
-		usuario.setMatricula(txtMatricula.getText());
-		usuario.setEmail(txtEmail.getText());
-		usuario.setFuncao(comboFuncao.getPromptText());
-
+		if (validarCampos() == true) {
+			usuario.setNome(txtNome.getText());
+			usuario.setTelefone(txtTelefone.getText());
+			usuario.setCelular(txtCelular.getText());
+			usuario.setMatricula(txtMatricula.getText());
+			usuario.setEmail(txtEmail.getText());
+			usuario.setFuncao(comboFuncao.getSelectionModel().getSelectedItem().toString());
+			usuario.save();
+			salvoMessage.setText("Cadastro realizado com sucesso!");
+			errorMessage.setText("");
+			limpaCampos();
+		} else {
+			errorMessage.setText("Os campos com (*) devem ser preenchidos obrigatoriamente");
+		}
 	}
-		
 
 	public void btnCancelar() {
 		URL arquivoFXML;
@@ -110,27 +102,31 @@ public class CadControllerUsuario implements Initializable {
 			e.printStackTrace();
 		}
 	}
-	
-	
-	
-	public boolean validarCampos(){
-		
+
+	public boolean validarCampos() {
+
 		String nome = txtNome.getText();
 		String telefone = txtTelefone.getText();
 		String celular = txtCelular.getText();
 		String matricula = txtMatricula.getText();
 		String email = txtEmail.getText();
 		String funcao = comboFuncao.getValue();
-		
-		if(nome.equals("") || nome == null ||
-				telefone.equals("") || telefone == null ||
-				celular.equals("") || celular == null ||
-				matricula.equals("") || matricula == null ||
-				email.equals("") || email == null ||
-				funcao.equals("") || funcao == null){
+
+		if (nome.equals("") || nome == null || telefone.equals("") || telefone == null || celular.equals("")
+				|| celular == null || matricula.equals("") || matricula == null || email.equals("") || email == null
+				|| funcao.equals("") || funcao == null) {
 			return false;
-		}		
+		}
 		return true;
+	}
+
+	public void limpaCampos() {
+		txtNome.setText("");
+		txtTelefone.setText("");
+		txtCelular.setText("");
+		txtMatricula.setText("");
+		txtEmail.setText("");
+		comboFuncao.getSelectionModel().clearSelection();
 	}
 
 }

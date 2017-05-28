@@ -17,7 +17,7 @@ public class UsuarioDAO {
 	public boolean create(Usuario usuario) {
 		Connection conn = new ConnectionFactory().getConnection();
 
-		String sql = "insert into usuario " + "nome, telefone, celular, matricula, email, funcao "
+		String sql = "insert into usuario " + "(nome, telefone, celular, matricula, email, funcao) "
 				+ "values(?, ?, ?, ?, ?, ?);";
 
 		try {
@@ -50,7 +50,7 @@ public class UsuarioDAO {
 
 		Connection conn = new ConnectionFactory().getConnection();
 
-		String sql = "select * from usuario where nome = ?";
+		String sql = "select * from usuario where nome like %?%";
 
 		try {
 			PreparedStatement stmt = conn.prepareStatement(sql);
@@ -73,10 +73,17 @@ public class UsuarioDAO {
 		return usuario;
 	}
 
-	public boolean update(Usuario usuario) throws SQLException {
+	public boolean update(Usuario usuario){
 		Connection conn = new ConnectionFactory().getConnection();
 
-		String sql = "update usuario set " + "where nome = ?;";
+		String sql = "update usuario set "
+				+ "nome = ?,"
+				+ "telefone = ?,"
+				+ "celular = ?"
+				+ "matricula = ?,"
+				+ "email = ?,"
+				+ "funcao = ?"
+				+ "where id = ?;";
 
 		try {
 			PreparedStatement stmt = conn.prepareStatement(sql);
@@ -86,6 +93,7 @@ public class UsuarioDAO {
 			stmt.setString(4, usuario.getMatricula());
 			stmt.setString(5, usuario.getEmail());
 			stmt.setString(6, usuario.getFuncao());
+			stmt.setInt(7, usuario.getId());
 
 			stmt.execute();
 			stmt.close();
@@ -93,7 +101,12 @@ public class UsuarioDAO {
 			System.out.println(e.getMessage());
 			return false;
 		} finally {
-			conn.close();
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		return true;
 	}
@@ -101,11 +114,11 @@ public class UsuarioDAO {
 	public boolean delete(Usuario usuario) throws SQLException {
 		Connection conn = new ConnectionFactory().getConnection();
 
-		String sql = "delete from usuario where nome = ?";
+		String sql = "delete from usuario where id = ?";
 
 		try {
 			PreparedStatement stmt = conn.prepareStatement(sql);
-			stmt.setString(1, usuario.getNome());
+			stmt.setInt(1, usuario.getId());
 
 			stmt.execute();
 			stmt.close();

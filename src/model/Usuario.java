@@ -1,5 +1,7 @@
 package model;
 
+import java.sql.SQLException;
+
 import dao.UsuarioDAO;
 
 /**
@@ -20,7 +22,8 @@ public class Usuario {
 	public Usuario() {
 	}
 
-	public Usuario(String nome, String telefone, String celular, String matricula, String senha, String email) {
+	public Usuario(int id, String nome, String telefone, String celular, String matricula, String senha, String email) {
+		this.id = id;
 		this.nome = nome;
 		this.telefone = telefone;
 		this.celular = celular;
@@ -93,6 +96,12 @@ public class Usuario {
 		this.funcao = funcao;
 	}
 
-
+	public void save(){
+		if(this.id == 0){
+			dao.create(this);
+		}else{
+			dao.update(this);
+		}
+	}
 
 }

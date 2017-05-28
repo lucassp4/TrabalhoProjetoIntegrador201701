@@ -89,7 +89,7 @@ public class CadastroSala implements Initializable{
 			exibeMensagem("Salvo com sucesso");
 
 			URL arquivoFXML;
-			arquivoFXML = getClass().getResource("/View/PaginaPrincipal.fxml");
+			arquivoFXML = getClass().getResource("/view/PaginaPrincipal.fxml");
 			Parent fxmlParent;
 			try {
 				fxmlParent = FXMLLoader.load(arquivoFXML);

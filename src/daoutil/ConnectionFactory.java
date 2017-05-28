@@ -15,8 +15,7 @@ public class ConnectionFactory {
             try {
                // Class.forName("com.mysql.jdbc.Driver");
             	DriverManager.deregisterDriver(new com.mysql.jdbc.Driver());
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projetoIntegrador", "root", "root");
-                return con;
+                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/projetoIntegrador", "root", "");
             } catch (Exception e) {
                 System.out.println("Erro na conexão: " + e.getMessage());
             }
