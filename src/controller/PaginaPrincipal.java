@@ -356,7 +356,6 @@ public void cadUsuario(){
 		Parent fxmlParent;
 		try {
 			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-			painelPrincipal.getChildren().clear();
 			painelPrincipal.getChildren().add(fxmlParent);
 		} catch (IOException e) {
 			e.printStackTrace();

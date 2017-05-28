@@ -28,7 +28,7 @@ public class UnidadeDao {
             "(nome,endereco,telefone,cnpj,razaoSocial,fantacia,cidade,cep,estado)" +
             "VALUES(?,?,?,?,?,?,?,?,?)";
 
-    String sqlEditar = "UPDATE cadastrounidade SET nome = ?, endereco = ?," +
+    String sqlEditar = "update cadastrounidade set nome = ?, endereco = ?," +
             "telefone = ?, cnpj = ?, razaoSocial = ?, fantacia = ?, cidade = ?," +
             "cep = ? , estado = ?  WHERE id = ?;";
 
@@ -41,6 +41,7 @@ public class UnidadeDao {
         try{
             con.setAutoCommit(false);
             stmt = con.prepareStatement(sqlSalvar);
+
             stmt.setString(1, unidade.getNome());
             stmt.setString(2, unidade.getEndereco());
             stmt.setString(3, unidade.getTelefone());

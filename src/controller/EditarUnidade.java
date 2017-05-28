@@ -60,6 +60,9 @@ public class EditarUnidade implements Initializable{
         @FXML
         private TextField txtTelefone;
 
+
+    @FXML
+    private TextField txtId;
         @FXML
         private Button btnEditar;
 
@@ -112,14 +115,11 @@ public class EditarUnidade implements Initializable{
                 if (validarCep) {
                     if (validarCnpj) {
                         if(validarTelefone) {
-
-
                             unidadeDao.editar(unidadeM);
-
                             exibeMensagem("Salvo com sucesso");
 
                             URL arquivoFXML;
-                            arquivoFXML = getClass().getResource("/View/PaginaPrincipal.fxml");
+                            arquivoFXML = getClass().getResource("/view/PaginaPrincipal.fxml");
                             Parent fxmlParent;
                             try {
                                 fxmlParent = FXMLLoader.load(arquivoFXML);
@@ -128,6 +128,7 @@ public class EditarUnidade implements Initializable{
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
+                        }
                         }else{
                             exibeMensagem("Por favor digite um telefone valido");
                         }
@@ -138,7 +139,7 @@ public class EditarUnidade implements Initializable{
                     exibeMensagem("Por favor digite um Cep valido!");
                 }
             }
-        }
+
         public void btnCancelar(){
 
             URL arquivoFXML;
@@ -154,7 +155,7 @@ public class EditarUnidade implements Initializable{
         }
 
         public void pegarValores(){
-
+            unidadeM.setId(Integer.parseInt(txtId.getText()));
             unidadeM.setNome(txtNomeUnidade.getText());
             unidadeM.setEndereco(txtEndereco.getText());
             unidadeM.setCnpj(txtCnpj.getText());
@@ -275,6 +276,7 @@ public class EditarUnidade implements Initializable{
         }
 
         public void setarValor(Unidade unidadeM){
+            txtId.setText(String.valueOf(unidadeM.getId()) );
             txtCep.setText(unidadeM.getCep());
             txtCidade.setText(unidadeM.getCidade());
             txtCnpj.setText(unidadeM.getCnpj());
@@ -288,9 +290,8 @@ public class EditarUnidade implements Initializable{
 
     public void mouseClieked() {
 
-       Unidade unidade = new Unidade();
-        unidade = (Unidade) tableUnidade.getSelectionModel().getSelectedItem();
-        setarValor(unidade);
+        unidadeM = (Unidade) tableUnidade.getSelectionModel().getSelectedItem();
+        setarValor(unidadeM);
     }
 }
 
