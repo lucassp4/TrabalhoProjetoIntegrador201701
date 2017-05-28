@@ -45,6 +45,7 @@
             </Menu>
             <Menu mnemonicParsing="false" text="Editar">
                <items>
+                  <MenuItem mnemonicParsing="false" onAction="#editarUnidade" text="Editar Unidade" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Excluir">

@@ -24,8 +24,15 @@ public class UnidadeDao {
         ConnectionFactory cf = new ConnectionFactory();
         con = cf.getConnection();
     }
-    String sqlSalvar =  "INSERT INTO projetoIntegrador.cadastroUnidade" + "(nome,endereco,telefone,cnpj,razaoSocial,blocos)" +
-            "VALUES(?,?,?,?,?,?)";
+    String sqlSalvar =  "INSERT INTO projetoIntegrador.cadastrounidade" +
+            "(nome,endereco,telefone,cnpj,razaoSocial,fantacia,cidade,cep,estado)" +
+            "VALUES(?,?,?,?,?,?,?,?,?)";
+
+    String sqlEditar = "UPDATE cadastrounidade SET nome = ?, endereco = ?," +
+            "telefone = ?, cnpj = ?, razaoSocial = ?, fantacia = ?, cidade = ?," +
+            "cep = ? , estado = ?  WHERE id = ?;";
+
+    String sqlDeletar = "DELETE from clientes where id = ?";
 
     public String salvar(Unidade unidade) throws SQLException{
 
@@ -39,6 +46,12 @@ public class UnidadeDao {
             stmt.setString(3, unidade.getTelefone());
             stmt.setString(4,unidade.getCnpj());
             stmt.setString(5, unidade.getRazaoSocial());
+            stmt.setString(6,unidade.getFantacia());
+            stmt.setString(7,unidade.getCidade());
+            stmt.setString(8,unidade.getCep());
+            stmt.setString(9,unidade.getEstado());
+
+
             stmt.executeUpdate();
             con.commit();
             salvo = "salvo";
@@ -63,31 +76,66 @@ public class UnidadeDao {
         return salvo;
     }
 
-    public List<CadastroBloco> listarClientes() {
-        List<CadastroBloco> list = new ArrayList<CadastroBloco>();
+    public List<Unidade> listarClientes() {
+        List<Unidade> list = new ArrayList<Unidade>();
         ResultSet res = null;
 
         try {
             stm = con.createStatement();
-            res = stm.executeQuery("SELECT * FROM cadastroAuditorio");
+            res = stm.executeQuery("SELECT * FROM cadastrounidade");
 
             while (res.next()){
 
-                CadastroBloco bloco = new CadastroBloco();
+                Unidade unidade = new Unidade();
 
-                bloco.setId(res.getInt("id"));
-                bloco.setNome(res.getString("nome"));
-                bloco.setDescricao(res.getString("descricao"));
-                bloco.setUnidade(res.getString("unidade"));
-                bloco.setNumeroSalas(res.getString("sala"));
-
-                list.add(bloco);
+                unidade.setId(res.getInt("id"));
+                unidade.setNome(res.getString("nome"));
+                unidade.setTelefone(res.getString("telefone"));
+                unidade.setEndereco(res.getString("endereco"));
+                unidade.setCep(res.getString("cep"));
+                unidade.setFantacia(res.getString("fantacia"));
+                unidade.setEstado(res.getString("estado"));
+                unidade.setCidade(res.getString("cidade"));
+                unidade.setCnpj(res.getString("cnpj"));
+                unidade.setRazaoSocial(res.getString("razaoSocial"));
+                list.add(unidade);
             }
         }
         catch (SQLException e){
             System.out.println("Erro na consulta1:" + e.getMessage());
         }
         return list;
+    }
+
+    public String editar(Unidade unidade) throws SQLException{
+
+        String salvo = "falhar";
+
+        try {
+            con.setAutoCommit(false);
+            stmt = con.prepareStatement(sqlEditar);
+
+            stmt.setString(1, unidade.getNome());
+            stmt.setString(2, unidade.getEndereco());
+            stmt.setString(3, unidade.getTelefone());
+            stmt.setString(4,unidade.getCnpj());
+            stmt.setString(5, unidade.getRazaoSocial());
+            stmt.setString(6,unidade.getFantacia());
+            stmt.setString(7,unidade.getCidade());
+            stmt.setString(8,unidade.getCep());
+            stmt.setString(9,unidade.getEstado());
+            stmt.setInt(10,unidade.getId());
+
+            stmt.executeUpdate();
+            con.commit();
+            salvo = "salvo";
+
+
+        }catch (Exception e){
+            System.out.println("erro ao atualizar " + e.getMessage());
+            salvo = e.getMessage();
+        }
+        return salvo;
     }
 }
 

@@ -74,30 +74,44 @@ public class CadastroUnidade implements Initializable {
 		UnidadeDao unidadeDao = new UnidadeDao();
 		pegarValores();
 		boolean validar;
-		boolean validarString;
+		boolean validarCep;
+		boolean validarCnpj;
+		boolean validarTelefone;
 
 		validar = validarCampos();
 		UnidadeNegocio unidadeNegocio = new UnidadeNegocio();
-		validarString = unidadeNegocio.verificarCampo(unidadeM.getCep());
-
+		validarTelefone = unidadeNegocio.validarTelefone(unidadeM.getTelefone());
+		validarCep = unidadeNegocio.validarCep(unidadeM.getCep());
+		validarCnpj = unidadeNegocio.verificarCampo(unidadeM.getCnpj());
 
 		if (validar) {
-			if (validarString) {
-				unidadeDao.salvar(unidadeM);
-				exibeMensagem("Salvo com sucesso");
+			if (validarCep) {
+				if (validarCnpj) {
+					if(validarTelefone) {
 
-				URL arquivoFXML;
-				arquivoFXML = getClass().getResource("/View/PaginaPrincipal.fxml");
-				Parent fxmlParent;
-				try {
-					fxmlParent = FXMLLoader.load(arquivoFXML);
-					painelPrincipal.getChildren().clear();
-					painelPrincipal.getChildren().add(fxmlParent);
-				} catch (IOException e) {
-					e.printStackTrace();
+
+						unidadeDao.salvar(unidadeM);
+
+						exibeMensagem("Salvo com sucesso");
+
+						URL arquivoFXML;
+						arquivoFXML = getClass().getResource("/View/PaginaPrincipal.fxml");
+						Parent fxmlParent;
+						try {
+							fxmlParent = FXMLLoader.load(arquivoFXML);
+							painelPrincipal.getChildren().clear();
+							painelPrincipal.getChildren().add(fxmlParent);
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+					}else{
+						exibeMensagem("Por favor digite um telefone valido");
+					}
+				} else {
+					exibeMensagem("Por favor digite um CNPJ valido!");
 				}
-			} else {
-				exibeMensagem("Por favor digite o cep sem letras!");
+			}else{
+				exibeMensagem("Por favor digite um Cep valido!");
 			}
 		}
 	}

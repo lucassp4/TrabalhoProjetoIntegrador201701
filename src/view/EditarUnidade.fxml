@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="519.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditarUnidade">
+   <children>
+      <Label layoutX="48.0" layoutY="250.0" text="* Campos Obrigatórios" textFill="RED">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="375.0" layoutY="188.0" text="Cidade*" />
+      <TextField fx:id="txtCidade" layoutX="419.0" layoutY="184.0" prefHeight="25.0" prefWidth="158.0" promptText="Digite a cidade" />
+      <TextField fx:id="txtEstado" layoutX="419.0" layoutY="113.0" prefHeight="25.0" prefWidth="158.0" promptText="Digite o UF da unidade" />
+      <Label layoutX="374.0" layoutY="117.0" text="Estado*" />
+      <TextField fx:id="txtCep" layoutX="419.0" layoutY="221.0" prefHeight="25.0" prefWidth="158.0" promptText="Digite o cep da unidade" />
+      <Label layoutX="383.0" layoutY="225.0" text="Cep*" />
+      <TextField fx:id="txtFantacia" layoutX="123.0" layoutY="148.0" prefHeight="25.0" prefWidth="454.0" promptText="Digite a Razão Social" />
+      <Label layoutX="32.0" layoutY="152.0" text="Nome fantacia*" />
+      <Button fx:id="btnCancelar" layoutX="394.0" layoutY="489.0" mnemonicParsing="false" onAction="#btnCancelar" text="Cancelar" />
+      <Button fx:id="btnEditar" layoutX="114.0" layoutY="490.0" mnemonicParsing="false" onAction="#btnEditar" text="Editar" />
+      <TextField fx:id="txtTelefone" layoutX="123.0" layoutY="221.0" prefHeight="25.0" prefWidth="243.0" promptText="Digite o Telefone" />
+      <TextField fx:id="txtCnpj" layoutX="419.0" layoutY="78.0" prefHeight="25.0" prefWidth="158.0" promptText="Digite o CNPJ" />
+      <TextField fx:id="txtRazao" layoutX="123.0" layoutY="113.0" prefHeight="25.0" prefWidth="243.0" promptText="Digite a Razão Social" />
+      <TextField fx:id="txtEndereco" layoutX="122.0" layoutY="184.0" prefHeight="25.0" prefWidth="243.0" promptText="Digite o Endereço" />
+      <TextField fx:id="txtNomeUnidade" layoutX="123.0" layoutY="78.0" prefHeight="25.0" prefWidth="243.0" promptText="Digite o Nome da Unidade" />
+      <Label layoutX="383.0" layoutY="82.0" text="CNPJ*" />
+      <Label layoutX="38.0" layoutY="117.0" text="Razão Social*" />
+      <Label layoutX="47.0" layoutY="225.0" text="Telefone*" />
+      <Label layoutX="60.0" layoutY="188.0" text="End.*" />
+      <Label layoutX="23.0" layoutY="82.0" text="Nome da Unidade*" />
+      <Label layoutX="217.0" layoutY="24.0" text="Editar Unidade" />
+      <TableView fx:id="tableUnidade" layoutX="34.0" layoutY="299.0" onMouseClicked="#mouseClieked" prefHeight="178.0" prefWidth="545.0">
+        <columns>
+            <TableColumn fx:id="colunaId" prefWidth="57.0" text="Id" />
+          <TableColumn fx:id="colunaNome" prefWidth="216.0" text="Nome" />
+          <TableColumn fx:id="colunaEndereco" minWidth="0.0" prefWidth="144.0" text="Endereço" />
+            <TableColumn fx:id="colunaTelefone" prefWidth="127.0" text="Telefone" />
+        </columns>
+      </TableView>
+      <Label layoutX="248.0" layoutY="260.0" text="Unidades">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

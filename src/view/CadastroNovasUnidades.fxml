@@ -14,11 +14,11 @@
             <Font size="27.0" />
          </font>
       </Label>
-      <Label layoutX="14.0" layoutY="127.0" text="Nome da Unidade" />
-      <Label layoutX="51.0" layoutY="233.0" text="End." />
-      <Label layoutX="38.0" layoutY="270.0" text="Telefone" />
-      <Label layoutX="29.0" layoutY="162.0" text="Razão Social" />
-      <Label layoutX="374.0" layoutY="127.0" text="CNPJ" />
+      <Label layoutX="14.0" layoutY="127.0" text="Nome da Unidade*" />
+      <Label layoutX="51.0" layoutY="233.0" text="End.*" />
+      <Label layoutX="38.0" layoutY="270.0" text="Telefone*" />
+      <Label layoutX="29.0" layoutY="162.0" text="Razão Social*" />
+      <Label layoutX="374.0" layoutY="127.0" text="CNPJ*" />
       <TextField fx:id="txtNomeUnidade" layoutX="114.0" layoutY="123.0" prefHeight="25.0" prefWidth="243.0" promptText="Digite o Nome da Unidade" />
       <TextField fx:id="txtEndereco" layoutX="113.0" layoutY="229.0" prefHeight="25.0" prefWidth="243.0" promptText="Digite o Endereço" />
       <TextField fx:id="txtRazao" layoutX="114.0" layoutY="158.0" prefHeight="25.0" prefWidth="243.0" promptText="Digite a Razão Social" />
@@ -26,13 +26,18 @@
       <TextField fx:id="txtTelefone" layoutX="114.0" layoutY="266.0" prefHeight="25.0" prefWidth="243.0" promptText="Digite o Telefone" />
       <Button fx:id="btnSalvar" layoutX="128.0" layoutY="387.0" mnemonicParsing="false" onAction="#btnSalvar" text="Salvar" />
       <Button fx:id="btnCancelar" layoutX="410.0" layoutY="387.0" mnemonicParsing="false" onAction="#btnCancelar" text="Cancelar" />
-      <Label layoutX="23.0" layoutY="197.0" text="Nome fantacia" />
+      <Label layoutX="23.0" layoutY="197.0" text="Nome fantacia*" />
       <TextField fx:id="txtFantacia" layoutX="114.0" layoutY="193.0" prefHeight="25.0" prefWidth="454.0" promptText="Digite a Razão Social" />
-      <Label layoutX="374.0" layoutY="270.0" text="Cep" />
+      <Label layoutX="374.0" layoutY="270.0" text="Cep*" />
       <TextField fx:id="txtCep" layoutX="410.0" layoutY="266.0" prefHeight="25.0" prefWidth="158.0" promptText="Digite o cep da unidade" />
-      <Label layoutX="365.0" layoutY="162.0" text="Estado" />
+      <Label layoutX="365.0" layoutY="162.0" text="Estado*" />
       <TextField fx:id="txtEstado" layoutX="410.0" layoutY="158.0" prefHeight="25.0" prefWidth="158.0" promptText="Digite o UF da unidade" />
       <TextField fx:id="txtCidade" layoutX="410.0" layoutY="229.0" prefHeight="25.0" prefWidth="158.0" promptText="Digite a cidade" />
-      <Label layoutX="366.0" layoutY="233.0" text="Cidade" />
+      <Label layoutX="366.0" layoutY="233.0" text="Cidade*" />
+      <Label layoutX="39.0" layoutY="318.0" text="* Campos Obrigatórios" textFill="RED">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

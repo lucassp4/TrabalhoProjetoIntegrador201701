@@ -347,6 +347,22 @@ public void cadUsuario(){
 
 	public void pesquisarUnidade(ActionEvent actionEvent) {
 	}
+
+	public void editarUnidade(ActionEvent actionEvent) {
+
+
+		URL arquivoFXML;
+		arquivoFXML = getClass().getResource("/View/EditarUnidade.fxml");
+		Parent fxmlParent;
+		try {
+			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
+			painelPrincipal.getChildren().clear();
+			painelPrincipal.getChildren().add(fxmlParent);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
 }
 					
 			
