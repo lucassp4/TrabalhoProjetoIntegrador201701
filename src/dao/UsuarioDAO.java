@@ -50,15 +50,16 @@ public class UsuarioDAO {
 
 		Connection conn = new ConnectionFactory().getConnection();
 
-		String sql = "select * from usuario where nome like %?%";
+		String sql = "select * from usuario where nome like ?;";
 
 		try {
 			PreparedStatement stmt = conn.prepareStatement(sql);
-			stmt.setString(1, nome);
-
+			stmt.setString(1, "%"+nome+"%");
 			ResultSet rs = stmt.executeQuery();
-
-			rs.getString("nome");
+			
+			while (rs.next()) {
+				usuario = new Usuario(rs.getInt("id"),rs.getString("nome"),rs.getString("telefone"),rs.getString("celular"),rs.getString("matricula"),rs.getString("email"),rs.getString("funcao"));
+			}
 			rs.close();
 			stmt.close();
 		} catch (SQLException e) {
@@ -73,17 +74,17 @@ public class UsuarioDAO {
 		return usuario;
 	}
 
-	public boolean update(Usuario usuario){
+	public static boolean update(Usuario usuario){
 		Connection conn = new ConnectionFactory().getConnection();
 
 		String sql = "update usuario set "
 				+ "nome = ?,"
 				+ "telefone = ?,"
-				+ "celular = ?"
+				+ "celular = ?,"
 				+ "matricula = ?,"
 				+ "email = ?,"
 				+ "funcao = ?"
-				+ "where id = ?;";
+				+ " where id = ?;";
 
 		try {
 			PreparedStatement stmt = conn.prepareStatement(sql);
@@ -111,7 +112,7 @@ public class UsuarioDAO {
 		return true;
 	}
 
-	public boolean delete(Usuario usuario) throws SQLException {
+	public static boolean delete(Usuario usuario) {
 		Connection conn = new ConnectionFactory().getConnection();
 
 		String sql = "delete from usuario where id = ?";
@@ -126,7 +127,12 @@ public class UsuarioDAO {
 			System.out.println(e.getMessage());
 			return false;
 		} finally {
-			conn.close();
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		return true;
 	}

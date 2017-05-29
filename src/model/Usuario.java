@@ -22,14 +22,14 @@ public class Usuario {
 	public Usuario() {
 	}
 
-	public Usuario(int id, String nome, String telefone, String celular, String matricula, String senha, String email) {
+	public Usuario(int id, String nome, String telefone, String celular, String matricula, String email, String funcao) {
 		this.id = id;
 		this.nome = nome;
 		this.telefone = telefone;
 		this.celular = celular;
 		this.matricula = matricula;
-		this.senha = senha;
 		this.email = email;
+		this.funcao = funcao;
 	}
 
 	public int getId() {
