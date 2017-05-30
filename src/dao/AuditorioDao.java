@@ -12,13 +12,13 @@ import daoutil.ConnectionFactory;
 /**
  * Created by Ritchely on 04/05/2017.
  */
-public class AuditorioDao {
+public class AuditorioDAO {
     ConnectionFactory connection = null;
     private Connection con;
     private Statement stm;
     private PreparedStatement stmt;
 
-    public AuditorioDao() throws SQLException {
+    public AuditorioDAO() throws SQLException {
         ConnectionFactory cf = new ConnectionFactory();
         con = cf.getConnection();
     }

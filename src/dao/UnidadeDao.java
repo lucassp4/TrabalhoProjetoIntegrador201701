@@ -12,7 +12,7 @@ import daoutil.ConnectionFactory;
 /**
  * Created by Ritchely on 04/05/2017.
  */
-public class UnidadeDao {
+public class UnidadeDAO {
 
 
     ConnectionFactory connection = null;
@@ -20,7 +20,7 @@ public class UnidadeDao {
     private Statement stm;
     private PreparedStatement stmt;
 
-    public UnidadeDao() throws SQLException {
+    public UnidadeDAO() throws SQLException {
         ConnectionFactory cf = new ConnectionFactory();
         con = cf.getConnection();
     }
