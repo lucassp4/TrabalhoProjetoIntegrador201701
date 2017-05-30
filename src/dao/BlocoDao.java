@@ -11,14 +11,14 @@ import daoutil.ConnectionFactory;
 /**
  * Created by Ritchely on 03/05/2017.
  */
-public class BlocoDao {
+public class BlocoDAO {
 
     ConnectionFactory connection = null;
     private Connection con;
     private Statement stm;
     private PreparedStatement stmt;
 
-    public BlocoDao() throws SQLException {
+    public BlocoDAO() throws SQLException {
         ConnectionFactory cf = new ConnectionFactory();
         con = cf.getConnection();
     }

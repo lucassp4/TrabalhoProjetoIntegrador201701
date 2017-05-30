@@ -1,12 +1,14 @@
 package dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-
 import daoutil.ConnectionFactory;
+
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+
+
 import model.Usuario;
 
 /**
@@ -14,152 +16,99 @@ import model.Usuario;
  */
 public class UsuarioDAO {
 
-	public boolean create(Usuario usuario) {
-		Connection conn = new ConnectionFactory().getConnection();
+	ConnectionFactory connection = null;
+	private Connection con;
+	private Statement stm;
+	private PreparedStatement stmt;
 
-		String sql = "insert into usuario " + "(nome, telefone, celular, matricula, email, funcao) "
-				+ "values(?, ?, ?, ?, ?, ?);";
+	// CONSTRUTOR DA CONEXÃO COM O BANCO DE DADOS.
+	public UsuarioDAO() {
+		ConnectionFactory cf = new ConnectionFactory();
+		con = cf.getConnection();
+	}
+
+
+	//STRING DE SQL
+	String sqlSalvar = "INSERT INTO usuarios" +
+			"(nome,login, senha,ativo,tipo)" +
+			"VALUES(?,?,?,?,?)";
+
+	String sqlBucarPorLogin = " select * from usuarios where login = ?";
+
+
+	// METODO PARA SALAR UM NOVO USUÁRIO NO BANCO DE DADOS
+	public String salvar(Usuario usuario) throws SQLException {
+
+
+		String salvo = "falha";
+
 
 		try {
-			PreparedStatement stmt = conn.prepareStatement(sql);
+			con.setAutoCommit(false);
+			stmt = con.prepareStatement(sqlSalvar);
 			stmt.setString(1, usuario.getNome());
-			stmt.setString(2, usuario.getTelefone());
-			stmt.setString(3, usuario.getCelular());
-			stmt.setString(4, usuario.getMatricula());
-			stmt.setString(5, usuario.getEmail());
-			stmt.setString(6, usuario.getFuncao());
+			stmt.setString(2, usuario.getLogin());
+			stmt.setString(3, usuario.getSenha());
+			stmt.setBoolean(4, usuario.getAtivo());
+			stmt.setString(5, usuario.getTipo());
 
-			stmt.execute();
-			stmt.close();
+
+			stmt.executeUpdate();
+
+			//Grava as informações se caso de problema os dados não são gravados
+			con.commit();
+			salvo = "salvo";
+
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-			return false;
-		} finally {
-			try {
-				conn.close();
-			} catch (SQLException ex) {
-				System.out.println(ex.getMessage());
+			if (con != null) {
+				try {
+					System.err.print("Rollback efetuado na transação");
+					con.rollback();
+				} catch (SQLException e2) {
+					System.err.print("Erro na transação!" + e2);
+					salvo = "\"Erro na transação!\"+e2";
+				}
 			}
+		} finally {
+			if (stmt != null) {
+				stmt.close();
+			}
+			con.setAutoCommit(true);
 		}
-		return true;
+
+		return salvo;
 	}
 
-	public static Usuario getByName(String nome) {
+	// METODO PARA LOCALIZAR UM LOGIN E VALIDAR ENTRADA NO BANCO DE DADOS
+	public Usuario buscarPorLogin(String login) {
 
-		Usuario usuario = null;
-
-		Connection conn = new ConnectionFactory().getConnection();
-
-		String sql = "select * from usuario where nome like %?%";
+		List<Usuario> list = new ArrayList<Usuario>();
+		ResultSet res = null;
 
 		try {
-			PreparedStatement stmt = conn.prepareStatement(sql);
-			stmt.setString(1, nome);
 
-			ResultSet rs = stmt.executeQuery();
+			stmt = con.prepareStatement(sqlBucarPorLogin);
+			stmt.setString(1, login);
+			res = stmt.executeQuery();
 
-			rs.getString("nome");
-			rs.close();
-			stmt.close();
+			while (res.next()) {
+				Usuario usuario = new Usuario();
+				usuario.setId(res.getInt("id"));
+				usuario.setNome(res.getString("nome"));
+				usuario.setLogin(res.getString("login"));
+				usuario.setSenha(res.getString("senha"));
+				usuario.setAtivo(res.getBoolean("ativo"));
+				usuario.setTipo(res.getString("tipo"));
+
+				list.add(usuario);
+			}
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		} finally {
-			try {
-				conn.close();
-			} catch (SQLException ex) {
-				System.out.println(ex.getMessage());
-			}
+			System.out.println("Erro na consulta1:" + e.getMessage());
 		}
-		return usuario;
-	}
-
-	public boolean update(Usuario usuario){
-		Connection conn = new ConnectionFactory().getConnection();
-
-		String sql = "update usuario set "
-				+ "nome = ?,"
-				+ "telefone = ?,"
-				+ "celular = ?"
-				+ "matricula = ?,"
-				+ "email = ?,"
-				+ "funcao = ?"
-				+ "where id = ?;";
-
-		try {
-			PreparedStatement stmt = conn.prepareStatement(sql);
-			stmt.setString(1, usuario.getNome());
-			stmt.setString(2, usuario.getTelefone());
-			stmt.setString(3, usuario.getCelular());
-			stmt.setString(4, usuario.getMatricula());
-			stmt.setString(5, usuario.getEmail());
-			stmt.setString(6, usuario.getFuncao());
-			stmt.setInt(7, usuario.getId());
-
-			stmt.execute();
-			stmt.close();
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-			return false;
-		} finally {
-			try {
-				conn.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		if(!list.isEmpty()) {
+			return list.get(0);
 		}
-		return true;
-	}
-
-	public boolean delete(Usuario usuario) throws SQLException {
-		Connection conn = new ConnectionFactory().getConnection();
-
-		String sql = "delete from usuario where id = ?";
-
-		try {
-			PreparedStatement stmt = conn.prepareStatement(sql);
-			stmt.setInt(1, usuario.getId());
-
-			stmt.execute();
-			stmt.close();
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-			return false;
-		} finally {
-			conn.close();
-		}
-		return true;
-	}
-
-	public static ArrayList<Usuario> getAll() {
-		
-		ArrayList<Usuario> usuarios = new ArrayList();
-		
-		Connection conn = new ConnectionFactory().getConnection();
-		
-		String sql = "select * from usuario";
-		
-		try {
-			PreparedStatement stmt = conn.prepareStatement(sql);
-			ResultSet rs = stmt.executeQuery();
-			
-			while (rs.next()){
-				Usuario usuario = new  Usuario();
-				
-				usuario.setId(rs.getInt("id"));
-				usuario.setNome(rs.getString("nome"));
-				usuario.setTelefone(rs.getString("telefone"));
-				usuario.setCelular(rs.getString("celular"));
-				usuario.setMatricula(rs.getString("matricula"));
-				usuario.setEmail(rs.getString("email"));
-				usuario.setFuncao(rs.getString("funcao"));
-			
-				usuarios.add(usuario);
-			}
-		}catch (SQLException e){
-			System.out.println();
-		}
-		return usuarios;
+		else return new Usuario();
 	}
 
 }

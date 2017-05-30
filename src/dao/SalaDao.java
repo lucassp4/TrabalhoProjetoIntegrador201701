@@ -10,13 +10,13 @@ import java.util.List;
 /**
  * Created by Ritchely on 23/05/2017.
  */
-public class SalaDao {
+public class SalaDAO {
     ConnectionFactory connection = null;
     private Connection con;
     private Statement stm;
     private PreparedStatement stmt;
 
-    public SalaDao() {
+    public SalaDAO() {
         ConnectionFactory cf = new ConnectionFactory();
         con = cf.getConnection();
     }

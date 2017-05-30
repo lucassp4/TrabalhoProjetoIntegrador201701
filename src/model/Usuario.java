@@ -1,7 +1,5 @@
 package model;
 
-import java.sql.SQLException;
-
 import dao.UsuarioDAO;
 
 /**
@@ -11,26 +9,10 @@ public class Usuario {
 
 	private int id;
 	private String nome;
-	private String telefone;
-	private String celular;
-	private String matricula;
+	private  String login;
 	private String senha;
-	private String email;
-	private String funcao;
-	protected UsuarioDAO dao = new UsuarioDAO();
-
-	public Usuario() {
-	}
-
-	public Usuario(int id, String nome, String telefone, String celular, String matricula, String senha, String email) {
-		this.id = id;
-		this.nome = nome;
-		this.telefone = telefone;
-		this.celular = celular;
-		this.matricula = matricula;
-		this.senha = senha;
-		this.email = email;
-	}
+	private String tipo;
+	private Boolean ativo;
 
 	public int getId() {
 		return id;
@@ -48,28 +30,12 @@ public class Usuario {
 		this.nome = nome;
 	}
 
-	public String getTelefone() {
-		return telefone;
+	public String getLogin() {
+		return login;
 	}
 
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
-
-	public String getCelular() {
-		return celular;
-	}
-
-	public void setCelular(String celular) {
-		this.celular = celular;
-	}
-
-	public String getMatricula() {
-		return matricula;
-	}
-
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
+	public void setLogin(String login) {
+		this.login = login;
 	}
 
 	public String getSenha() {
@@ -80,28 +46,20 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getTipo() {
+		return tipo;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
-	public String getFuncao() {
-		return funcao;
+	public Boolean getAtivo() {
+		return ativo;
 	}
 
-	public void setFuncao(String funcao) {
-		this.funcao = funcao;
-	}
-
-	public void save(){
-		if(this.id == 0){
-			dao.create(this);
-		}else{
-			dao.update(this);
-		}
+	public void setAtivo(Boolean ativo) {
+		this.ativo = ativo;
 	}
 
 }
