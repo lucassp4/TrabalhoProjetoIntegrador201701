@@ -52,7 +52,7 @@ public class EquipamentoNegocio {
 	
 	public boolean validaData(CadEquipamento equipamento) {
 		Boolean anoValido = false;
-		if (equipamento.getData().getYear() > 2005) {
+		if (equipamento.getDataCadastro().getYear() > 2005) {
 			anoValido = true;
 		}
 		return anoValido;

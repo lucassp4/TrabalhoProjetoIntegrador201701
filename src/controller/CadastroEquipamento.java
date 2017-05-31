@@ -58,9 +58,6 @@ public class CadastroEquipamento implements Initializable {
 	private Pane painelPrincipal;
 	
 	@FXML
-	private TextArea txtareaDescricao;
-	
-	@FXML
 	private Button btnSalvar;
 	
 	@FXML
@@ -88,7 +85,7 @@ public class CadastroEquipamento implements Initializable {
 	 private TableColumn<CadEquipamento, String> colunaMarca;
 	 
 	 @FXML
-	 private TableColumn<CadEquipamento, String>  colunaData;
+	 private TableColumn<CadEquipamento, String>  colunaDataCadastro;
 	 
 	 @FXML
 	 private TableColumn<CadEquipamento, String>  colunaUnidade;
@@ -115,7 +112,12 @@ public class CadastroEquipamento implements Initializable {
 		
 		equipamento= new CadEquipamento();
 		CadEquipamento = listarEquipamento();
-	
+		
+		List<String> Unidade = new ArrayList<String>();
+		Unidade.add("UNIALFA - Bueno");
+		Unidade.add("UNIALFA - Perimetral");
+		Unidade.add("FADISP");
+		comboUnidade.getItems().addAll(Unidade);
 	}
 	
 	application.Main main = null;
@@ -135,11 +137,11 @@ public class CadastroEquipamento implements Initializable {
 			}
 	
 		private void pegaValores(CadEquipamento equipamento) {
-		       equipamento.setId(Integer.parseInt(txtId.getText()));
 		       equipamento.setTipo(txtTipo.getText());
 		        equipamento.setModelo(txtModelo.getText());
 		        equipamento.setMarca(txtMarca.getText());
-		        equipamento.setData(dataCadastro.getValue());
+		        equipamento.setDataCadastro(dataCadastro.getValue());
+		   
 		        equipamento.setUnidade(comboUnidade.getValue());
 		        
 		}
@@ -150,7 +152,7 @@ public class CadastroEquipamento implements Initializable {
 	        txtTipo.setText(equipamento.getTipo());
 	        txtModelo.setText(equipamento.getModelo());
 	        txtMarca.setText(equipamento.getModelo());
-	        dataCadastro.setValue(equipamento.getData());
+	        dataCadastro.setValue(equipamento.getDataCadastro());
 	        comboUnidade.setValue(equipamento.getUnidade());
 	       
 	    }
@@ -164,13 +166,14 @@ public class CadastroEquipamento implements Initializable {
 	    }
 		
 		public void limpaCampos() {
-
-	        txtId.setText("0");
+			txtId.setText("");
 	        txtTipo.setText("");
 	        txtModelo.setText("");
 	        txtMarca.setText("");
 	        dataCadastro.setValue(null);
 	        comboUnidade.setValue("");
+	        btnSalvar.setDisable(false);
+	        btnCancelar.setDisable(true);
 	       
 	    }
 		    
@@ -188,9 +191,11 @@ public class CadastroEquipamento implements Initializable {
 	        if(validacao) {
 	            if (equipamento.getId() == 0) {
 	             validar = equipamentoNegocio.salvar(equipamento);
+	             
 	                if(validar.equals("salvo")) {
+	                	CadEquipamento = listarEquipamento();
+	   	             populaView(CadEquipamento);
 	                  
-
 	                    String msg = "Equipamento inserido!";
 	                    exibeMensagem(msg);
 	                    limpaCampos();
@@ -223,7 +228,7 @@ public class CadastroEquipamento implements Initializable {
 		        colunaTipo.setCellValueFactory(new PropertyValueFactory<CadEquipamento, String>("tipo"));
 		        colunaModelo.setCellValueFactory(new PropertyValueFactory<CadEquipamento, String>("modelo"));
 		        colunaMarca.setCellValueFactory(new PropertyValueFactory<CadEquipamento, String>("marca"));
-		        colunaData.setCellValueFactory(new PropertyValueFactory<CadEquipamento, String>("data"));
+		        colunaDataCadastro.setCellValueFactory(new PropertyValueFactory<CadEquipamento, String>("data"));
 		        colunaUnidade.setCellValueFactory(new PropertyValueFactory<CadEquipamento, String>("unidade"));
 		        equipamentoView = FXCollections.observableArrayList(equipamento);
 		        tblEquipamentos.setItems(equipamentoView);
@@ -308,18 +313,18 @@ public class CadastroEquipamento implements Initializable {
                 sb.append("A Marca não pode ser vazia!. \n");
                 controls.add(txtMarca);
             }
-            if(data.equals("") || data == null){
+        /*    if(data.equals("") || data == null){
                 sb.append("A Data não pode ser vazia!. \n");
-                controls.add(txtMarca);
+                controls.add(dataCadastro);
             }
             if(unidade.equals("") || unidade == null){
                 sb.append("A Unidade não pode ser vazia!. \n");
-                controls.add(txtMarca);
+                controls.add(comboUnidade);
             }
             if(!sb.equals("")) {
                 exibeMensagem(sb.toString());
              
-            }
+            }*/
 
             return sb.toString().isEmpty();
     }

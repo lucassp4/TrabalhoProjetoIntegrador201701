@@ -6,18 +6,19 @@ import model.CadEquipamento;
 
 
 public class CadEquipamento {
-	private int id;
+	
+	private Integer id;
     private String tipo;
     private String modelo;
     private String marca;
-    private LocalDate data;
+    private LocalDate dataCadastro;
     private String unidade;
     
-    public CadEquipamento(String tipo, String modelo, String marca, LocalDate data, String unidade) {
+    public CadEquipamento(String tipo, String modelo, String marca, LocalDate dataCadastro, String unidade) {
         this.tipo = tipo;
         this.modelo = modelo;
         this.marca = marca;
-        this.data = data;
+        this.dataCadastro = dataCadastro;
         this.unidade = unidade;
     }
     	public CadEquipamento (){
@@ -56,12 +57,11 @@ public class CadEquipamento {
 		this.marca = marca;
 	}
 
-	public LocalDate getData() {
-		return data;
+	public LocalDate getDataCadastro() {
+		return dataCadastro;
 	}
-
-	public void setData(LocalDate data) {
-		this.data = data;
+	public void setDataCadastro(LocalDate dataCadastro) {
+		this.dataCadastro = dataCadastro;
 	}
 
 	public String getUnidade() {

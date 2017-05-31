@@ -19,10 +19,10 @@ public class EquipamentoDAO {
 		con = cf.getConnection();
 	}
 
-	String sqlSalvar = "INSERT INTO projetoIntegrador.equipamento" + "(tipo,modelo, marca, data, unidade)"
+	String sqlSalvar = "INSERT INTO projetoIntegrador.equipamento" + "(tipo,modelo, marca, dataCadastro, unidade)"
 			+ "VALUES(?,?,?,?,?)";
 
-	String sqlEditar = "UPDATE projetoIntegrador SET tipo = ?, modelo = ?," + "marca = ?, data = ?, unidade = ?";
+	String sqlEditar = "UPDATE projetoIntegrador SET tipo = ?, modelo = ?," + "marca = ?, dataCadastro = ?, unidade = ?";
 
 	public String salvar(CadEquipamento equipamento) throws SQLException {
 
@@ -34,7 +34,7 @@ public class EquipamentoDAO {
 			stmt.setString(1, equipamento.getTipo());
 			stmt.setString(2, equipamento.getModelo());
 			stmt.setString(3, equipamento.getMarca());
-			stmt.setDate(4, Date.valueOf(equipamento.getData()));
+			stmt.setDate(4, Date.valueOf(equipamento.getDataCadastro()));
 			stmt.setString(5, equipamento.getUnidade());
 
 			stmt.executeUpdate();
@@ -69,7 +69,7 @@ public class EquipamentoDAO {
 
         try {
             stm = con.createStatement();
-            res = stm.executeQuery("SELECT * FROM clientes");
+            res = stm.executeQuery("SELECT * FROM Equipamento");
 
             while (res.next()) {
 
@@ -79,7 +79,7 @@ public class EquipamentoDAO {
                 equipamento.setTipo(res.getString("tipo"));
                 equipamento.setModelo(res.getString("modelo"));
                 equipamento.setMarca(res.getString("marca"));
-                Date data = res.getDate("data");
+                Date dataCadastro = res.getDate("dataCadastro");
                 equipamento.setUnidade(res.getString("unidade"));
 
 
@@ -101,7 +101,7 @@ public class EquipamentoDAO {
 			stmt.setString(1, equipamento.getTipo());
 			stmt.setString(2, equipamento.getModelo());
 			stmt.setString(3, equipamento.getMarca());
-			stmt.setDate(4, Date.valueOf(equipamento.getData()));
+			stmt.setDate(4, Date.valueOf(equipamento.getDataCadastro()));
 			stmt.setString(5, equipamento.getUnidade());
 
 			stmt.executeUpdate();

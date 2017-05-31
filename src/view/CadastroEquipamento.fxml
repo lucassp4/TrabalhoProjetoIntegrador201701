@@ -35,7 +35,7 @@
           <TableColumn fx:id="colunaTipo" prefWidth="75.0" text="Tipo" />
           <TableColumn fx:id="colunaModelo" prefWidth="94.0" text="Modelo" />
             <TableColumn fx:id="colunaMarca" prefWidth="109.0" text="Marca" />
-            <TableColumn fx:id="colunaData" prefWidth="104.0" text="Data" />
+            <TableColumn fx:id="colunaDataCadastro" prefWidth="104.0" text="Data" />
             <TableColumn fx:id="colunaUnidade" prefWidth="112.0" text="Unidade" />
         </columns>
       </TableView>
