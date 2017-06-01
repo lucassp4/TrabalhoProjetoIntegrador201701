@@ -1,6 +1,10 @@
 package controller;
 
+import dao.EquipamentoDAO;
+import dao.UnidadeDao;
+import javafx.animation.RotateTransition;
 import model.CadEquipamento;
+import model.Unidade;
 import negocio.EquipamentoNegocio;
 
 import java.io.IOException;
@@ -39,89 +43,89 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Window;
 import javafx.util.Duration;
 
+import javax.swing.*;
+
 public class CadastroEquipamento implements Initializable {
-	  
-	
+
+
 	@FXML
     private CadEquipamento equipamento;
-	
+
 	@FXML
 	private TextField txtTipo;
-	
+
 	@FXML
 	private TextField txtMarca;
-	
+
 	@FXML
 	private TextField txtModelo;
-	
+
 	@FXML
 	private Pane painelPrincipal;
-	
+
 	@FXML
 	private Button btnSalvar;
-	
+
 	@FXML
 	private Button btnCancelar;
-	
-	@FXML 
+
+	@FXML
 	private ComboBox<String> comboUnidade;
-		
+
 	@FXML
     private TextField txtId;
-	
+
 	 @FXML
 	 private DatePicker dataCadastro;
-	 
+
 	 @FXML
 	 private TableView<CadEquipamento> tblEquipamentos;
-	 
+
 	 @FXML
 	 private TableColumn<CadEquipamento, String> colunaTipo;
-	 
+
 	 @FXML
 	 private TableColumn<CadEquipamento, String> colunaModelo;
-	 
+
 	 @FXML
 	 private TableColumn<CadEquipamento, String> colunaMarca;
-	 
+
 	 @FXML
 	 private TableColumn<CadEquipamento, String>  colunaDataCadastro;
-	 
+
 	 @FXML
 	 private TableColumn<CadEquipamento, String>  colunaUnidade;
-	 
+
 	 @FXML
 	 private Button btnAcao;
-	
-	 
+
+
 	 List<CadEquipamento> CadEquipamento = new ArrayList();
-	 
+
 	 Integer id = 0;
      CadEquipamento cadEquipamento =  new CadEquipamento();
      ObservableList<CadEquipamento> equipamentoView = null;
-    
+
      EquipamentoNegocio equipamentoNegocio = new EquipamentoNegocio();
      String filter = "";
      private ObservableList<String> originalItems;
 
-     
-	 
-	 
+     UnidadeDao unidadeDao = new UnidadeDao();
+
+	public CadastroEquipamento() throws SQLException {
+	}
+
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
+		preencherComboUnidade();
 		equipamento= new CadEquipamento();
 		CadEquipamento = listarEquipamento();
-		
-		List<String> Unidade = new ArrayList<String>();
-		Unidade.add("UNIALFA - Bueno");
-		Unidade.add("UNIALFA - Perimetral");
-		Unidade.add("FADISP");
-		comboUnidade.getItems().addAll(Unidade);
+
 	}
-	
+
 	application.Main main = null;
-		
+
 		public void Cancelar(){
 			URL arquivoFXML;
 			arquivoFXML = getClass().getResource("/view/PaginaPrincipal.fxml");
@@ -130,22 +134,21 @@ public class CadastroEquipamento implements Initializable {
 				fxmlParent = FXMLLoader.load(arquivoFXML);
 				painelPrincipal.getChildren().clear();
 				painelPrincipal.getChildren().add(fxmlParent);
-				
+
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 			}
-	
+
 		private void pegaValores(CadEquipamento equipamento) {
 		       equipamento.setTipo(txtTipo.getText());
 		        equipamento.setModelo(txtModelo.getText());
 		        equipamento.setMarca(txtMarca.getText());
 		        equipamento.setDataCadastro(dataCadastro.getValue());
-		   
 		        equipamento.setUnidade(comboUnidade.getValue());
-		        
+
 		}
-		
+
 		private void setaValores(CadEquipamento equipamento) {
 
 	        txtId.setText(String.valueOf(equipamento.getId()));
@@ -154,17 +157,17 @@ public class CadastroEquipamento implements Initializable {
 	        txtMarca.setText(equipamento.getModelo());
 	        dataCadastro.setValue(equipamento.getDataCadastro());
 	        comboUnidade.setValue(equipamento.getUnidade());
-	       
+
 	    }
-		
+
 		public void AutoCompleteCliente(Event e){
 	        originalItems = FXCollections.observableArrayList(comboUnidade.getItems());
 	        comboUnidade.setTooltip(new Tooltip());
 	        comboUnidade.setOnKeyPressed(this::handleOnKeyPressed);
 	        comboUnidade.setOnHidden(this::handleOnHiding);
-		
+
 	    }
-		
+
 		public void limpaCampos() {
 			txtId.setText("");
 	        txtTipo.setText("");
@@ -174,61 +177,57 @@ public class CadastroEquipamento implements Initializable {
 	        comboUnidade.setValue("");
 	        btnSalvar.setDisable(false);
 	        btnCancelar.setDisable(true);
-	       
+
 	    }
-		    
-		
-		
-		
-		
+
+
+
+	EquipamentoDAO equipamentoDAO = new EquipamentoDAO();
+
 		@FXML
 		private void salvar(ActionEvent event) throws SQLException {
-	        String validar;
-	        boolean validacao = false;
-	        equipamento = new CadEquipamento();
-	        pegaValores(equipamento);
-	        validacao = validarCampos();
-	        if(validacao) {
-	            if (equipamento.getId() == 0) {
-	             validar = equipamentoNegocio.salvar(equipamento);
-	             
-	                if(validar.equals("salvo")) {
-	                	CadEquipamento = listarEquipamento();
-	   	             populaView(CadEquipamento);
-	                  
-	                    String msg = "Equipamento inserido!";
-	                    exibeMensagem(msg);
-	                    limpaCampos();
-	                }else{
-	                    exibeMensagem(validar);
-	                }
-	            } else {
-	                validar = equipamentoNegocio.editar(equipamento);
-	                if (validar.equals("salvo")) {
-	                	CadEquipamento = listarEquipamento();
-	                    populaView(CadEquipamento);
-	                    String msg = "Objeto editado com sucesso!";
-	                    exibeMensagem(msg);
 
-	                    limpaCampos();
-	                    btnAcao.setText("Salvar");
-	                }else{
-	                    exibeMensagem(validar);
-	                }
-	            }
-	            
-	        }
+			boolean validacao = false;
+			boolean validar = false;
+			equipamento = new CadEquipamento();
 
-	    }
+			pegaValores(equipamento);
+			validacao = validarCampos();
 
-		
+			if (validacao) {
+				validar = confirmar();
+				equipamentoDAO.salvar(equipamento);
+				CadEquipamento = listarEquipamento();
+				populaView(CadEquipamento);
+			} else {
+				equipamentoDAO.salvar(equipamento);
+
+				String msg = "Equipamento inserido!";
+				exibeMensagem(msg);
+				limpaCampos();
+
+				URL arquivoFXML;
+				arquivoFXML = getClass().getResource("/view/PaginaPrincipal.fxml");
+				Parent fxmlParent;
+				try {
+					fxmlParent = FXMLLoader.load(arquivoFXML);
+					painelPrincipal.getChildren().clear();
+					painelPrincipal.getChildren().add(fxmlParent);
+
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+
+			}
+
+			}
+
 		
 		
 		 public void populaView(List<CadEquipamento> equipamento){
 		        colunaTipo.setCellValueFactory(new PropertyValueFactory<CadEquipamento, String>("tipo"));
 		        colunaModelo.setCellValueFactory(new PropertyValueFactory<CadEquipamento, String>("modelo"));
 		        colunaMarca.setCellValueFactory(new PropertyValueFactory<CadEquipamento, String>("marca"));
-		        colunaDataCadastro.setCellValueFactory(new PropertyValueFactory<CadEquipamento, String>("data"));
 		        colunaUnidade.setCellValueFactory(new PropertyValueFactory<CadEquipamento, String>("unidade"));
 		        equipamentoView = FXCollections.observableArrayList(equipamento);
 		        tblEquipamentos.setItems(equipamentoView);
@@ -246,7 +245,7 @@ public class CadastroEquipamento implements Initializable {
 	        setaValores(equipamento);
 	        btnAcao.setText("Editar");
 	        btnCancelar.setText("Cancelar");
-	        String msg  = "Equipamento pronto para edição!";
+	        String msg  = "Equipamento pronto para ediï¿½ï¿½o!";
 	        exibeMensagem(msg);
 	    }
 		
@@ -295,43 +294,43 @@ public class CadastroEquipamento implements Initializable {
             String tipo =  txtTipo.getText();
             String modelo = txtModelo.getText();
             String marca =  txtMarca.getText();
-            LocalDate data =  dataCadastro.getValue();
             String unidade =  comboUnidade.getValue();
-           
+           LocalDate date = dataCadastro.getValue();
             List<Control>  controls = new ArrayList<>();
             StringBuilder sb = new StringBuilder();
             sb.append("");
             if(tipo.equals("") || tipo == null){
-                sb.append("O tipo não pode ser vazio!. \n");
+                sb.append("O tipo nao pode ser vazio!. \n");
                 controls.add(txtTipo);
             }
             if(modelo.equals("") || modelo == null){
-                sb.append("O modelo não pode ser vazio!. \n");
+                sb.append("O modelo nao pode ser vazio!. \n");
                 controls.add(txtModelo);
             }
             if(marca.equals("") || marca == null){
-                sb.append("A Marca não pode ser vazia!. \n");
+                sb.append("A Marca nao pode ser vazia!. \n");
                 controls.add(txtMarca);
             }
-        /*    if(data.equals("") || data == null){
-                sb.append("A Data não pode ser vazia!. \n");
-                controls.add(dataCadastro);
-            }
-            if(unidade.equals("") || unidade == null){
-                sb.append("A Unidade não pode ser vazia!. \n");
+            if(unidade == null){
+                sb.append("A Unidade nao pode ser vazia!. \n");
                 controls.add(comboUnidade);
             }
+			if(date == null){
+				sb.append("A data nao pode ser vazia!. \n");
+				controls.add(dataCadastro);
+			}
             if(!sb.equals("")) {
                 exibeMensagem(sb.toString());
+                animaCamposValidados(controls);
              
-            }*/
+            }
 
             return sb.toString().isEmpty();
     }
 
 		public void exibeMensagem(String msg){
 	        Notifications.create()
-	                .title("Atenção")
+	                .title("AtenÃ§ao")
 	                .text(String.valueOf(msg))
 	                .owner(main)
 	                .hideAfter(Duration.seconds(3))
@@ -339,6 +338,55 @@ public class CadastroEquipamento implements Initializable {
 	                .position(Pos.TOP_RIGHT)
 	                .showInformation();
 		}
+	public void animaCamposValidados(List<Control> controls) {
+		controls.forEach(control -> {
+			RotateTransition rotateTransition = new RotateTransition(Duration.millis(60), control);
+			rotateTransition.setFromAngle(-4);
+			rotateTransition.setToAngle(4);
+			rotateTransition.setCycleCount(8);
+			rotateTransition.setAutoReverse(true);
+			rotateTransition.setOnFinished((ActionEvent event1) -> {
+				control.setRotate(0);
+			});
+			rotateTransition.play();
+		});
+		if (!controls.isEmpty()) {
+			controls.get(0).requestFocus();
+		}
 	}
+	public void preencherComboUnidade(){
+
+		List<String> teste = new ArrayList<String>();
+		List<Unidade> unidade = new ArrayList<Unidade>();
+		unidade = unidadeDao.listarClientes();
+		unidade.forEach( (Unidade cliente) -> {
+					teste.add(cliente.getNome());
+				}
+
+
+		);
+		teste.forEach((String testes)->{
+					comboUnidade.getItems().add(testes);
+				}
+		);
+	}
+	public boolean confirmar() {
+		boolean teste= false;
+
+		Object[] options = {"Sim", "NÃ£o"};
+
+		int opcao = JOptionPane.showOptionDialog(null, "Derteza que dezeja salvar a alteraÃ§ao feitas nessa unidade?",
+				"ConfirmaÃ§ao", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
+		for (int i = -1; i<options.length;i++ ) {
+			if (opcao == 0) {
+				teste = true;
+			} else {
+				teste = false;
+			}
+		}
+
+		return teste;
+	}
+		}
 			
 

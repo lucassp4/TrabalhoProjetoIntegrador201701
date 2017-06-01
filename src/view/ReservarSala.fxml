@@ -8,34 +8,30 @@
 
 <Pane fx:id="painelPrincipal" prefHeight="440.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReservarSala">
    <children>
-      <Label layoutX="240.0" layoutY="51.0" text="Reservar Sala">
+      <Label layoutX="243.0" layoutY="35.0" text="Reservar Sala">
          <font>
             <Font size="26.0" />
          </font>
       </Label>
-      <Label layoutX="354.0" layoutY="145.0" text="Sala" />
-      <Label layoutX="331.0" layoutY="180.0" text="Unidade" />
-      <TextArea fx:id="textAriaDescricao" layoutX="122.0" layoutY="308.0" prefHeight="74.0" prefWidth="356.0" />
-      <Label layoutX="277.0" layoutY="271.0" text="Descrição">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
+      <Label layoutX="345.0" layoutY="114.0" text="Sala*" />
+      <Label layoutX="322.0" layoutY="146.0" text="Unidade*" />
       <Button fx:id="btcSalvar" layoutX="159.0" layoutY="393.0" mnemonicParsing="false" onAction="#btcSalvar" text="Salvar" />
       <Button fx:id="btnCancelar" layoutX="379.0" layoutY="393.0" mnemonicParsing="false" onAction="#btnCancelar" text="Cancelar" />
-      <Label layoutX="51.0" layoutY="180.0" text="Turno" />
-      <ComboBox fx:id="comboBloca" layoutX="92.0" layoutY="141.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha o Bloco" />
-      <ComboBox fx:id="comboTurma" layoutX="92.0" layoutY="176.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha Turno" />
-      <ComboBox fx:id="comboSala" layoutX="385.0" layoutY="141.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha o Laboratório" />
-      <ComboBox fx:id="comboUnidade" layoutX="385.0" layoutY="176.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha Unidade" />
-      <Label layoutX="53.0" layoutY="145.0" text="Bloco" />
-      <Label layoutX="26.0" layoutY="215.0" text="Data inicial" />
+      <Label layoutX="51.0" layoutY="180.0" text="Turno*" />
+      <ComboBox fx:id="comboBloco" layoutX="92.0" layoutY="141.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha o Bloco" />
+      <ComboBox fx:id="comboTurno" layoutX="92.0" layoutY="176.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha Turno" />
+      <ComboBox fx:id="comboSala" layoutX="380.0" layoutY="110.0" prefHeight="25.0" prefWidth="178.0" promptText="Salas disponivel" />
+      <ComboBox fx:id="comboUnidade" layoutX="380.0" layoutY="142.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha Unidade" />
+      <Label layoutX="53.0" layoutY="145.0" text="Bloco*" />
+      <Label layoutX="26.0" layoutY="215.0" text="Data inicial*" />
       <DatePicker fx:id="dateInicio" layoutX="94.0" layoutY="211.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha a Data Inicial" />
-      <DatePicker fx:id="dateFim" layoutX="386.0" layoutY="211.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha a Data Final" />
-      <Label layoutX="25.0" layoutY="250.0" text="Hora inicial" />
+      <DatePicker fx:id="dateFim" layoutX="381.0" layoutY="176.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha a Data Final" />
+      <Label layoutX="25.0" layoutY="250.0" text="Hora inicial*" />
       <TextField fx:id="horaIncio" layoutX="94.0" layoutY="246.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha a Hora Inicial" />
-      <TextField fx:id="horaFim" layoutX="386.0" layoutY="246.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha a Hora Final" />
-      <Label layoutX="322.0" layoutY="250.0" text="Hora Final" />
-      <Label layoutX="329.0" layoutY="215.0" text="Data Fim" />
+      <TextField fx:id="horaFim" layoutX="383.0" layoutY="211.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha a Hora Final" />
+      <Label layoutX="319.0" layoutY="215.0" text="Hora Final*" />
+      <Label layoutX="323.0" layoutY="180.0" text="Data Fim*" />
+      <ComboBox fx:id="comboTipo" layoutX="92.0" layoutY="110.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha o tipo da sala" />
+      <Label layoutX="54.0" layoutY="115.0" text="Tipo*" />
    </children>
 </Pane>

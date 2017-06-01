@@ -30,19 +30,6 @@
             <Font size="13.0" />
          </font>
       </Label>
-      <TableView fx:id="tblEquipamentos" layoutX="53.0" layoutY="251.0" prefHeight="171.0" prefWidth="495.0">
-        <columns>
-          <TableColumn fx:id="colunaTipo" prefWidth="75.0" text="Tipo" />
-          <TableColumn fx:id="colunaModelo" prefWidth="94.0" text="Modelo" />
-            <TableColumn fx:id="colunaMarca" prefWidth="109.0" text="Marca" />
-            <TableColumn fx:id="colunaDataCadastro" prefWidth="104.0" text="Data" />
-            <TableColumn fx:id="colunaUnidade" prefWidth="112.0" text="Unidade" />
-        </columns>
-      </TableView>
-      <Label layoutX="206.0" layoutY="209.0" text="Itens Cadastrados">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
+      <TextField fx:id="txtId" layoutX="72.0" layoutY="49.0" prefHeight="25.0" prefWidth="61.0"  visible="false" />
    </children>
 </Pane>

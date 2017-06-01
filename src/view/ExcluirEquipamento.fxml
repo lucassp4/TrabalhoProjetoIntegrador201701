@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<Pane fx:id="painelPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="465.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ExcluirEquipamento">
+    <children>
+        <Label layoutX="30.0" layoutY="89.0" text="Tipo *" />
+        <Label layoutX="145.0" layoutY="22.0" prefHeight="39.0" prefWidth="331.0" text="Excluir e Equipamentos">
+            <font>
+                <Font size="27.0" />
+            </font>
+        </Label>
+        <Label layoutX="21.0" layoutY="124.0" text="Marca *" />
+        <TextField fx:id="txtTipo" layoutX="72.0" layoutY="85.0" prefHeight="25.0" prefWidth="228.0" promptText="Digite o Tipo" />
+        <TextField fx:id="txtMarca" layoutX="72.0" layoutY="120.0" prefHeight="25.0" prefWidth="228.0" promptText="Digite a Marca" />
+        <Label layoutX="305.0" layoutY="89.0" text="Modelo *" />
+        <TextField fx:id="txtModelo" layoutX="364.0" layoutY="85.0" prefHeight="25.0" prefWidth="228.0" promptText="Digite o Modelo" />
+        <Button fx:id="btnSalvar" layoutX="177.0" layoutY="426.0" mnemonicParsing="false" onAction="#salvar" text="Excluir" />
+        <Button fx:id="btnCancelar" layoutX="383.0" layoutY="426.0" mnemonicParsing="false" onAction="#Cancelar" text="Cancelar" />
+        <DatePicker fx:id="dataCadastro" layoutX="364.0" layoutY="120.0" prefHeight="25.0" prefWidth="228.0" promptText="Digite a Data do Cadastro" />
+        <Label layoutX="321.0" layoutY="124.0" text="Data *" />
+        <Label layoutX="9.0" layoutY="159.0" text="Unidade *" />
+        <ComboBox fx:id="comboUnidade" layoutX="72.0" layoutY="155.0" prefHeight="25.0" prefWidth="228.0" promptText="Selecione a Unidade" />
+        <Label layoutX="72.0" layoutY="190.0" text="* Campos Obrigatórios" textFill="RED">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Label>
+        <TableView fx:id="tblEquipamentos" layoutX="53.0" layoutY="251.0" onMouseClicked="#excluir" prefHeight="171.0" prefWidth="495.0">
+            <columns>
+                <TableColumn fx:id="colunaTipo" prefWidth="110.0" text="Tipo" />
+                <TableColumn fx:id="colunaModelo" prefWidth="107.0" text="Modelo" />
+                <TableColumn fx:id="colunaMarca" prefWidth="137.0" text="Marca" />
+                <TableColumn fx:id="colunaUnidade" prefWidth="138.0" text="Unidade" />
+            </columns>
+        </TableView>
+        <Label layoutX="206.0" layoutY="209.0" text="Itens Cadastrados">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtId" layoutX="72.0" layoutY="49.0" prefHeight="25.0" prefWidth="61.0" visible="false" />
+    </children>
+</Pane>

@@ -3,6 +3,7 @@ package controller;
 import application.Main;
 import dao.BlocoDao;
 import dao.SalaDao;
+import dao.UnidadeDao;
 import javafx.animation.RotateTransition;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,6 +20,8 @@ import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 import model.CadastroBloco;
 import model.Sala;
+import model.Unidade;
+import negocio.SalaNegocio;
 import org.controlsfx.control.Notifications;
 
 import java.io.IOException;
@@ -52,11 +55,11 @@ public class CadastroSala implements Initializable{
 	private Button btnFechar;
 	@FXML
 	private Pane panielSala;
-
+	SalaNegocio salaNegocio = new SalaNegocio();
 	BlocoDao blocoDao = new BlocoDao();
 	Main main = null;
-	private ObservableList <String> listaBloco;
 
+	UnidadeDao unidadeDao = new UnidadeDao();
 	public CadastroSala() throws SQLException {
 	}
 
@@ -71,35 +74,51 @@ public class CadastroSala implements Initializable{
 
 	}
 	public void preencherComboUnidade(){
-		
-		comboUnidade.getItems().add("Bueno:");
-		comboUnidade.getItems().add("Sao paulo:");
-		comboUnidade.getItems().add("Perimetral:");
+
+		List<String> teste = new ArrayList<String>();
+		List<Unidade> unidade = new ArrayList<Unidade>();
+		unidade = unidadeDao.listarClientes();
+		unidade.forEach( (Unidade cliente) -> {
+					teste.add(cliente.getNome());
+				}
+
+
+		);
+		teste.forEach((String testes)->{
+					comboUnidade.getItems().add(testes);
+				}
+		);
+
+
 
 	}
 
 	public void salvar() throws SQLException {
-
 		boolean validar;
+		boolean validarCapacidade;
 		pegarValores();
+
+
 		validar =  validarCampos();
 		SalaDao salaDao = new SalaDao();
 		if (validar) {
-			salaDao.salvar(sala);
-			exibeMensagem("Salvo com sucesso");
+				salaDao.salvar(sala);
+				exibeMensagem("Salvo com sucesso");
 
-			URL arquivoFXML;
-			arquivoFXML = getClass().getResource("/view/PaginaPrincipal.fxml");
-			Parent fxmlParent;
-			try {
-				fxmlParent = FXMLLoader.load(arquivoFXML);
-				painelPrincipal.getChildren().clear();
-				painelPrincipal.getChildren().add(fxmlParent);
-			} catch (IOException e) {
-				e.printStackTrace();
+				URL arquivoFXML;
+				arquivoFXML = getClass().getResource("/View/PaginaPrincipal.fxml");
+				Parent fxmlParent;
+				try {
+					fxmlParent = FXMLLoader.load(arquivoFXML);
+					painelPrincipal.getChildren().clear();
+					painelPrincipal.getChildren().add(fxmlParent);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}else{
+
 			}
-
-		}}
+		}
 	public void cancelar(){
 		URL arquivoFXML;
 		arquivoFXML = getClass().getResource("/view/PaginaPrincipal.fxml");
@@ -162,37 +181,33 @@ public class CadastroSala implements Initializable{
 
 	public boolean validarCampos(){
 
-		String nome =  sala.getNome();
+		boolean nome =  salaNegocio.string(sala.getNome());
 		String unidade = sala.getUnidade();
-		String capacidade = sala.getCapacidade();
+		boolean capacidade = salaNegocio.verificarCampo(sala.getCapacidade());
 		String tipo = sala.getTipo();
 		String bloco = sala.getBloco();
 
 		List<Control> controls = new ArrayList<>();
 		StringBuilder sb = new StringBuilder();
 		sb.append("");
-		if(nome.equals("") || nome == null){
-			sb.append("O nome não pode ser vazio!. \n");
+		if(!nome){
+			sb.append("Por favor digite somente três numeros! \n");
 			controls.add(txtNome);
 		}
-		if(unidade == null){
-			sb.append(" A por favor selecione uma unidade !. \n");
-			controls.add(comboUnidade);
-		}
-		if(capacidade.equals("") || capacidade == null){
-			sb.append("O Numero de sala não pode ser vazio!. \n");
+		if(!capacidade){
+			sb.append("Digite a capacidade valida! \n");
 			controls.add(txtCapacidade);
 		}
 		if(unidade == null){
-			sb.append(" A por favor selecione uma unidade !. \n");
+			sb.append("Selecione uma unidade !. \n");
 			controls.add(comboUnidade);
 		}
 		if(tipo == null){
-			sb.append("O Numero de sala não pode ser vazio!. \n");
+			sb.append("Selecione um tipo!. \n");
 			controls.add(comboTipo);
 		}
 		if(bloco == null){
-			sb.append("O Numero de sala não pode ser vazio!. \n");
+			sb.append("Selecione um bloco!. \n");
 			controls.add(comboBloco);
 		}
 

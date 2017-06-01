@@ -13,24 +13,29 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 
-public class PaginaPrincipal implements Initializable {
+public class PaginaPrincipal implements Initializable{
 
+
+	
 	@FXML
 	private Pane painelPrincipal;
 	@FXML
 	private Image editar;
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
 
-	}
 
-	// Metodos da parte de cadastro
+@Override
+public void initialize(URL location, ResourceBundle resources) {
+	// TODO Auto-generated method stub
+	
+}
 
-	public void cadUsuario() {
+
+// Metodos da parte de cadastro
+	
+public void cadUsuario(){
 		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/view/CadastroUsuario.fxml");
+		arquivoFXML = getClass().getResource("/View/CadastroUsuario.fxml");
 		Parent fxmlParent;
 		try {
 			fxmlParent = FXMLLoader.load(arquivoFXML);
@@ -39,64 +44,9 @@ public class PaginaPrincipal implements Initializable {
 			e.printStackTrace();
 		}
 	}
-
-	public void cadEquipamento() {
+	public void cadEquipamento(){
 		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/view/CadastroEquipamento.fxml");
-		Parent fxmlParent;
-		try {
-			fxmlParent = FXMLLoader.load(arquivoFXML);
-
-			painelPrincipal.getChildren().add(fxmlParent);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
-	public void cadAuditorio() {
-		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/view/CadastroAuditorio.fxml");
-		Parent fxmlParent;
-		try {
-			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-
-			painelPrincipal.getChildren().add(fxmlParent);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-	}
-
-	public void cadLaboratorio() {
-		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/view/CadastroLaboratorio.fxml");
-		Parent fxmlParent;
-		try {
-			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-
-			painelPrincipal.getChildren().add(fxmlParent);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-	}
-
-	public void cadSala() {
-		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/view/CadastroSala.fxml");
-		Parent fxmlParent;
-		try {
-			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-
-			painelPrincipal.getChildren().add(fxmlParent);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
-	public void cadAutoridade() {
-		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/view/CadastroAutoridade.fxml");
+		arquivoFXML = getClass().getResource("/View/CadastroEquipamento.fxml");
 		Parent fxmlParent;
 		try {
 			fxmlParent = FXMLLoader.load(arquivoFXML);
@@ -106,158 +56,289 @@ public class PaginaPrincipal implements Initializable {
 			e.printStackTrace();
 		}
 	}
+		public void cadAuditorio(){
+			URL arquivoFXML;
+			arquivoFXML = getClass().getResource("/View/CadastroAuditorio.fxml");
+			Parent fxmlParent;
+			try {
+				fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
 
-	public void cadBloco() {
-		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/view/CadastroBloco.fxml");
-		Parent fxmlParent;
-		try {
-			fxmlParent = FXMLLoader.load(arquivoFXML);
-
-			painelPrincipal.getChildren().add(fxmlParent);
-		} catch (IOException e) {
-			e.printStackTrace();
+				painelPrincipal.getChildren().add(fxmlParent);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
 		}
-	}
+		public void cadLaboratorio(){
+			URL arquivoFXML;
+			arquivoFXML = getClass().getResource("/View/CadastroLaboratorio.fxml");
+			Parent fxmlParent;
+			try {
+				fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
 
-	public void cadUnidade() {
-		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/view/CadastroNovasUnidades.fxml");
-		Parent fxmlParent;
-		try {
-			fxmlParent = FXMLLoader.load(arquivoFXML);
-
-			painelPrincipal.getChildren().add(fxmlParent);
-		} catch (IOException e) {
-			e.printStackTrace();
+				painelPrincipal.getChildren().add(fxmlParent);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
 		}
-	}
+		public void cadSala(){
+			URL arquivoFXML;
+			arquivoFXML = getClass().getResource("/View/CadastroSala.fxml");
+			Parent fxmlParent;
+			try {
+				fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
 
-	public void kits() {
-		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/view/CriarKit.fxml");
-		Parent fxmlParent;
-		try {
-			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-
-			painelPrincipal.getChildren().add(fxmlParent);
-		} catch (IOException e) {
-			e.printStackTrace();
+				painelPrincipal.getChildren().add(fxmlParent);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
-	}
+		
+		
+		public void cadAutoridade(){
+			URL arquivoFXML;
+			arquivoFXML = getClass().getResource("/View/CadastroAutoridade.fxml");
+			Parent fxmlParent;
+			try {
+				fxmlParent = FXMLLoader.load(arquivoFXML);
 
-	// Metodos da parte de reserva
-
-	public void reservaCancelar() {
-		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/view/CancelarReserva.fxml");
-		Parent fxmlParent;
-		try {
-			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-
-			painelPrincipal.getChildren().add(fxmlParent);
-		} catch (IOException e) {
-			e.printStackTrace();
+				painelPrincipal.getChildren().add(fxmlParent);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
-	}
+		
+		public void cadBloco(){
+			URL arquivoFXML;
+			arquivoFXML = getClass().getResource("/View/CadastroBloco.fxml");
+			Parent fxmlParent;
+			try {
+				fxmlParent = FXMLLoader.load(arquivoFXML);
 
-	public void cancelarReservaADM() {
-		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/view/CancelarReservaAdm.fxml");
-		Parent fxmlParent;
-		try {
-			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-
-			painelPrincipal.getChildren().add(fxmlParent);
-		} catch (IOException e) {
-			e.printStackTrace();
+				painelPrincipal.getChildren().add(fxmlParent);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
-	}
+		
+		
+		
+		public void cadUnidade(){
+			URL arquivoFXML;
+			arquivoFXML = getClass().getResource("/View/CadastroNovasUnidades.fxml");
+			Parent fxmlParent;
+			try {
+				fxmlParent = FXMLLoader.load(arquivoFXML);
 
-	public void reservarAuditorio() {
-		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/view/ReservarAuditorio.fxml");
-		Parent fxmlParent;
-		try {
-			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-
-			painelPrincipal.getChildren().add(fxmlParent);
-		} catch (IOException e) {
-			e.printStackTrace();
+				painelPrincipal.getChildren().add(fxmlParent);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
-	}
+		
+		public void kits(){
+			URL arquivoFXML;
+			arquivoFXML = getClass().getResource("/View/CriarKit.fxml");
+			Parent fxmlParent;
+			try {
+				fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
 
-	public void reservarEquipamento() {
-		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/view/ReservarEquipamento.fxml");
-		Parent fxmlParent;
-		try {
-			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-
-			painelPrincipal.getChildren().add(fxmlParent);
-		} catch (IOException e) {
-			e.printStackTrace();
+				painelPrincipal.getChildren().add(fxmlParent);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
-	}
+		
+		
+		
+		//Metodos da parte de reserva
+		
+		public void reservaCancelar(){
+			URL arquivoFXML;
+			arquivoFXML = getClass().getResource("/View/CancelarReserva.fxml");
+			Parent fxmlParent;
+			try {
+				fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
 
-	public void reservaLaboratorio() {
-		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/view/ReservarLaboratorio.fxml");
-		Parent fxmlParent;
-		try {
-			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-
-			painelPrincipal.getChildren().add(fxmlParent);
-		} catch (IOException e) {
-			e.printStackTrace();
+				painelPrincipal.getChildren().add(fxmlParent);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
-	}
+		
+		public void cancelarReservaADM(){
+			URL arquivoFXML;
+			arquivoFXML = getClass().getResource("/View/CancelarReservaAdm.fxml");
+			Parent fxmlParent;
+			try {
+				fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
 
-	public void reservaSala() {
-		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/view/ReservarSala.fxml");
-		Parent fxmlParent;
-		try {
-			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-
-			painelPrincipal.getChildren().add(fxmlParent);
-		} catch (IOException e) {
-			e.printStackTrace();
+				painelPrincipal.getChildren().add(fxmlParent);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
-	}
+		
+		
+			public void reservarAuditorio(){
+				URL arquivoFXML;
+				arquivoFXML = getClass().getResource("/View/ReservarAuditorio.fxml");
+				Parent fxmlParent;
+				try {
+					fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
 
-	// Metodos da parte de alterar os cadastros
+					painelPrincipal.getChildren().add(fxmlParent);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			
+				public void reservarEquipamento(){
+					URL arquivoFXML;
+					arquivoFXML = getClass().getResource("/View/ReservarEquipamento.fxml");
+					Parent fxmlParent;
+					try {
+						fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
 
-	public void alterarUsuario() {
-		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/view/CadastroUsuario.fxml");
-		Parent fxmlParent;
-		try {
-			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
+						painelPrincipal.getChildren().add(fxmlParent);
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+					public void reservaLaboratorio(){
+						URL arquivoFXML;
+						arquivoFXML = getClass().getResource("/View/ReservarLaboratorio.fxml");
+						Parent fxmlParent;
+						try {
+							fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
 
-			painelPrincipal.getChildren().add(fxmlParent);
-		} catch (IOException e) {
-			e.printStackTrace();
+							painelPrincipal.getChildren().add(fxmlParent);
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+					}
+						public void reservaSala(){
+							URL arquivoFXML;
+							arquivoFXML = getClass().getResource("/View/ReservarSala.fxml");
+							Parent fxmlParent;
+							try {
+								fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
+
+								painelPrincipal.getChildren().add(fxmlParent);
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+						}
+					
+						
+						
+						// Metodos da parte de alterar os cadastros
+						
+						public void alterarUsuario(){
+							URL arquivoFXML;
+							arquivoFXML = getClass().getResource("/View/CadastroUsuario.fxml");
+							Parent fxmlParent;
+							try {
+								fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
+
+								painelPrincipal.getChildren().add(fxmlParent);
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+						}
+
+
+							
+							public void alterarEquipamento(){
+								URL arquivoFXML;
+								arquivoFXML = getClass().getResource("/View/ReservarLaboratorio.fxml");
+								Parent fxmlParent;
+								try {
+									fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
+
+									painelPrincipal.getChildren().add(fxmlParent);
+								} catch (IOException e) {
+									e.printStackTrace();
+								}
+	
 		}
-	}
 
-	public void alterarEquipamento() {
+								public void alterarSala(){
+									URL arquivoFXML;
+									arquivoFXML = getClass().getResource("/View/CadastroUsuario.fxml");
+									Parent fxmlParent;
+									try {
+										fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
+										painelPrincipal.getChildren().clear();
+										painelPrincipal.getChildren().add(fxmlParent);
+									} catch (IOException e) {
+										e.printStackTrace();
+									}
+								}
+								
+
+												
+												//Metodos de Relatorios
+											
+												public void relatorioCadastro(){
+													URL arquivoFXML;
+													arquivoFXML = getClass().getResource("/View/RelatorioCadastro.fxml");
+													Parent fxmlParent;
+													try {
+														fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
+														painelPrincipal.getChildren().clear();
+														painelPrincipal.getChildren().add(fxmlParent);
+													} catch (IOException e) {
+														e.printStackTrace();
+													}
+						
+							}
+												public void relatorioReserva(){
+													URL arquivoFXML;
+													arquivoFXML = getClass().getResource("/View/RelatorioReserva.fxml");
+													Parent fxmlParent;
+													try {
+														fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
+														painelPrincipal.getChildren().clear();
+														painelPrincipal.getChildren().add(fxmlParent);
+													} catch (IOException e) {
+														e.printStackTrace();
+													}
+						
+							}
+												public void relatorioReservaADM(){
+													URL arquivoFXML;
+													arquivoFXML = getClass().getResource("/View/RelatorioReservaADM.fxml");
+													Parent fxmlParent;
+													try {
+														fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
+														painelPrincipal.getChildren().clear();
+														painelPrincipal.getChildren().add(fxmlParent);
+													} catch (IOException e) {
+														e.printStackTrace();
+													}
+						
+							}
+												
+												public void relatorioCancelamento(){
+													URL arquivoFXML;
+													arquivoFXML = getClass().getResource("/View/RelatorioCancelamento.fxml");
+													Parent fxmlParent;
+													try {
+														fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
+														painelPrincipal.getChildren().clear();
+														painelPrincipal.getChildren().add(fxmlParent);
+													} catch (IOException e) {
+														e.printStackTrace();
+													}
+						
+							}
+
+
+    public void pesquisarEquipamento(ActionEvent actionEvent) {
 		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/view/ReservarLaboratorio.fxml");
-		Parent fxmlParent;
-		try {
-			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-
-			painelPrincipal.getChildren().add(fxmlParent);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-	}
-
-	public void alterarSala() {
-		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/view/CadastroUsuario.fxml");
+		arquivoFXML = getClass().getResource("/View/PesquisarEquipamento.fxml");
 		Parent fxmlParent;
 		try {
 			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
@@ -268,68 +349,18 @@ public class PaginaPrincipal implements Initializable {
 		}
 	}
 
-	// Metodos de Relatorios
-
-	public void relatorioCadastro() {
-		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/view/RelatorioCadastro.fxml");
-		Parent fxmlParent;
-		try {
-			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-			painelPrincipal.getChildren().clear();
-			painelPrincipal.getChildren().add(fxmlParent);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-	}
-
-	public void relatorioReserva() {
-		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/view/RelatorioReserva.fxml");
-		Parent fxmlParent;
-		try {
-			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-			painelPrincipal.getChildren().clear();
-			painelPrincipal.getChildren().add(fxmlParent);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-	}
-
-	public void relatorioReservaADM() {
-		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/view/RelatorioReservaADM.fxml");
-		Parent fxmlParent;
-		try {
-			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-			painelPrincipal.getChildren().clear();
-			painelPrincipal.getChildren().add(fxmlParent);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-	}
-
-	public void relatorioCancelamento() {
-		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/view/RelatorioCancelamento.fxml");
-		Parent fxmlParent;
-		try {
-			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
-			painelPrincipal.getChildren().clear();
-			painelPrincipal.getChildren().add(fxmlParent);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-	}
-
-	public void pesquisarEquipamento(ActionEvent actionEvent) {
-	}
 
 	public void pesquisarSala(ActionEvent actionEvent) {
+		URL arquivoFXML;
+		arquivoFXML = getClass().getResource("/View/PesquisarSala.fxml");
+		Parent fxmlParent;
+		try {
+			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
+			painelPrincipal.getChildren().clear();
+			painelPrincipal.getChildren().add(fxmlParent);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void pesquisarUsuario(ActionEvent actionEvent) {
@@ -338,10 +369,11 @@ public class PaginaPrincipal implements Initializable {
 	public void pesquisarUnidade(ActionEvent actionEvent) {
 	}
 
-	public void editarUnidade(ActionEvent actionEvent) {
+	public void editarUnidade() {
+
 
 		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/view/EditarUnidade.fxml");
+		arquivoFXML = getClass().getResource("/View/EditarUnidade.fxml");
 		Parent fxmlParent;
 		try {
 			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
@@ -352,9 +384,9 @@ public class PaginaPrincipal implements Initializable {
 
 	}
 
-	public void excluirUnidade(ActionEvent actionEvent) {
+	public void excluirUnidade() {
 		URL arquivoFXML;
-		arquivoFXML = getClass().getResource("/view/ExcluirUnidade.fxml");
+		arquivoFXML = getClass().getResource("/View/ExcluirUnidade.fxml");
 		Parent fxmlParent;
 		try {
 			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
@@ -364,4 +396,62 @@ public class PaginaPrincipal implements Initializable {
 		}
 
 	}
-}
+
+	public void editarSala(ActionEvent actionEvent) {
+		URL arquivoFXML;
+		arquivoFXML = getClass().getResource("/View/EditarSala.fxml");
+		Parent fxmlParent;
+		try {
+			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
+			painelPrincipal.getChildren().add(fxmlParent);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public void editarBloco(ActionEvent actionEvent) {
+	}
+
+	public void excluirSala() {
+
+		URL arquivoFXML;
+		arquivoFXML = getClass().getResource("/View/ExcluirSala.fxml");
+		Parent fxmlParent;
+		try {
+			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
+			painelPrincipal.getChildren().add(fxmlParent);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public void editarEquipamento(ActionEvent actionEvent) {
+		URL arquivoFXML;
+		arquivoFXML = getClass().getResource("/View/EditarEquipamento.fxml");
+		Parent fxmlParent;
+		try {
+			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
+			painelPrincipal.getChildren().add(fxmlParent);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void excluirEquipamento(ActionEvent actionEvent) {
+		URL arquivoFXML;
+		arquivoFXML = getClass().getResource("/View/ExcluirEquipamento.fxml");
+		Parent fxmlParent;
+		try {
+			fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
+			painelPrincipal.getChildren().add(fxmlParent);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	}
+
+
+					
+			

@@ -1,5 +1,6 @@
 package model;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
 import model.CadEquipamento;
@@ -13,7 +14,8 @@ public class CadEquipamento {
     private String marca;
     private LocalDate dataCadastro;
     private String unidade;
-    
+
+
     public CadEquipamento(String tipo, String modelo, String marca, LocalDate dataCadastro, String unidade) {
         this.tipo = tipo;
         this.modelo = modelo;
@@ -25,7 +27,7 @@ public class CadEquipamento {
     		
     	}
     
-	public int getId() {
+	public  int getId() {
 		return id;
 	}
 

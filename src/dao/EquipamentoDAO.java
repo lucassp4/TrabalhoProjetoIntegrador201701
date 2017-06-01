@@ -2,6 +2,7 @@ package dao;
 
 import daoutil.ConnectionFactory;
 import model.CadEquipamento;
+import model.Unidade;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -22,10 +23,13 @@ public class EquipamentoDAO {
 	String sqlSalvar = "INSERT INTO projetoIntegrador.equipamento" + "(tipo,modelo, marca, dataCadastro, unidade)"
 			+ "VALUES(?,?,?,?,?)";
 
-	String sqlEditar = "UPDATE projetoIntegrador SET tipo = ?, modelo = ?," + "marca = ?, dataCadastro = ?, unidade = ?";
+	String sqlEditar = "UPDATE equipamento SET tipo = ?, modelo = ?," + "marca = ?, dataCadastro = ?, unidade = ?";
+
+
+	String sqlDeletar = "DELETE from equipamento where id = ?";
 
 	public String salvar(CadEquipamento equipamento) throws SQLException {
-
+		Date date = java.sql.Date.valueOf(equipamento.getDataCadastro());
 		String salvo = "falha";
 
 		try {
@@ -34,7 +38,7 @@ public class EquipamentoDAO {
 			stmt.setString(1, equipamento.getTipo());
 			stmt.setString(2, equipamento.getModelo());
 			stmt.setString(3, equipamento.getMarca());
-			stmt.setDate(4, Date.valueOf(equipamento.getDataCadastro()));
+			stmt.setDate(4, (date));
 			stmt.setString(5, equipamento.getUnidade());
 
 			stmt.executeUpdate();
@@ -45,11 +49,11 @@ public class EquipamentoDAO {
 		} catch (SQLException e) {
 			if (con != null) {
 				try {
-					System.err.print("Rollback efetuado na transação");
+					System.err.print("Rollback efetuado na transaï¿½ï¿½o"+e.getMessage());
 					con.rollback();
 				} catch (SQLException e2) {
-					System.err.print("Erro na transação!" + e2);
-					salvo = "\"Erro na transação!\"+e2";
+					System.err.print("Erro na transaï¿½ï¿½o!" + e2);
+					salvo = "\"Erro na transaï¿½ï¿½o!\"+e2";
 				}
 			}
 		} finally {
@@ -113,6 +117,24 @@ public class EquipamentoDAO {
 			salvo = e.getMessage();
 		}
 		return salvo;
+	}
+	public String excluir(CadEquipamento unidade) {
+		String deletado = "falha";
+		try {
+			con.setAutoCommit(false);
+			stmt = con.prepareStatement(sqlDeletar);
+
+			stmt.setInt(1, unidade.getId());
+
+			stmt.executeUpdate();
+			con.commit();
+			deletado = "deletado";
+
+		} catch (SQLException e) {
+			System.out.println("Erro na exclusÃ£o :" + e.getMessage());
+			deletado = e.getMessage();
+		}
+		return deletado;
 	}
 
 }

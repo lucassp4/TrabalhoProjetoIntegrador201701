@@ -8,28 +8,45 @@
 
 <Pane fx:id="painelPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="499.0" prefWidth="613.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReservarRecurso">
    <children>
-      <Label layoutX="184.0" layoutY="40.0" text="Reserva de Equipamento">
+      <Label layoutX="142.0" layoutY="29.0" text="Reserva de Equipamento">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label layoutX="62.0" layoutY="162.0" text="Nome" />
-      <TextField fx:id="txtNome" layoutX="105.0" layoutY="158.0" prefHeight="25.0" prefWidth="206.0" promptText="Digite seu Nome" />
-      <ComboBox fx:id="comboEquipamento" layoutX="105.0" layoutY="193.0" prefHeight="25.0" prefWidth="206.0" promptText="Selecione o Equipamento" />
-      <ComboBox fx:id="comboTurno" layoutX="417.0" layoutY="158.0" prefHeight="25.0" prefWidth="178.0" promptText="Selecione o Turno" />
-      <Button fx:id="btnSalvar" layoutX="135.0" layoutY="428.0" mnemonicParsing="false" onAction="#btnSalvar" text="Salvar" />
-      <Button fx:id="btnCancelar" layoutX="416.0" layoutY="428.0" mnemonicParsing="false" onAction="#btnCancelar" text="Cancelar" />
-      <Label layoutX="19.0" layoutY="197.0" text="Equipamentos" />
-      <Label layoutX="376.0" layoutY="162.0" text="Turno" />
-      <Label layoutX="362.0" layoutY="232.0" text="Data Fim" />
-      <Label layoutX="353.0" layoutY="267.0" text="Hora Final" />
-      <TextField fx:id="horaFim" layoutX="417.0" layoutY="263.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha a Hora Final" />
-      <TextField fx:id="horaInicial" layoutX="105.0" layoutY="263.0" prefHeight="25.0" prefWidth="206.0" promptText="Escolha a Hora Inicial" />
-      <Label layoutX="36.0" layoutY="267.0" text="Hora Inicial" />
-      <DatePicker fx:id="dataFim" layoutX="417.0" layoutY="228.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha a Data Final" />
-      <DatePicker fx:id="dataInicial" layoutX="105.0" layoutY="228.0" prefHeight="25.0" prefWidth="206.0" promptText="Escolha a Data Inicial" />
-      <Label layoutX="37.0" layoutY="232.0" text="Data Inicial" />
-      <Label layoutX="386.0" layoutY="197.0" text="Sala" />
-      <ComboBox layoutX="417.0" layoutY="193.0" prefHeight="25.0" prefWidth="178.0" promptText="Selecione o Turno" />
+      <Label layoutX="58.0" layoutY="93.0" text="Nome*" />
+      <TextField fx:id="txtNome" layoutX="101.0" layoutY="89.0" prefHeight="25.0" prefWidth="206.0" promptText="Digite seu Nome" />
+      <ComboBox fx:id="comboEquipamento" layoutX="101.0" layoutY="124.0" prefHeight="25.0" prefWidth="206.0" promptText="Selecione o Equipamento" />
+      <ComboBox fx:id="comboTurno" layoutX="416.0" layoutY="89.0" prefHeight="25.0" prefWidth="178.0" promptText="Selecione o Turno" />
+      <Button fx:id="btnSalvar" layoutX="134.0" layoutY="471.0" mnemonicParsing="false" onAction="#btnSalvar" text="Salvar" />
+      <Button fx:id="btnCancelar" layoutX="418.0" layoutY="471.0" mnemonicParsing="false" onAction="#btnCancelar" text="Cancelar" />
+      <Label layoutX="15.0" layoutY="128.0" text="Equipamentos*" />
+      <Label layoutX="375.0" layoutY="93.0" text="Turno*" />
+      <Label layoutX="40.0" layoutY="227.0" text="Data Fim*" />
+      <Label layoutX="353.0" layoutY="193.0" text="Hora Final*" />
+      <TextField fx:id="horaFim" layoutX="419.0" layoutY="191.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha a Hora Final" />
+      <TextField fx:id="horaInicial" layoutX="418.0" layoutY="159.0" prefHeight="25.0" prefWidth="178.0" promptText="Escolha a Hora Inicial" />
+      <Label layoutX="349.0" layoutY="163.0" text="Hora Inicial*" />
+      <DatePicker fx:id="dataFim" layoutX="101.0" layoutY="225.0" prefHeight="25.0" prefWidth="206.0" promptText="Escolha a Data Final" />
+      <DatePicker fx:id="dataInicial" layoutX="101.0" layoutY="193.0" prefHeight="25.0" prefWidth="206.0" promptText="Escolha a Data Inicial" />
+      <Label layoutX="33.0" layoutY="197.0" text="Data Inicial*" />
+      <Label layoutX="380.0" layoutY="128.0" text="Sala*" />
+      <ComboBox fx:id="comboSala" layoutX="418.0" layoutY="124.0" prefHeight="25.0" prefWidth="178.0" promptText="Selecione o Turno" />
+      <Label layoutX="33.0" layoutY="163.0" text="Unidade*" />
+      <ComboBox fx:id="comboUnidade" layoutX="101.0" layoutY="159.0" prefHeight="25.0" prefWidth="206.0" promptText="Selecione Unidade" />
+      <TableView fx:id="tabelaVewer" layoutX="10.0" layoutY="306.0" prefHeight="143.0" prefWidth="596.0">
+        <columns>
+          <TableColumn fx:id="colunaEquiepamento" prefWidth="89.0" text="Equipamento" />
+          <TableColumn fx:id="colunaSala" prefWidth="84.0" text="Sala" />
+            <TableColumn fx:id="colunaUnidade" prefWidth="112.0" text="Unidade" />
+            <TableColumn fx:id="colunaDataIncial" prefWidth="79.0" text="Data Inicial" />
+            <TableColumn fx:id="colunaDataFinal" prefWidth="99.0" text="Data final" />
+            <TableColumn fx:id="calunaUnidade" prefWidth="131.0" text="Unidade" />
+        </columns>
+      </TableView>
+      <Label layoutX="249.0" layoutY="252.0" text="Reservas">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

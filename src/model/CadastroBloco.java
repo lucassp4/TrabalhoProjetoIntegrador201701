@@ -30,14 +30,6 @@ public class CadastroBloco  {
         this.unidade = unidade;
     }
 
-    public String getNumeroSalas() {
-        return numeroSalas;
-    }
-
-    public void setNumeroSalas(String numeroSalas) {
-        this.numeroSalas = numeroSalas;
-    }
-
     public String getDescricao() {
         return descricao;
     }

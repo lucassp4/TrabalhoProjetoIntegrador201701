@@ -22,9 +22,9 @@ public class BlocoDao {
         ConnectionFactory cf = new ConnectionFactory();
         con = cf.getConnection();
     }
-    String sqlSalvar =  "INSERT INTO projetoIntegrador.cadastroBlocos" + "(nome,unidade,descricao,sala)" +
-            "VALUES(?,?,?,?)";
-
+    String sqlSalvar =  "INSERT INTO projetoIntegrador.cadastroBlocos" + "(nome,unidade,descricao)" +
+            "VALUES(?,?,?)";
+        String bloco = "Bloco - ";
     public String salvar(CadastroBloco blocos) throws SQLException{
 
         String salvo = "falhar";
@@ -32,10 +32,10 @@ public class BlocoDao {
         try{
             con.setAutoCommit(false);
             stmt = con.prepareStatement(sqlSalvar);
-            stmt.setString(1, blocos.getNome());
+            stmt.setString(1, bloco + blocos.getNome());
             stmt.setString(2, blocos.getUnidade());
             stmt.setString(3,blocos.getDescricao());
-            stmt.setString    (4, blocos.getNumeroSalas());
+
             stmt.executeUpdate();
             con.commit();
             salvo = "salvo";
@@ -76,7 +76,6 @@ public class BlocoDao {
                                      bloco.setNome(res.getString("nome"));
                                      bloco.setDescricao(res.getString("descricao"));
                                      bloco.setUnidade(res.getString("unidade"));
-                                     bloco.setNumeroSalas(res.getString("sala"));
 
                 list.add(bloco);
             }

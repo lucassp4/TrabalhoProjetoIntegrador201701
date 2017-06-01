@@ -2,6 +2,7 @@ package dao;
 
 import daoutil.ConnectionFactory;
 import model.Sala;
+import model.Unidade;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -23,16 +24,15 @@ public class SalaDao {
 
 
     String sqlSalvar = "INSERT INTO projetoIntegrador.cadastroSala" +
-            "(nome,tipo,capacidade, unidade,bloco)" +
+            "(nome,tipo,unidade,capacidade,bloco)" +
             "VALUES(?,?,?,?,?)";
 
-    String sqlEditar = "UPDATE clientes SET nome = ?, sobrenome = ?," +
-            "cpf = ?, rg = ?, telefone = ?, celular = ?, endereco = ?," +
-            "email = ?  WHERE id = ?";
+    String sqlEditar = "UPDATE cadastroSala SET nome = ?, tipo = ?," +
+            "unidade = ?, capacidade = ?, bloco = ? WHERE id = ?;";
 
-    String sqlDeletar = "DELETE from clientes where id = ?";
+    String sqlDeletar = "DELETE from cadastroSala where id = ?";
 
-
+    String sala = "Sala - ";
     public String salvar(Sala cliente) throws SQLException {
 
 
@@ -42,7 +42,7 @@ public class SalaDao {
         try {
             con.setAutoCommit(false);
             stmt = con.prepareStatement(sqlSalvar);
-            stmt.setString(1, cliente.getNome());
+            stmt.setString(1,sala+ cliente.getNome());
             stmt.setString(2, cliente.getTipo());
             stmt.setString(3, cliente.getUnidade());
             stmt.setString(4, cliente.getCapacidade());
@@ -111,6 +111,7 @@ public class SalaDao {
             stmt.setString(3, cliente.getUnidade());
             stmt.setString(4, cliente.getCapacidade());
             stmt.setString(5, cliente.getBloco());
+            stmt.setInt(6, cliente.getId());
 
             stmt.executeUpdate();
             con.commit();
@@ -124,26 +125,22 @@ public class SalaDao {
         return salvo;
     }
 
-    public String deletar(Sala cliente) throws SQLException {
-        String salvo = "falha";
+    public String excluir(Sala unidade) {
+        String deletado = "falha";
         try {
             con.setAutoCommit(false);
-            stmt = con.prepareStatement(sqlEditar);
-            stmt.setString(1, cliente.getNome());
-            stmt.setString(2, cliente.getTipo());
-            stmt.setString(3, cliente.getUnidade());
-            stmt.setString(4, cliente.getCapacidade());
-            stmt.setString(5, cliente.getBloco());
+            stmt = con.prepareStatement(sqlDeletar);
+
+            stmt.setInt(1, unidade.getId());
 
             stmt.executeUpdate();
             con.commit();
-            salvo = "salvo";
+            deletado = "deletado";
 
-
-        }catch (Exception e){
-            System.out.println("erro ao atualizar " + e.getMessage());
-            salvo = e.getMessage();
+        } catch (SQLException e) {
+            System.out.println("Erro na exclusão :" + e.getMessage());
+            deletado = e.getMessage();
         }
-        return salvo;
+        return deletado;
     }
 }

@@ -1,6 +1,7 @@
 package controller;
 
 import dao.BlocoDao;
+import dao.UnidadeDao;
 import javafx.animation.RotateTransition;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
@@ -12,6 +13,8 @@ import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
+import model.Unidade;
+import negocio.BlocoNegocio;
 import org.controlsfx.control.Notifications;
 import application.Main;
 
@@ -42,6 +45,10 @@ public class CadastrarBloco implements Initializable {
 
 	Main main = null;
 	CadastroBloco bloco = new CadastroBloco();
+	UnidadeDao unidadeDao = new UnidadeDao();
+	BlocoNegocio blocoNegocio = new BlocoNegocio();
+	public CadastrarBloco() throws SQLException {
+	}
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -93,19 +100,12 @@ public class CadastrarBloco implements Initializable {
 	public void pegarvalores() {
 
 
-		bloco.setNome(txtNome.getText());
+		bloco.setNome(txtNome.getText().toUpperCase());
 		bloco.setUnidade(comboUnidade.getValue());
-		bloco.setNumeroSalas(txtSalas.getText());
 		bloco.setDescricao(textDescricao.getText());
 
 
 	}
-
-	  public void preencherComboUnidade(){
-	  		comboUnidade.getItems().add("Faculdade Alves Faria Bueno");
-			comboUnidade.getItems().add("Faculdade Alves Faria Perimetral");
-			comboUnidade.getItems().add("Faculdade Alves Faria SP");
-		}
 
 
 		public void exibeMensagem(String msg){
@@ -125,22 +125,24 @@ public class CadastrarBloco implements Initializable {
 
 		String nome =  txtNome.getText();
 		String unidade = bloco.getUnidade();
-		String nSala = bloco.getNumeroSalas();
+		String descriçao = bloco.getDescricao();
 
 		List<Control> controls = new ArrayList<>();
 		StringBuilder sb = new StringBuilder();
 		sb.append("");
-		if(nome.equals("") || nome == null){
-			sb.append("O nome não pode ser vazio!. \n");
+		boolean teste;
+		teste = blocoNegocio.string(bloco.getNome());
+		if(!teste ){
+			sb.append("Por favor digite somente uma letra!. \n");
 			controls.add(txtNome);
 		}
 		if(unidade == null){
 			sb.append(" A por favor selecione uma unidade !. \n");
 			controls.add(comboUnidade);
 		}
-		if(nSala.equals("") || nSala == null){
-			sb.append("O Numero de sala não pode ser vazio!. \n");
-			controls.add(txtSalas);
+		if(descriçao.equals("") || descriçao == null){
+			sb.append("Descriçao nao pode ser vazia!. \n");
+			controls.add(textDescricao);
 		}
 
 		if(!sb.equals("")) {
@@ -166,6 +168,22 @@ public class CadastrarBloco implements Initializable {
 		if(!controls.isEmpty()){
 			controls.get(0).requestFocus();
 		}
+	}
+	public void preencherComboUnidade(){
+
+		List<String> teste = new ArrayList<String>();
+		List<Unidade> unidade = new ArrayList<Unidade>();
+		unidade = unidadeDao.listarClientes();
+		unidade.forEach( (Unidade cliente) -> {
+					teste.add(cliente.getNome());
+				}
+
+
+		);
+		teste.forEach((String testes)->{
+					comboUnidade.getItems().add(testes);
+				}
+		);
 	}
 
 		}

@@ -76,7 +76,7 @@ public class AuditorioDao {
                 bloco.setNome(res.getString("nome"));
                 bloco.setDescricao(res.getString("descricao"));
                 bloco.setUnidade(res.getString("unidade"));
-                bloco.setNumeroSalas(res.getString("sala"));
+
 
                 list.add(bloco);
             }

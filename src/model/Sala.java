@@ -13,6 +13,7 @@ public class Sala {
     private String capacidade;
 
 
+
     public String getNome() {
         return nome;
     }

@@ -105,24 +105,25 @@ public class ExcluirUnidade implements Initializable {
         confirmarMais = confirmarMaisExclusao();
                         if (confirmarExlusão) {
                             unidadeDao.excluir(unidadeM);
-
                             if(confirmarMais) {
                                 preencherT();
-
+                                limpaCampo();
                             }else {
                                 exibeMensagem("Unidade Excluida com sucesso");
-                            }
-                            URL arquivoFXML;
-                            arquivoFXML = getClass().getResource("/view/PaginaPrincipal.fxml");
-                            Parent fxmlParent;
-                            try {
-                                fxmlParent = FXMLLoader.load(arquivoFXML);
-                                painelPrincipal.getChildren().clear();
-                                painelPrincipal.getChildren().add(fxmlParent);
-                            } catch (IOException e) {
-                                e.printStackTrace();
+
+                                URL arquivoFXML;
+                                arquivoFXML = getClass().getResource("/view/PaginaPrincipal.fxml");
+                                Parent fxmlParent;
+                                try {
+                                    fxmlParent = FXMLLoader.load(arquivoFXML);
+                                    painelPrincipal.getChildren().clear();
+                                    painelPrincipal.getChildren().add(fxmlParent);
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
                             }
                             }else{
+
 
                         }
 
@@ -260,5 +261,18 @@ public class ExcluirUnidade implements Initializable {
 
             populaView(listaUnidade);
         }
-    }
+        public void limpaCampo(){
+                txtId.setText(String.valueOf(0));
+                txtCep.setText("");
+                txtCidade.setText("");
+                txtCnpj.setText("");
+                txtEndereco.setText("");
+                txtEstado.setText("");
+                txtFantacia.setText("");
+                txtNomeUnidade.setText("");
+                txtRazao.setText("");
+                txtTelefone.setText("");
+            }
+        }
+
 
