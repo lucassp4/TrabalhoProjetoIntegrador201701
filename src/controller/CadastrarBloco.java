@@ -1,6 +1,6 @@
 package controller;
 
-import dao.BlocoDao;
+import dao.BlocoDAO;
 import javafx.animation.RotateTransition;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
@@ -71,7 +71,7 @@ public class CadastrarBloco implements Initializable {
 		boolean validar;
 		pegarvalores();
 		validar =  validarCampos();
-		BlocoDao blocoDao = new BlocoDao();
+		BlocoDAO blocoDao = new BlocoDAO();
 		if (validar) {
 			blocoDao.salvar(bloco);
 				exibeMensagem("Salvo com sucesso");

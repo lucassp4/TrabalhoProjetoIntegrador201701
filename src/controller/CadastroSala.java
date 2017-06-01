@@ -1,8 +1,8 @@
 package controller;
 
 import application.Main;
-import dao.BlocoDao;
-import dao.SalaDao;
+import dao.BlocoDAO;
+import dao.SalaDAO;
 import javafx.animation.RotateTransition;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -26,7 +26,6 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Observable;
 import java.util.ResourceBundle;
 
 public class CadastroSala implements Initializable{
@@ -53,7 +52,7 @@ public class CadastroSala implements Initializable{
 	@FXML
 	private Pane panielSala;
 
-	BlocoDao blocoDao = new BlocoDao();
+	BlocoDAO blocoDao = new BlocoDAO();
 	Main main = null;
 	private ObservableList <String> listaBloco;
 
@@ -83,9 +82,9 @@ public class CadastroSala implements Initializable{
 		boolean validar;
 		pegarValores();
 		validar =  validarCampos();
-		SalaDao salaDao = new SalaDao();
+		SalaDAO salaDAO = new SalaDAO();
 		if (validar) {
-			salaDao.salvar(sala);
+			salaDAO.salvar(sala);
 			exibeMensagem("Salvo com sucesso");
 
 			URL arquivoFXML;

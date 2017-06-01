@@ -1,7 +1,7 @@
 package controller;
 
 import application.Main;
-import dao.UnidadeDao;
+import dao.UnidadeDAO;
 import javafx.animation.RotateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,7 +16,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 import model.Unidade;
-import negocio.UnidadeNegocio;
 import org.controlsfx.control.Notifications;
 
 import javax.swing.*;
@@ -86,7 +85,7 @@ public class ExcluirUnidade implements Initializable {
     @FXML
     private TableColumn colunaTelefone;
     ObservableList<Unidade> preencherTabela = null;
-    UnidadeDao unidadeDao = new UnidadeDao();
+    UnidadeDAO unidadeDao = new UnidadeDAO();
     List<Unidade> listaUnidade = new ArrayList<Unidade>();
     Unidade unidadeM = new Unidade();
     Main main = null;

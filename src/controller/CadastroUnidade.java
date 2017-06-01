@@ -1,7 +1,6 @@
 package controller;
 
-import dao.BlocoDao;
-import dao.UnidadeDao;
+import dao.UnidadeDAO;
 import javafx.animation.RotateTransition;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Control;
@@ -71,7 +70,7 @@ public class CadastroUnidade implements Initializable {
 	}
 
 	public void btnSalvar() throws SQLException {
-		UnidadeDao unidadeDao = new UnidadeDao();
+		UnidadeDAO unidadeDao = new UnidadeDAO();
 		pegarValores();
 		boolean validar;
 		boolean validarCep;
