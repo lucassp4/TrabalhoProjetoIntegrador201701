@@ -170,15 +170,8 @@ public class PesquisarEquipamento implements Initializable {
     }
 
     public void exluir(ActionEvent actionEvent) {
-        boolean confirmar;
-        boolean confirmarC;
 
-        confirmar = confirmar();
-        confirmarC = confirmarConfirmar();
-        if (confirmar) {
             equipamentoDAO.excluir(cadeEquipamento);
-            preencherComboEquipamento();
-            if (confirmarC) {
 
                 URL arquivoFXML;
                 arquivoFXML = getClass().getResource("/View/PaginaPrincipal.fxml");
@@ -190,10 +183,10 @@ public class PesquisarEquipamento implements Initializable {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            } else {
+
             }
-        }
-    }
+
+
 
 
     public void editar(ActionEvent actionEvent) {
@@ -219,12 +212,34 @@ public class PesquisarEquipamento implements Initializable {
 
 
     public void reserva(ActionEvent actionEvent) {
-
+        URL arquivoFXML;
+        arquivoFXML = getClass().getResource("/View/ReservarEquipamento.fxml");
+        Parent fxmlParent;
+        try {
+            fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
+            painelPrincipal.getChildren().clear();
+            painelPrincipal.getChildren().add(fxmlParent);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
-    public void cancelar(ActionEvent actionEvent) {
+
+
+    public void cancelar(ActionEvent actionEvent) { URL arquivoFXML;
+        arquivoFXML = getClass().getResource("/View/PaginaPrincipal.fxml");
+        Parent fxmlParent;
+        try {
+            fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
+            painelPrincipal.getChildren().clear();
+            painelPrincipal.getChildren().add(fxmlParent);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
+
 
 
     @Override
@@ -232,39 +247,9 @@ public class PesquisarEquipamento implements Initializable {
         preencherComboEquipamento();
     }
 
-    public boolean confirmar() {
-        boolean teste= false;
-
-        Object[] options = {"Sim", "Não"};
-
-        int opcao = JOptionPane.showOptionDialog(null, "Tem certeza que dezeja excluir esse Equipamento?",
-                "Confirmaçao", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
-        for (int i = -1; i<options.length;i++ ) {
-            if (opcao == 0) {
-                teste = true;
-            } else {
-                teste = false;
-            }
-        }
-
-        return teste;
-    }
-    public boolean confirmarConfirmar() {
-        boolean teste= false;
-
-        Object[] options = {"Sim", "Não"};
-
-        int opcao = JOptionPane.showOptionDialog(null, "Deseja sair da tela de pesquisa?",
-                "Confirmaçao", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
-        for (int i = -1; i<options.length;i++ ) {
-            if (opcao == 0) {
-                teste = true;
-            } else {
-                teste = false;
-            }
-        }
-
-        return teste;
-    }
 }
+
+
+
+
 

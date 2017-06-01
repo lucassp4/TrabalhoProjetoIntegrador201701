@@ -78,23 +78,6 @@ public class CadastroEquipamento implements Initializable {
 	 @FXML
 	 private DatePicker dataCadastro;
 
-	 @FXML
-	 private TableView<CadEquipamento> tblEquipamentos;
-
-	 @FXML
-	 private TableColumn<CadEquipamento, String> colunaTipo;
-
-	 @FXML
-	 private TableColumn<CadEquipamento, String> colunaModelo;
-
-	 @FXML
-	 private TableColumn<CadEquipamento, String> colunaMarca;
-
-	 @FXML
-	 private TableColumn<CadEquipamento, String>  colunaDataCadastro;
-
-	 @FXML
-	 private TableColumn<CadEquipamento, String>  colunaUnidade;
 
 	 @FXML
 	 private Button btnAcao;
@@ -187,19 +170,7 @@ public class CadastroEquipamento implements Initializable {
 		@FXML
 		private void salvar(ActionEvent event) throws SQLException {
 
-			boolean validacao = false;
-			boolean validar = false;
-			equipamento = new CadEquipamento();
-
 			pegaValores(equipamento);
-			validacao = validarCampos();
-
-			if (validacao) {
-				validar = confirmar();
-				equipamentoDAO.salvar(equipamento);
-				CadEquipamento = listarEquipamento();
-				populaView(CadEquipamento);
-			} else {
 				equipamentoDAO.salvar(equipamento);
 
 				String msg = "Equipamento inserido!";
@@ -220,34 +191,18 @@ public class CadastroEquipamento implements Initializable {
 
 			}
 
-			}
+
 
 		
 		
-		 public void populaView(List<CadEquipamento> equipamento){
-		        colunaTipo.setCellValueFactory(new PropertyValueFactory<CadEquipamento, String>("tipo"));
-		        colunaModelo.setCellValueFactory(new PropertyValueFactory<CadEquipamento, String>("modelo"));
-		        colunaMarca.setCellValueFactory(new PropertyValueFactory<CadEquipamento, String>("marca"));
-		        colunaUnidade.setCellValueFactory(new PropertyValueFactory<CadEquipamento, String>("unidade"));
-		        equipamentoView = FXCollections.observableArrayList(equipamento);
-		        tblEquipamentos.setItems(equipamentoView);
-		 }
+
 		
 		 public List<CadEquipamento> listarEquipamento(){
 				CadEquipamento = equipamentoNegocio.listarEquipamento();
 		        return CadEquipamento;
 			}
 		
-		public void edit(){
 
-	        equipamento = new CadEquipamento();
-	        equipamento = (CadEquipamento) tblEquipamentos.getSelectionModel().getSelectedItem();
-	        setaValores(equipamento);
-	        btnAcao.setText("Editar");
-	        btnCancelar.setText("Cancelar");
-	        String msg  = "Equipamento pronto para edi��o!";
-	        exibeMensagem(msg);
-	    }
 		
 		public void handleOnKeyPressed(KeyEvent e) {
 	        ObservableList<String> filteredList = FXCollections.observableArrayList();
